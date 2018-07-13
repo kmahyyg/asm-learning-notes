@@ -70,3 +70,5 @@
 ![pdos](../assets/envbuild/pdos1.png)
 
 启动完成。
+
+啥？你告诉我不会关机？ 输入 ```shutdown```，完事。
