@@ -1,0 +1,46 @@
+{
+    "author": "kmahyyg <16604643+kmahyyg@users.noreply.github.com>",
+    "description": "Learning Notes about Assembly Language",
+    "extension": null,
+    "generator": "site",
+    "isbn": null,
+    "links": {
+        "sharing": {
+            "all": null,
+            "facebook": null,
+            "google": null,
+            "twitter": null,
+            "weibo": null
+        },
+        "sidebar": {
+            "About Me": "https://www.kmahyyg.xyz/about",
+            "My Blog": "https://www.kmahyyg.xyz"
+        }
+    },
+    "output": null,
+    "pdf": {
+        "fontSize": 12,
+        "footerTemplate": null,
+        "headerTemplate": null,
+        "margin": {
+            "bottom": 36,
+            "left": 62,
+            "right": 62,
+            "top": 36
+        },
+        "pageNumbers": false,
+        "paperSize": "a4"
+    },
+    "plugins": [
+        "disqus",
+        "anchors",
+        "multipart"
+    ],
+    "pluginsConfig": {
+        "disqus": {
+            "shortName": "asm-kmahyyg"
+        }
+    },
+    "title": "汇编语言程序设计 - 大学笔记",
+    "variables": {}
+}
