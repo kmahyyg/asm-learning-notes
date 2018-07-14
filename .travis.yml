@@ -1,7 +1,7 @@
 language: node_js
 
 before_install:
-  - echo "Start Build for Gitbook, Runs from github: kmahyyg/asm-learning-notes"
+  - echo "Start Build for Gitbook, asm-learning-notes"
 
 install:
   - npm install gitbook -g --save
