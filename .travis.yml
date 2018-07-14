@@ -1,0 +1,31 @@
+dist: xenial
+sudo: required
+
+language: node_js
+node_js:
+  - "node"
+
+before_install:
+  - echo "Start Build for Gitbook, asm-learning-notes"
+
+install:
+  - npm install gitbook-cli -g --save
+
+script:
+  - gitbook install
+  - gitbook build
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  keep-history: true
+  github-token: $GITHUB_PERTKN
+  on:
+    branch: master
+  target-branch: gh-pages
+  fqdn: asm.kmahyyg.xyz
+  project-name: asm-learning-notes
+  committer-from-gh: true
+  local-dir: _book
+
+
