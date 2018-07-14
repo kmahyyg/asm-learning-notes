@@ -4,7 +4,7 @@ before_install:
   - echo "Start Build for Gitbook, asm-learning-notes"
 
 install:
-  - npm install gitbook -g --save
+  - npm install gitbook-cli -g --save
 
 script:
   - gitbook install
@@ -16,5 +16,11 @@ deploy:
   keep-history: true
   github-token: $GITHUB_PERTKN
   on:
-    branch: gh_pages
+    branch: master
+  target-branch: gh_pages
+  fqdn: asm.kmahyyg.xyz
+  project-name: asm-learning-notes
+  committer-from-gh: true
   local-dir: _book
+
+
