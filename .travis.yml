@@ -22,7 +22,7 @@ deploy:
   github-token: $GITHUB_PERTKN
   on:
     branch: master
-  target-branch: gh_pages
+  target-branch: gh-pages
   fqdn: asm.kmahyyg.xyz
   project-name: asm-learning-notes
   committer-from-gh: true
