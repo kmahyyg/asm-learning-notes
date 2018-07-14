@@ -28,4 +28,9 @@ deploy:
   committer-from-gh: true
   local-dir: _book
 
-
+notifications:
+  email:
+    recipients:
+      - kmahyygyyg@gmail.com
+    on_success: never
+    on_failure: always
