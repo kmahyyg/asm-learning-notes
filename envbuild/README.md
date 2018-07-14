@@ -16,7 +16,7 @@
 
 （版权归原作者所有，仅供学习研究之用） 
 
-1. 王爽 著 - 清华大学出版社出版 - 汇编语言 电子教材 [PDF](../assets/binary/chn-asm-wangshuang.pdf)
+1. 王爽 著 - 清华大学出版社出版 - 汇编语言 电子教材 [PDF](../assets/binary/chn-asm-wangshuang.zip)
 2. DEBUGX 1.3.2 [ZIP](../assets/binary/DEBUGX_1.3.2.ZIP)
 3. MS-DOS 7.1 完整版 [ISO](../assets/binary/dos71cd.iso)
 4. MASM SDK 6.11 工具包 6 DISCS [RAR](../assets/binary/masm611.rar)
