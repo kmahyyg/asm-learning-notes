@@ -29,8 +29,9 @@ deploy:
   local-dir: _book
 
 notifications:
-  email:
-    recipients:
-      - kmahyygyyg@gmail.com
-    on_success: never
+  webhooks:
+    urls:
+      - https://integrations.bonbotics.io/travis/webhook/aZiQeUIDrRpCDRoAkHWZqJGj87Wp7yC8oQZh5QjeF7I
+    on_success: always
     on_failure: always
+    on_start: never
