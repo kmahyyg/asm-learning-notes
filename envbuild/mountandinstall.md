@@ -36,8 +36,6 @@ KVM 的默认磁盘镜像存储位置： ```/var/lib/libvirt/images```
 
 本教程提供的 ```MASM``` 为完整版本，携带了 ```link.exe``` ，无需独立安装连接器。
 
-本教程提供的 ```DEBUGX``` 为 原 DOS 中 ```DEBUG``` 程序的进阶修改版，直接将解压后得到的文件放入一个文件夹中，并复制到 DOS 系统根目录即可直接运行，无需安装。
-
 最终目录结构如图所示：
 
 ![directory tree](../assets/envbuild/treeforroot.png)
@@ -49,6 +47,11 @@ KVM 的默认磁盘镜像存储位置： ```/var/lib/libvirt/images```
 ![linkrun](../assets/envbuild/linkrun.png)
 
 ![linkrun](../assets/envbuild/dbgNdbgx.png)
+
+
+## 调试器 DEBUGX
+
+本教程提供的 ```DEBUGX``` 为 原 DOS 中 ```DEBUG``` 程序的进阶修改版，直接将解压后得到的文件放入一个文件夹中，并复制到 DOS 系统根目录即可直接运行，无需安装。
 
 ## 本章完
 
