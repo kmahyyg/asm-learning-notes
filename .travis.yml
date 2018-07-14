@@ -1,0 +1,20 @@
+language: node_js
+
+before_install:
+  - echo "Start Build for Gitbook, Runs from github: kmahyyg/asm-learning-notes"
+
+install:
+  - npm install gitbook -g --save
+
+script:
+  - gitbook install
+  - gitbook build
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  keep-history: true
+  github-token: $GITHUB_PERTKN
+  on:
+    branch: gh_pages
+  local-dir: _book
