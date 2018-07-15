@@ -5,6 +5,11 @@ language: node_js
 node_js:
   - "node"
 
+cache:
+  bundler: true
+  directories:
+  - node_modules # NPM packages
+
 before_install:
   - echo "Start Build for Gitbook, asm-learning-notes"
 
