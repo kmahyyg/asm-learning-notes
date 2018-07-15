@@ -19,7 +19,7 @@
 ## Is there any breaking changes?
 
 
-## Will it bring any possible issues? If so, describe it.
+## Will it bring any possible issue? If so, describe it.
 
 
 # Other things you want to tell me
