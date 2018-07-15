@@ -6,7 +6,6 @@ node_js:
   - "node"
 
 cache:
-  bundler: true
   directories:
   - node_modules # NPM packages
 
@@ -14,7 +13,7 @@ before_install:
   - echo "Start Build for Gitbook, asm-learning-notes"
 
 install:
-  - npm install gitbook-cli -g --save
+  - npm install gitbook-cli --save
 
 script:
   - gitbook install
