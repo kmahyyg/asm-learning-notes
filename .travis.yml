@@ -13,7 +13,7 @@ before_install:
   - echo "Start Build for Gitbook, asm-learning-notes"
 
 install:
-  - npm install gitbook-cli --save
+  - npm install gitbook-cli
 
 script:
   - gitbook install
