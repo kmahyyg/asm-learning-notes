@@ -33,7 +33,9 @@ JMP $
 ## Reference
 
 [1] https://stackoverflow.com/questions/4903906/assembly-using-the-data-segment-register-ds (写作参考资料来源)
+
 [2] https://wiki.osdev.org/Real_Mode (推荐扩展阅读：实模式)
+
 [3] 《计算机组成结构与原理》课程教材
 
 鸣谢：我的汇编和计算机组成原理老师 王逍老师
