@@ -6,19 +6,40 @@
 
 ## DS 寄存器
 
-DS 寄存器，全称 Data Segment Register，即数据段寄存器，主要用于存储一些静态的全局数据。
+DS 寄存器，全称 Data Segment Register，即数据段寄存器，主要用于存储一些静态的全局变量，同时也用来存放要访问的数据的段地址。
 
 ### 将数据传送到 DS 寄存器
 
+> 执行程序时从形式地址到有效地址的转换。
 
+我们以下列代码为例：
+```assembly
+MOV AX, [0x0000]
+MOV DS, AX
+MOV AL, [msg]
+MOV BX, 0x0007  
+INT 0x10    
+JMP $
+```
 
-#### 执行程序时从形式地址到有效地址的转换
+前面我们提到过，每条 CPU 微指令的格式都是 ```[OPCODE] [ADDR]``` ，在 8086 PC 机中，这一形式地址到有效地址的转换遵循 ``` 有效地址 = 段基址 * 0x10 + 偏移地址 ``` 的原则。
 
+在上述这几条指令中，正保持了这一原则，对于 ```MOV AX, [0x0000] ``` 这条指令 CPU 将会自动使用 ``` DS * 0x10 + 0x0000 ``` 作为有效地址，也就是说 此处的 ```0x0000``` 仅作输入的偏移地址只用，当调用到 AX 时， DS 保存了寻址时的段基址。
 
+当你需要修改这一寄存器时，你的首选方案，应当是：将数据传送到某个第三方寄存器中，之后将内容所在寄存器的地址传入 ```MOV``` 指令，最终使用 ```MOV``` 指令读取到该地址中的内容后传入 DS 寄存器。
+
+略微做一点点延伸，对于 ``` MOV AX, [BP+0x32] ``` 这样一条指令来说， CPU看到你使用了 BP 寄存器时，将默认你想要访问堆栈，CPU 将使用 ``` SS[Stack Segment] * 0x10 + BP + 0x32 ``` 来确定有效地址。 当然，你也可以使用 ``` [DS:BP+0x32] ``` 来人为指定它不使用 SS 寄存器。
 
 ## Reference
 
-[1] https://stackoverflow.com/questions/4903906/assembly-using-the-data-segment-register-ds
-[2] 《计算机组成结构与原理》课程教材
+[1] https://stackoverflow.com/questions/4903906/assembly-using-the-data-segment-register-ds (写作参考资料来源)
+[2] https://wiki.osdev.org/Real_Mode (推荐扩展阅读：实模式)
+[3] 《计算机组成结构与原理》课程教材
 
 鸣谢：我的汇编和计算机组成原理老师 王逍老师
+
+## Tips
+
+1. 在上面我们提到的示例代码中， "msg" 应当位于 0x7C11 地址附近。
+2. 汇编语言中，```[ ]``` 表示操作的对象是一个内存单元。
+3. 推荐扩展阅读：为什么 8086 PC 不支持直接输入数据到 DS 寄存器，而要从另一个寄存器的某个地址中读取对应内容，再传送至 DS？  https://stackoverflow.com/questions/19074666/8086-why-cant-we-move-an-immediate-data-into-segment-register
