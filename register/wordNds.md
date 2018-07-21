@@ -30,6 +30,22 @@ JMP $
 
 略微做一点点延伸，对于 ``` MOV AX, [BP+0x32] ``` 这样一条指令来说， CPU看到你使用了 BP 寄存器时，将默认你想要访问堆栈，CPU 将使用 ``` SS[Stack Segment] * 0x10 + BP + 0x32 ``` 来确定有效地址。 当然，你也可以使用 ``` [DS:BP+0x32] ``` 来人为指定它不使用 SS 寄存器。
 
+## 数据段的访问
+
+我们知道 CPU 主要将内存分为数据段、代码段、栈段等几大段空间。我们将一组长度为N、地址连续、起始地址为 16 的倍数的内存空间当作专门存储数据的内存空间，这样我们就定义了一个数据段。
+
+我们来用下列代码作为示例来访问一个数据段：
+```assembly
+MOV AX, 123BH
+MOV DS, AX
+MOV AL, 0
+ADD AL, [0]
+ADD AL, [1]
+ADD AL, [2]
+```
+
+首先，我们在 AX 中记录下 123BH 作为数据段的段地址，将其传入  DS。用 AL 作为存放计算结果的单元，然后依次累加偏移地址为 1、2、3的单元中的数值至 AL。这样就完成了一次数据段的访问。
+
 ## Reference
 
 [1] https://stackoverflow.com/questions/4903906/assembly-using-the-data-segment-register-ds (写作参考资料来源)
