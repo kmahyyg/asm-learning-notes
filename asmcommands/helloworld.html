@@ -329,6 +329,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.2" data-path="../exps/exp2-firsttry.html">
+            
+                <a href="../exps/exp2-firsttry.html">
+            
+                    
+                    实验二：编程、编译、链接、跟踪 :star:
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -403,7 +416,29 @@ codesg ends         ;&#x6BB5;&#x5B9A;&#x4E49;&#x7ED3;&#x675F;
 
 end                 ;&#x6C47;&#x7F16;&#x7A0B;&#x5E8F;&#x7ED3;&#x675F;
 </code></pre>
-<h2 id="&#x5B9E;&#x9645;&#x64CD;&#x4F5C;&#x8FC7;&#x7A0B;"><a name="&#x5B9E;&#x9645;&#x64CD;&#x4F5C;&#x8FC7;&#x7A0B;" class="plugin-anchor" href="#&#x5B9E;&#x9645;&#x64CD;&#x4F5C;&#x8FC7;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B9E;&#x9645;&#x64CD;&#x4F5C;&#x8FC7;&#x7A0B;</h2>
+<h2 id="&#x5B9E;&#x9645;&#x64CD;&#x4F5C;&#x8FC7;&#x7A0B;-step-by-step"><a name="&#x5B9E;&#x9645;&#x64CD;&#x4F5C;&#x8FC7;&#x7A0B;-step-by-step" class="plugin-anchor" href="#&#x5B9E;&#x9645;&#x64CD;&#x4F5C;&#x8FC7;&#x7A0B;-step-by-step"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B9E;&#x9645;&#x64CD;&#x4F5C;&#x8FC7;&#x7A0B; (Step-By-Step)</h2>
+<p>&#x4EE5;&#x4E0B;&#x4EE5;&#x672C;&#x4E66;&#x4E2D;&#x9644;&#x5E26;&#x7684; MASM 6.11 &#x548C; MS-DOS 7.1 &#x4E3A;&#x4F8B;&#xFF1A;</p>
+<ol>
+<li>&#x542F;&#x52A8; MS-DOS 7.1</li>
+<li>&#x4F7F;&#x7528; <code>cd</code> &#x5207;&#x6362;&#x5230;&#x5BF9;&#x5E94; <code>MASM</code> &#x548C; <code>LINK</code> &#x6240;&#x5728;&#x76EE;&#x5F55;&#x3002;</li>
+<li>&#x4F7F;&#x7528; <code>edit 1.asm</code> &#x521B;&#x5EFA;&#x5E76;&#x7F16;&#x8F91;&#x4E00;&#x4E2A;&#x6C47;&#x7F16;&#x8BED;&#x8A00;&#x6E90;&#x4EE3;&#x7801;&#x6587;&#x4EF6;&#xFF0C; Alt &#x952E;&#x9009;&#x62E9;&#x83DC;&#x5355;&#xFF0C; &#x4E0A;&#x4E0B;&#x65B9;&#x5411;&#x952E;&#x63A7;&#x5236;&#x5149;&#x6807;&#xFF0C;&#x56DE;&#x8F66;&#x786E;&#x8BA4;&#x3002;</li>
+<li>&#x4F7F;&#x7528; <code>masm.exe 1.asm 1.obj</code> &#x5C06;&#x5176;&#x7F16;&#x8BD1;&#x4E3A; <code>1.obj</code> &#x6587;&#x4EF6;&#x3002;</li>
+<li>&#x4F7F;&#x7528; <code>link.exe</code> &#x5C06; <code>1.obj</code>  &#x8FDE;&#x63A5;&#x4E3A; <code>1.exe</code> &#x3002;</li>
+</ol>
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#x4F7F;&#x7528; <code>link</code> &#x65F6;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x663E;&#x793A;&#x4E86; <code>[.OBJ]</code> &#x65F6;&#x8F93;&#x5165; <code>1</code> &#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x5176;&#x4ED6;&#x6587;&#x4EF6;&#xFF0C;&#x5219;&#x9700;&#x8F93;&#x5165;&#x6587;&#x4EF6;&#x5168;&#x540D;&#x3002;</p>
+<blockquote>
+<p>Tips: &#x5728;&#x547D;&#x4EE4;&#x672B;&#x5C3E;&#x6DFB;&#x52A0;&#x5BF9;&#x5E94;&#x8FD0;&#x884C;&#x53C2;&#x6570;&#x540E;&#x4F7F;&#x7528; <code>;</code> &#x53EF;&#x4EE5;&#x8FDB;&#x5165;&#x65E0;&#x4EA4;&#x4E92;&#x6A21;&#x5F0F;&#x3002;</p>
+</blockquote>
+<h2 id="&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x7684;&#x88C5;&#x5165;&#x3001;&#x6267;&#x884C;"><a name="&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x7684;&#x88C5;&#x5165;&#x3001;&#x6267;&#x884C;" class="plugin-anchor" href="#&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x7684;&#x88C5;&#x5165;&#x3001;&#x6267;&#x884C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x7684;&#x88C5;&#x5165;&#x3001;&#x6267;&#x884C;</h2>
+<p>&#x4EE5; MS-DOS 7.11 &#x4E3A;&#x4F8B;&#xFF1A;</p>
+<p>DOS &#x4E2D;&#x6709;&#x4E00;&#x4E2A; <code>command.com</code> &#x88AB;&#x79F0;&#x4E3A;&#x547D;&#x4EE4;&#x89E3;&#x91CA;&#x5668;&#xFF0C;&#x4E5F;&#x5C31;&#x662F; DOS &#x7CFB;&#x7EDF;&#x7684; Shell&#xFF0C;&#x4E4B;&#x540E;&#x6839;&#x636E;&#x7528;&#x6237;&#x5728;&#x547D;&#x4EE4;&#x63D0;&#x793A;&#x7B26;&#x4E2D;&#x8F93;&#x5165;&#x7684;&#x6587;&#x4EF6;&#x540D;&#xFF0C;&#x5C06;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x7A0B;&#x5E8F;&#x8F7D;&#x5165;&#x5230;&#x5185;&#x5B58;&#xFF0C;&#x8BBE;&#x7F6E; CS:IP &#x4E3A;&#x7A0B;&#x5E8F;&#x7684;&#x5165;&#x53E3;&#xFF0C;&#x6B64;&#x540E; <code>command.com</code> &#x6682;&#x505C;&#x8FD0;&#x884C;&#xFF0C;CPU &#x8FD0;&#x884C;&#x8F7D;&#x5165;&#x7684;&#x7A0B;&#x5E8F;&#xFF0C;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x7ED3;&#x675F;&#x540E;&#xFF0C;&#x8FD4;&#x56DE;&#x5230; <code>command.com</code> &#x4E2D;&#xFF0C;&#x7EE7;&#x7EED;&#x663E;&#x793A;&#x7531;&#x5F53;&#x524D;&#x76D8;&#x7B26;&#x548C;&#x8DEF;&#x5F84;&#x7EC4;&#x6210;&#x7684;&#x547D;&#x4EE4;&#x63D0;&#x793A;&#x7B26;&#x3002;</p>
+<h2 id="&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x7684;&#x8DDF;&#x8E2A;&#x8C03;&#x8BD5;"><a name="&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x7684;&#x8DDF;&#x8E2A;&#x8C03;&#x8BD5;" class="plugin-anchor" href="#&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x7684;&#x8DDF;&#x8E2A;&#x8C03;&#x8BD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x7684;&#x8DDF;&#x8E2A;&#x8C03;&#x8BD5;</h2>
+<p>&#x4F7F;&#x7528; <code>DEBUG</code> &#x5373;&#x53EF;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1;&#x5B9E;&#x9A8C;&#x4E00;&#x3002;</p>
+<blockquote>
+<p>&#x62D3;&#x5C55;&#x5EF6;&#x4F38;&#xFF1A;&#x5728; DOS &#x4E2D;&#xFF0C;&#x88C5;&#x8F7D;&#x7A0B;&#x5E8F;&#x4E3B;&#x8981;&#x5305;&#x62EC;&#xFF1A;&#x5BFB;&#x627E;&#x5230;&#x4E00;&#x4E2A;&#x8D77;&#x59CB;&#x5730;&#x5740;&#x4E3A; SA:0000 &#x7684;&#x5BB9;&#x91CF;&#x8DB3;&#x591F;&#x5927;&#x7684;&#x7A7A;&#x95F2;&#x5185;&#x5B58;&#x533A;&#xFF0C;&#x5728;&#x8FD9;&#x6BB5;&#x5185;&#x5B58;&#x53BB;&#x524D; 256 Bytes &#x4E2D;&#xFF0C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x533A;&#xFF1A;&#x7A0B;&#x5E8F;&#x6BB5;&#x524D;&#x7F00;&#xFF08;PSP&#xFF09;&#xFF0C; DOS &#x5229;&#x7528; PSP &#x4E0E; &#x88AB;&#x52A0;&#x8F7D;&#x7A0B;&#x5E8F;&#x901A;&#x8BAF;&#x3002;&#x4E4B;&#x540E;&#xFF0C;&#x5728; SA+10H:0 &#x5C06;&#x7A0B;&#x5E8F;&#x88C5;&#x5165;&#xFF0C;&#x5C06; PSP &#x7684;&#x6BB5;&#x5730;&#x5740;&#x88C5;&#x5165; DS &#x4E2D;&#xFF0C;&#x8BBE;&#x7F6E; CS:IP &#x6307;&#x5411;&#x7A0B;&#x5E8F;&#x5165;&#x53E3;&#x3002;</p>
+<p>&#x6CE8;&#x610F;&#xFF1A; <code>INT</code> &#x4E2D;&#x65AD;&#x6307;&#x4EE4;&#x9700;&#x8981;&#x4F7F;&#x7528; <code>P</code> &#x6307;&#x4EE4;&#x5728; <code>debug</code> &#x4E2D;&#x6267;&#x884C;&#x3002;</p>
+</blockquote>
+<p>&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x8BF7;&#x4F60;&#x5B8C;&#x6210;&#x5B9E;&#x9A8C;&#x4E8C;&#x3002;</p>
 
                                 
                                 </section>
@@ -447,7 +482,7 @@ end                 ;&#x6C47;&#x7F16;&#x7A0B;&#x5E8F;&#x7ED3;&#x675F;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.3 第一个程序","level":"1.4.3","depth":2,"next":{"title":"All Experiments","level":"1.5","depth":1,"path":"exps/README.md","ref":"exps/README.md","articles":[{"title":"实验一：DOS 中 DEBUG 的基本使用","level":"1.5.1","depth":2,"path":"exps/exp1-dosdbg.md","ref":"exps/exp1-dosdbg.md","articles":[]}]},"previous":{"title":"3.2 栈机制 与 PUSH、POP 指令","level":"1.4.2","depth":2,"path":"asmcommands/pushpop.md","ref":"asmcommands/pushpop.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","anchors","multipart"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"asm-kmahyyg"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"kmahyyg <16604643+kmahyyg@users.noreply.github.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"none","variables":{},"title":"汇编语言程序设计 - 大学笔记","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"About Me":"https://www.kmahyyg.xyz/about","My Blog":"https://www.kmahyyg.xyz"}},"gitbook":"*","description":"Learning Notes about Assembly Language","extension":null},"file":{"path":"asmcommands/helloworld.md","mtime":"2018-07-22T08:42:28.397Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-22T08:43:22.162Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3.3 第一个程序","level":"1.4.3","depth":2,"next":{"title":"All Experiments","level":"1.5","depth":1,"path":"exps/README.md","ref":"exps/README.md","articles":[{"title":"实验一：DOS 中 DEBUG 的基本使用","level":"1.5.1","depth":2,"path":"exps/exp1-dosdbg.md","ref":"exps/exp1-dosdbg.md","articles":[]},{"title":"实验二：编程、编译、链接、跟踪 :star:","level":"1.5.2","depth":2,"path":"exps/exp2-firsttry.md","ref":"exps/exp2-firsttry.md","articles":[]}]},"previous":{"title":"3.2 栈机制 与 PUSH、POP 指令","level":"1.4.2","depth":2,"path":"asmcommands/pushpop.md","ref":"asmcommands/pushpop.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","anchors","multipart"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"asm-kmahyyg"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"kmahyyg <16604643+kmahyyg@users.noreply.github.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"none","variables":{},"title":"汇编语言程序设计 - 大学笔记","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"About Me":"https://www.kmahyyg.xyz/about","My Blog":"https://www.kmahyyg.xyz"}},"gitbook":"*","description":"Learning Notes about Assembly Language","extension":null},"file":{"path":"asmcommands/helloworld.md","mtime":"2018-07-22T14:23:29.461Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-22T14:24:30.314Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
