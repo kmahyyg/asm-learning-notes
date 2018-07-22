@@ -19,4 +19,5 @@
 
 * [All Experiments](exps/README.md)
   - [实验一：DOS 中 ```DEBUG``` 的基本使用](exps/exp1-dosdbg.md)
+  - [实验二：编程、编译、链接、跟踪 :star:](exps/exp2-firsttry.md)
 

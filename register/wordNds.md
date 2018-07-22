@@ -61,3 +61,7 @@ ADD AL, [2]
 1. 在上面我们提到的示例代码中， "msg" 应当位于 0x7C11 地址附近。
 2. 汇编语言中，```[ ]``` 表示操作的对象是一个内存单元。
 3. 推荐扩展阅读：为什么 8086 PC 不支持直接输入数据到 DS 寄存器，而要从另一个寄存器的某个地址中读取对应内容，再传送至 DS？  https://stackoverflow.com/questions/19074666/8086-why-cant-we-move-an-immediate-data-into-segment-register
+
+
+
+接下来，请你完成实验一。
