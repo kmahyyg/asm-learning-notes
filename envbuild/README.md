@@ -19,3 +19,4 @@
 1. DEBUGX 1.3.2 [ZIP](../assets/binary/DEBUGX_1.3.2.ZIP)
 2. MS-DOS 7.1 完整版 [ISO](../assets/binary/dos71cd.iso)
 3. MASM SDK 6.11 工具包 6 DISCS [RAR](../assets/binary/masm611.rar)
+4. 本书中所有用到的汇编代码 [Github](https://github.com/kmahyyg/asm-learning-notes/tree/master/assets/code) 
