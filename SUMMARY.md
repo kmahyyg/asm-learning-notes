@@ -15,6 +15,7 @@
 * [Chapter 3 - 汇编语言常见指令](asmcommands/README.md)
   - [3.1 MOV、ADD、SUB 指令](asmcommands/addsubmov.md)
   - [3.2 栈机制 与 PUSH、POP 指令](asmcommands/pushpop.md)
+  - [3.3 第一个程序](asmcommands/helloworld.md)
 
 * [All Experiments](exps/README.md)
   - [实验一：DOS 中 ```DEBUG``` 的基本使用](exps/exp1-dosdbg.md)
