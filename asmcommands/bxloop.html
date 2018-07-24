@@ -355,6 +355,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.3" data-path="../exps/exp3-bxloop.html">
+            
+                <a href="../exps/exp3-bxloop.html">
+            
+                    
+                    实验三：[BX] 和 LOOP 指令的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -441,9 +454,8 @@ S:
 <p>&#x8FD9;&#x91CC;&#x4E0D;&#x4F5C;&#x8BE6;&#x7EC6;&#x63CF;&#x8FF0;&#xFF0C;&#x5728;&#x7F16;&#x5199;&#x7A0B;&#x5E8F;&#x65F6;&#xFF0C;&#x8BF7;&#x6CE8;&#x610F;&#x4E00;&#x4E0B;&#x51E0;&#x4E2A;&#x95EE;&#x9898;&#xFF1A;</p>
 <ul>
 <li>&#x6C47;&#x7F16;&#x6E90;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x6570;&#x636E;&#x4E0D;&#x80FD;&#x4EE5;&#x5B57;&#x6BCD;&#x5F00;&#x5934;</li>
-<li>&#x8FD0;&#x7B97;&#x7ED3;&#x679C;&#x4E0D;&#x80FD;&#x6EA2;&#x51FA;</li>
+<li>&#x8FD0;&#x7B97;&#x7ED3;&#x679C;&#x4E0D;&#x80FD;&#x51FA;&#x73B0;&#x8FDB;&#x4F4D;&#x4E22;&#x5931;</li>
 <li>&#x63D0;&#x524D;&#x786E;&#x5B9A;&#x597D;&#x7528;&#x4E8E;&#x4FDD;&#x5B58;&#x8FD0;&#x7B97;&#x7ED3;&#x679C;&#x7684;&#x5BC4;&#x5B58;&#x5668;</li>
-<li>&#x5F53;&#x4FDD;&#x5B58;&#x7684;&#x6570;&#x636E;&#x5B57;&#x957F;&#x4E0E;&#x5BC4;&#x5B58;&#x5668;&#x5BB9;&#x91CF;&#x4E0D;&#x540C;&#x7684;&#x65F6;&#x5019;&#x9700;&#x8981;&#x600E;&#x4E48;&#x5904;&#x7406;</li>
 </ul>
 <p>&#x5728;&#x8FD9;&#x4E2A;&#x81EA;&#x884C;&#x5B8C;&#x6210;&#x7684;&#x5B9E;&#x9A8C;&#x4E2D;&#xFF0C;&#x4F60;&#x53EF;&#x80FD;&#x4F1A;&#x6CE8;&#x610F;&#x5230;&#xFF1A;</p>
 <ul>
@@ -452,14 +464,54 @@ S:
 <li>&#x4F7F;&#x7528;<code>G 0012</code> &#x6307;&#x4EE4;&#x8BA9;&#x7A0B;&#x5E8F;&#x81EA;&#x52A8;&#x6267;&#x884C;&#x524D;&#x9762;&#x7684;&#x6240;&#x6709;&#x6307;&#x4EE4;&#x5230;<code>0012</code>&#x5904;</li>
 </ul>
 <h2 id="debug-&#x548C;-masm-&#x5BF9;&#x6307;&#x4EE4;&#x7684;&#x4E0D;&#x540C;&#x5904;&#x7406;"><a name="debug-&#x548C;-masm-&#x5BF9;&#x6307;&#x4EE4;&#x7684;&#x4E0D;&#x540C;&#x5904;&#x7406;" class="plugin-anchor" href="#debug-&#x548C;-masm-&#x5BF9;&#x6307;&#x4EE4;&#x7684;&#x4E0D;&#x540C;&#x5904;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a>DEBUG &#x548C; MASM &#x5BF9;&#x6307;&#x4EE4;&#x7684;&#x4E0D;&#x540C;&#x5904;&#x7406;</h2>
-<h2 id="&#x6BB5;&#x524D;&#x7F00;&#x53CA;&#x5176;&#x4F7F;&#x7528;"><a name="&#x6BB5;&#x524D;&#x7F00;&#x53CA;&#x5176;&#x4F7F;&#x7528;" class="plugin-anchor" href="#&#x6BB5;&#x524D;&#x7F00;&#x53CA;&#x5176;&#x4F7F;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6BB5;&#x524D;&#x7F00;&#x53CA;&#x5176;&#x4F7F;&#x7528;</h2>
+<p>&#x6E90;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-assembly">assume cs:code
+code segment
+   mov ax,2000h   ; directly input this to debug
+   mov ds,ax      ; directly input this to debug
+   mov al,[0]     ; directly input this to debug
+   mov bl,[1]     ; directly input this to debug
+   mov cl,[2]     ; directly input this to debug
+   mov dl,[3]     ; directly input this to debug
+
+   mov ax,4c00h
+   int 21h
+
+code ends
+end
+</code></pre>
+<p>&#x5982;&#x679C;&#x4F60;&#x5C06;&#x4E0A;&#x8BC9;&#x6807;&#x6CE8;&#x4E86;&#x76F4;&#x63A5;&#x8F93;&#x5165;&#x7684;&#x4EE3;&#x7801;&#x8F93;&#x5165;&#x5230; <code>DEBUG</code> &#x4E2D;&#x6267;&#x884C;&#xFF0C;&#x4F60;&#x4F1A;&#x770B;&#x5230;&#xFF1A; <code>DEBUG</code> &#x5C06;&#x5176;&#x4E2D;&#x7684; <code>[0][1][2][3]</code> &#x76F4;&#x63A5;&#x89E3;&#x91CA;&#x4E3A;&#x4E00;&#x4E2A;&#x5185;&#x5B58;&#x5355;&#x5143;&#x3002;&#x4F7F;&#x7528; <code>MASM</code> &#x548C; <code>LINK</code> &#x7F16;&#x8BD1;&#x3001;&#x8FDE;&#x63A5;&#x4E4B;&#x540E;&#x5F97;&#x5230; exe&#xFF0C; &#x5176;&#x4E2D;&#x7684;  <code>[0][1][2][3]</code> &#x88AB;&#x89E3;&#x91CA;&#x4E3A; <code>idata</code> &#x3002;</p>
+<p>&#x90A3;&#x4E48;&#x5982;&#x4F55;&#x5728;&#x6E90;&#x7A0B;&#x5E8F;&#x4E2D;&#x5B9E;&#x73B0;&#x5C06;&#x5185;&#x5B58; 2000:1&#x3001;2000:2&#x3001;2000:3&#x3001;2000:4 &#x5355;&#x5143;&#x7684;&#x6570;&#x636E;&#x4F20;&#x5165; AL&#x3001;BL&#x3001;CL&#x3001;DL &#x4E2D;&#x5462;&#xFF1F;</p>
+<p>&#x7B54;&#x6848;&#x662F;&#x501F;&#x52A9; BX &#x5BC4;&#x5B58;&#x5668;&#xFF1A;</p>
+<pre><code class="lang-assembly">mov ax,2000h
+mov ds,ax
+mov bx,&#x504F;&#x79FB;&#x5730;&#x5740;
+mov al,[bx]    ; [ds:bx] &#x7684;&#x6570;&#x636E;&#x9001;&#x5165; al
+</code></pre>
+<p>&#x6216;&#x8005; <code>mov al,ds:[0]</code> &#x663E;&#x5F0F;&#x7ED9;&#x51FA;&#x6BB5;&#x57FA;&#x5730;&#x5740;&#x6240;&#x5728;&#x7684;&#x5BC4;&#x5B58;&#x5668;&#x3002;</p>
+<h2 id="loop-&#x548C;-bx-&#x7684;&#x8054;&#x5408;&#x5E94;&#x7528;"><a name="loop-&#x548C;-bx-&#x7684;&#x8054;&#x5408;&#x5E94;&#x7528;" class="plugin-anchor" href="#loop-&#x548C;-bx-&#x7684;&#x8054;&#x5408;&#x5E94;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>LOOP &#x548C; [BX] &#x7684;&#x8054;&#x5408;&#x5E94;&#x7528;</h2>
+<p>&#x6211;&#x4EEC;&#x5728;&#x672C;&#x6587;&#x7684;&#x4E0A;&#x534A;&#x90E8;&#x5206;&#x63D0;&#x5230;&#x4E86;&#x8FD0;&#x7B97;&#x65F6;&#x5E94;&#x5F53;&#x6CE8;&#x610F;&#x7684;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#xFF1A;&#x5B9E;&#x73B0;&#x4E24;&#x4E2A;&#x8FD0;&#x7B97;&#x5BF9;&#x8C61;&#x7684;&#x7C7B;&#x578B;&#x5339;&#x914D;&#x4E14;&#x7ED3;&#x679C;&#x4E0D;&#x4F1A;&#x8D85;&#x754C;&#x3002;&#x4EE5;&#x6211;&#x4EEC;&#x76EE;&#x524D;&#x7684;&#x77E5;&#x8BC6;&#xFF0C;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#x53EA;&#x6709;&#x9009;&#x62E9;&#x4E00;&#x4E2A; 16 &#x4F4D;&#x5BC4;&#x5B58;&#x5668;&#x6682;&#x5B58; 8 &#x4F4D;&#x7684;&#x521D;&#x59CB;&#x6570;&#x636E;&#x5E76;&#x5B58;&#x50A8;&#x53EF;&#x80FD;&#x5230;&#x8FBE; 16 &#x4F4D;&#x7684;&#x8FD0;&#x7B97;&#x7ED3;&#x679C;&#xFF0C;&#x6700;&#x7EC8;&#x518D;&#x5199;&#x56DE;&#x76EE;&#x7684;&#x5B58;&#x50A8;&#x5668;&#x3002;</p>
+<p>&#x89E3;&#x51B3;&#x601D;&#x8DEF;&#xFF1A;</p>
+<ol>
+<li>&#x521D;&#x59CB;&#x5316; DS=AX&#x3001;Offset=BX</li>
+<li>&#x521D;&#x59CB;&#x5316;&#x7D2F;&#x52A0;&#x5BC4;&#x5B58;&#x5668; DX&#xFF0C;&#x5FAA;&#x73AF;&#x8BA1;&#x6570;&#x5668; CX</li>
+<li>&#x6267;&#x884C;&#x5FAA;&#x73AF;&#xFF0C;&#x5C06; <strong>AL</strong> &#x4E2D;&#x7684;&#x5730;&#x5740;&#x4E0D;&#x65AD;&#x81EA;&#x589E;&#xFF0C;&#x5B9E;&#x73B0;&#x8FDE;&#x7EED;&#x8FD0;&#x7B97;&#x3001;&#x5B58;&#x50A8;&#x3001;&#x8DF3;&#x8F6C;</li>
+<li>&#x8FBE;&#x5230;&#x6761;&#x4EF6;&#x540E;&#x4F7F;&#x7528; 21 &#x53F7;&#x4E2D;&#x65AD;&#x9000;&#x51FA;&#x7A0B;&#x5E8F;&#x3002;</li>
+</ol>
+<h2 id="&#x6BB5;&#x524D;&#x7F00;"><a name="&#x6BB5;&#x524D;&#x7F00;" class="plugin-anchor" href="#&#x6BB5;&#x524D;&#x7F00;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6BB5;&#x524D;&#x7F00;</h2>
+<p>&#x4F8B;&#x5982;&#xFF1A;<code>MOV AX,SS:[BX]</code> &#x8FD9;&#x6837;&#x7684;&#x8BBF;&#x95EE;&#x5185;&#x5B58;&#x5355;&#x5143;&#x7684;&#x6307;&#x4EE4;&#x4E2D;&#xFF0C;&#x7528;&#x4E8E;&#x663E;&#x5F0F;&#x6307;&#x660E;&#x5185;&#x5B58;&#x5355;&#x5143;&#x7684;&#x6BB5;&#x5730;&#x5740;&#x7684; <code>SS:</code> &#x79F0;&#x4E3A;&#x6BB5;&#x524D;&#x7F00;&#x3002;</p>
 <h2 id="&#x5BFB;&#x627E;&#x4E00;&#x6BB5;&#x5B89;&#x5168;&#x7684;&#x7A7A;&#x95F4;&#x6267;&#x884C;&#x4F60;&#x7684;&#x6307;&#x4EE4;"><a name="&#x5BFB;&#x627E;&#x4E00;&#x6BB5;&#x5B89;&#x5168;&#x7684;&#x7A7A;&#x95F4;&#x6267;&#x884C;&#x4F60;&#x7684;&#x6307;&#x4EE4;" class="plugin-anchor" href="#&#x5BFB;&#x627E;&#x4E00;&#x6BB5;&#x5B89;&#x5168;&#x7684;&#x7A7A;&#x95F4;&#x6267;&#x884C;&#x4F60;&#x7684;&#x6307;&#x4EE4;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5BFB;&#x627E;&#x4E00;&#x6BB5;&#x5B89;&#x5168;&#x7684;&#x7A7A;&#x95F4;&#x6267;&#x884C;&#x4F60;&#x7684;&#x6307;&#x4EE4;</h2>
+<p>&#x6211;&#x4EEC;&#x4E4B;&#x524D;&#x5728;&#x8BF4;&#x5230;&#x6808;&#x9876;&#x8D85;&#x754C;&#x95EE;&#x9898;&#x65F6;&#x63D0;&#x5230;&#x8FC7;&#x8FD9;&#x4E00;&#x95EE;&#x9898;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x4F60;&#x7684;&#x4EE3;&#x7801;&#x548C;&#x6570;&#x636E;&#x4E0D;&#x5E94;&#x5F53;&#x8986;&#x76D6;&#x4EFB;&#x4F55;&#x5B58;&#x6709;&#x7CFB;&#x7EDF;&#x5173;&#x952E;&#x4FE1;&#x606F;&#x548C;&#x5173;&#x952E;&#x6307;&#x4EE4;&#x6216;&#x8005;&#x5B58;&#x6709;&#x5176;&#x4ED6;&#x7A0B;&#x5E8F;&#x53EF;&#x80FD;&#x4F7F;&#x7528;&#x7684;&#x4FE1;&#x606F;&#x7684;&#x533A;&#x57DF;&#x3002;</p>
+<p>&#x5728;&#x6211;&#x4EEC;&#x5B9E;&#x9A8C;&#x7684; DOS &#x73AF;&#x5883;&#x4E0B;&#xFF0C;&#x7531;&#x4E8E; CPU &#x5DE5;&#x4F5C;&#x5728;&#x5B9E;&#x6A21;&#x5F0F;&#xFF0C;&#x6CA1;&#x6709;&#x80FD;&#x529B;&#x5BF9;&#x786C;&#x4EF6;&#x7CFB;&#x7EDF;&#x8FDB;&#x884C;&#x5168;&#x9762;&#x3001;&#x4E25;&#x683C;&#x7684;&#x7BA1;&#x7406;&#x3002;&#x5728;&#x73B0;&#x5728;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;CPU &#x5DE5;&#x4F5C;&#x5728;&#x4FDD;&#x62A4;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x4F60;&#x662F;&#x65E0;&#x6CD5;&#x76F4;&#x63A5;&#x64CD;&#x4F5C;&#x8FD9;&#x7C7B;&#x786C;&#x4EF6;&#x8D44;&#x6E90;&#x7684;&#x3002;</p>
+<p>&#x672C;&#x4E66;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x53C2;&#x8003;&#x4E66;&#x7C4D;&#x5EFA;&#x8BAE;&#x6211;&#x4EEC;&#x4F7F;&#x7528; 0:200~0:2FF &#x8FD9;&#x6BB5;&#x7A7A;&#x95F4;&#xFF0C;&#x56E0;&#x4E3A;&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;&#x8FD9;&#x6BB5;&#x7A7A;&#x95F4;&#x4E0D;&#x4F1A;&#x88AB;&#x5176;&#x4ED6;&#x4F7F;&#x7528;&#x3002;</p>
+<h2 id="&#x8BF7;&#x5B8C;&#x6210;&#x5B9E;&#x9A8C;&#x4E09;"><a name="&#x8BF7;&#x5B8C;&#x6210;&#x5B9E;&#x9A8C;&#x4E09;" class="plugin-anchor" href="#&#x8BF7;&#x5B8C;&#x6210;&#x5B9E;&#x9A8C;&#x4E09;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8BF7;&#x5B8C;&#x6210;&#x5B9E;&#x9A8C;&#x4E09;</h2>
 <h2 id="reference"><a name="reference" class="plugin-anchor" href="#reference"><i class="fa fa-link" aria-hidden="true"></i></a>Reference</h2>
 <p>[1] <a href="https://stackoverflow.com/questions/23500782/assembly-parenthesis-explanation" target="_blank">https://stackoverflow.com/questions/23500782/assembly-parenthesis-explanation</a> </p>
 <p>[2] <a href="https://www.jianshu.com/p/46efa9b8b0a8" target="_blank">https://www.jianshu.com/p/46efa9b8b0a8</a></p>
 <p>[3] <a href="https://stackoverflow.com/questions/19012300/whats-the-difference-between-rdata-and-idata-segments" target="_blank">https://stackoverflow.com/questions/19012300/whats-the-difference-between-rdata-and-idata-segments</a></p>
 <p>[4] <a href="https://stackoverflow.com/questions/36641131/why-are-mov-ds-bx-and-mov-ds-2345h-valid" target="_blank">https://stackoverflow.com/questions/36641131/why-are-mov-ds-bx-and-mov-ds-2345h-valid</a></p>
 <p>[5] <a href="https://stackoverflow.com/questions/5364270/concept-of-mov-ax-cs-and-mov-ds-ax" target="_blank">https://stackoverflow.com/questions/5364270/concept-of-mov-ax-cs-and-mov-ds-ax</a></p>
+<p>[6] &#xFF08;&#x5199;&#x7684;&#x4E0D;&#x662F;&#x592A;&#x597D;&#xFF0C;&#x5EFA;&#x8BAE;&#x4E0D;&#x8981;&#x770B;&#xFF09; <a href="https://chrislinn.github.io/2017/06/23/assembly-shuangw/" target="_blank">https://chrislinn.github.io/2017/06/23/assembly-shuangw/</a></p>
 
                                 
                                 </section>
@@ -503,7 +555,7 @@ S:
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.4 [BX] 和 LOOP 指令","level":"1.4.4","depth":2,"next":{"title":"All Experiments","level":"1.5","depth":1,"path":"exps/README.md","ref":"exps/README.md","articles":[{"title":"实验一：DOS 中 DEBUG 的基本使用","level":"1.5.1","depth":2,"path":"exps/exp1-dosdbg.md","ref":"exps/exp1-dosdbg.md","articles":[]},{"title":"实验二：编程、编译、链接、跟踪 :star:","level":"1.5.2","depth":2,"path":"exps/exp2-firsttry.md","ref":"exps/exp2-firsttry.md","articles":[]}]},"previous":{"title":"3.3 第一个程序","level":"1.4.3","depth":2,"path":"asmcommands/helloworld.md","ref":"asmcommands/helloworld.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","anchors","multipart"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"asm-kmahyyg"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"kmahyyg <16604643+kmahyyg@users.noreply.github.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"none","variables":{},"title":"汇编语言程序设计 - 大学笔记","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"About Me":"https://www.kmahyyg.xyz/about","My Blog":"https://www.kmahyyg.xyz"}},"gitbook":"*","description":"Learning Notes about Assembly Language","extension":null},"file":{"path":"asmcommands/bxloop.md","mtime":"2018-07-23T23:19:46.018Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-23T23:20:42.461Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3.4 [BX] 和 LOOP 指令","level":"1.4.4","depth":2,"next":{"title":"All Experiments","level":"1.5","depth":1,"path":"exps/README.md","ref":"exps/README.md","articles":[{"title":"实验一：DOS 中 DEBUG 的基本使用","level":"1.5.1","depth":2,"path":"exps/exp1-dosdbg.md","ref":"exps/exp1-dosdbg.md","articles":[]},{"title":"实验二：编程、编译、链接、跟踪 :star:","level":"1.5.2","depth":2,"path":"exps/exp2-firsttry.md","ref":"exps/exp2-firsttry.md","articles":[]},{"title":"实验三：[BX] 和 LOOP 指令的使用","level":"1.5.3","depth":2,"path":"exps/exp3-bxloop.md","ref":"exps/exp3-bxloop.md","articles":[]}]},"previous":{"title":"3.3 第一个程序","level":"1.4.3","depth":2,"path":"asmcommands/helloworld.md","ref":"asmcommands/helloworld.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","anchors","multipart"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"asm-kmahyyg"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"kmahyyg <16604643+kmahyyg@users.noreply.github.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"none","variables":{},"title":"汇编语言程序设计 - 大学笔记","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"About Me":"https://www.kmahyyg.xyz/about","My Blog":"https://www.kmahyyg.xyz"}},"gitbook":"*","description":"Learning Notes about Assembly Language","extension":null},"file":{"path":"asmcommands/bxloop.md","mtime":"2018-07-24T15:07:21.858Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-24T15:08:19.076Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
