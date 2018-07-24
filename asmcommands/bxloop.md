@@ -53,9 +53,8 @@ idata 和 rdata 都表示一个常量：
 这里不作详细描述，在编写程序时，请注意一下几个问题：
 
 - 汇编源代码中，数据不能以字母开头
-- 运算结果不能溢出
+- 运算结果不能出现进位丢失
 - 提前确定好用于保存运算结果的寄存器
-- 当保存的数据字长与寄存器容量不同的时候需要怎么处理
 
 在这个自行完成的实验中，你可能会注意到：
 
@@ -65,17 +64,64 @@ idata 和 rdata 都表示一个常量：
 
 ## DEBUG 和 MASM 对指令的不同处理
 
+源代码：
 
+```assembly
+assume cs:code
+code segment
+   mov ax,2000h   ; directly input this to debug
+   mov ds,ax      ; directly input this to debug
+   mov al,[0]     ; directly input this to debug
+   mov bl,[1]     ; directly input this to debug
+   mov cl,[2]     ; directly input this to debug
+   mov dl,[3]     ; directly input this to debug
+   
+   mov ax,4c00h
+   int 21h
+   
+code ends
+end
+```
 
-## 段前缀及其使用
+如果你将上诉标注了直接输入的代码输入到 ```DEBUG``` 中执行，你会看到： ```DEBUG``` 将其中的 ```[0][1][2][3]``` 直接解释为一个内存单元。使用 ```MASM``` 和 ```LINK``` 编译、连接之后得到 exe， 其中的  ```[0][1][2][3]``` 被解释为 ```idata``` 。
 
+那么如何在源程序中实现将内存 2000:1、2000:2、2000:3、2000:4 单元的数据传入 AL、BL、CL、DL 中呢？
 
+答案是借助 BX 寄存器：
+
+```assembly
+mov ax,2000h
+mov ds,ax
+mov bx,偏移地址
+mov al,[bx]    ; [ds:bx] 的数据送入 al
+```
+
+或者 ```mov al,ds:[0]``` 显式给出段基地址所在的寄存器。
+
+## LOOP 和 [BX] 的联合应用
+
+我们在本文的上半部分提到了运算时应当注意的一个问题：实现两个运算对象的类型匹配且结果不会超界。以我们目前的知识，解决方法只有选择一个 16 位寄存器暂存 8 位的初始数据并存储可能到达 16 位的运算结果，最终再写回目的存储器。
+
+解决思路：
+
+1. 初始化 DS=AX、Offset=BX
+2. 初始化累加寄存器 DX，循环计数器 CX
+3. 执行循环，将 **AL** 中的地址不断自增，实现连续运算、存储、跳转
+4. 达到条件后使用 21 号中断退出程序。
+
+## 段前缀
+
+例如：```MOV AX,SS:[BX]``` 这样的访问内存单元的指令中，用于显式指明内存单元的段地址的 ```SS:``` 称为段前缀。
 
 ## 寻找一段安全的空间执行你的指令
 
+我们之前在说到栈顶超界问题时提到过这一问题，也就是你的代码和数据不应当覆盖任何存有系统关键信息和关键指令或者存有其他程序可能使用的信息的区域。
 
+在我们实验的 DOS 环境下，由于 CPU 工作在实模式，没有能力对硬件系统进行全面、严格的管理。在现在操作系统中，CPU 工作在保护模式下，你是无法直接操作这类硬件资源的。
 
+本书所使用的参考书籍建议我们使用 0:200~0:2FF 这段空间，因为一般情况下这段空间不会被其他使用。
 
+## 请完成实验三
 
 ## Reference
 
@@ -88,3 +134,5 @@ idata 和 rdata 都表示一个常量：
 [4] https://stackoverflow.com/questions/36641131/why-are-mov-ds-bx-and-mov-ds-2345h-valid
 
 [5] https://stackoverflow.com/questions/5364270/concept-of-mov-ax-cs-and-mov-ds-ax
+
+[6] （写的不是太好，建议不要看） https://chrislinn.github.io/2017/06/23/assembly-shuangw/
