@@ -113,6 +113,43 @@ mov al,[bx]    ; [ds:bx] 的数据送入 al
 
 例如：```MOV AX,SS:[BX]``` 这样的访问内存单元的指令中，用于显式指明内存单元的段地址的 ```SS:``` 称为段前缀。
 
+## 段前缀的使用
+
+> 前情提要：
+>
+> 1. 一个段的寻址长度最大是 64 KB，相聚大于 64 KB 的目标单元需要多次设置 DS 寄存器。
+> 2. 由 8086 地址转换规则知：  0:200 == 0020:0
+
+应用举例：复制 ffff:0 ~ ffff:b 中的数据到 0:200 ~ 0:20b 中。
+
+源代码：
+
+```assembly
+assume cs:code
+
+code segment
+
+   mov ax,0ffffh   ; addr cannot start with letter,add 0&h
+   mov ds,ax       ; remember the source addr
+   mov ax,0020h
+   mov es,ax       ; remember the target addr
+   mov bx,0        ; addr offset
+   
+   mov cx,12       ; loop * 12
+   
+s: mov dl,[bx]     ; dl=ds<<4+bx
+   mov es:[bx],dl  ; send data in dl to 0020:bx
+   inc bx
+
+   loop s
+   
+   mov ax,4c00h
+   int 21h
+   
+code ends
+end
+```
+
 ## 寻找一段安全的空间执行你的指令
 
 我们之前在说到栈顶超界问题时提到过这一问题，也就是你的代码和数据不应当覆盖任何存有系统关键信息和关键指令或者存有其他程序可能使用的信息的区域。
