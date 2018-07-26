@@ -29,7 +29,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
                 
             
                 
@@ -441,7 +441,7 @@
 <p>&#x4E66;&#x4E2D;&#x8FD8;&#x4F7F;&#x7528;&#x4E86; <code>INC BX</code> &#x6307;&#x4EE4;&#xFF0C;&#x7B49;&#x4EF7;&#x4E8E; <code>ADD BX,1</code></p>
 </blockquote>
 <h2 id="loop"><a name="loop" class="plugin-anchor" href="#loop"><i class="fa fa-link" aria-hidden="true"></i></a>LOOP</h2>
-<pre class="language-"><code>MOV CX,&#x5FAA;&#x73AF;&#x6B21;&#x6570;
+<pre><code>MOV CX,&#x5FAA;&#x73AF;&#x6B21;&#x6570;
 S:
     &#x4EE3;&#x7801;&#x6BB5;
     loop S
@@ -451,7 +451,7 @@ S:
 </code></pre><p>&#x4EE3;&#x7801;&#x89E3;&#x91CA;&#xFF1A;&#x5C06;&#x5FAA;&#x73AF;&#x6B21;&#x6570;&#x7F6E;&#x5165; CX &#x4E2D;&#xFF0C;S&#x662F;&#x4E00;&#x6BB5;&#x4EE3;&#x7801;&#x7684;&#x6807;&#x53F7;&#xFF0C;&#x6807;&#x8BC6;&#x7740;&#x4E00;&#x4E2A;&#x5730;&#x5740;&#x3002;&#x5F53; CPU &#x6267;&#x884C; loop s&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C06; CX -=1 &#x76F4;&#x81F3;&#x5224;&#x65AD;&#x5230; CX &#x4E3A; 0&#xFF0C;&#x4E0D;&#x4E3A; 0, &#x5219;&#x8DF3;&#x8F6C;&#x5230; S &#x6807;&#x53F7;&#x5BF9;&#x5E94;&#x7684;&#x5730;&#x5740;&#x5904;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#xFF0C;&#x4E3A; 0, &#x5219;&#x8DF3;&#x8F6C;&#x5230;&#x4E0B;&#x4E00;&#x6761;&#x6307;&#x4EE4;&#x3002;</p>
 <h2 id="idata--rdata"><a name="idata--rdata" class="plugin-anchor" href="#idata--rdata"><i class="fa fa-link" aria-hidden="true"></i></a>idata &amp; rdata</h2>
 <p>idata &#x548C; rdata &#x90FD;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x5E38;&#x91CF;&#xFF1A;</p>
-<pre class="language-"><code>.text: Code 
+<pre><code>.text: Code 
 .data: Initialized data
 .bss: Uninitialized data
 .rdata: Const/read-only (and initialized) data
@@ -478,7 +478,7 @@ S:
 </ul>
 <h2 id="debug-&#x548C;-masm-&#x5BF9;&#x6307;&#x4EE4;&#x7684;&#x4E0D;&#x540C;&#x5904;&#x7406;"><a name="debug-&#x548C;-masm-&#x5BF9;&#x6307;&#x4EE4;&#x7684;&#x4E0D;&#x540C;&#x5904;&#x7406;" class="plugin-anchor" href="#debug-&#x548C;-masm-&#x5BF9;&#x6307;&#x4EE4;&#x7684;&#x4E0D;&#x540C;&#x5904;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a>DEBUG &#x548C; MASM &#x5BF9;&#x6307;&#x4EE4;&#x7684;&#x4E0D;&#x540C;&#x5904;&#x7406;</h2>
 <p>&#x6E90;&#x4EE3;&#x7801;&#xFF1A;</p>
-<pre class="language-"><code class="lang-asm6502">assume cs:code
+<pre><code class="lang-asm6502">assume cs:code
 code segment
    mov ax,2000h   ; directly input this to debug
    mov ds,ax      ; directly input this to debug
@@ -496,7 +496,7 @@ end
 <p>&#x5982;&#x679C;&#x4F60;&#x5C06;&#x4E0A;&#x8BC9;&#x6807;&#x6CE8;&#x4E86;&#x76F4;&#x63A5;&#x8F93;&#x5165;&#x7684;&#x4EE3;&#x7801;&#x8F93;&#x5165;&#x5230; <code>DEBUG</code> &#x4E2D;&#x6267;&#x884C;&#xFF0C;&#x4F60;&#x4F1A;&#x770B;&#x5230;&#xFF1A; <code>DEBUG</code> &#x5C06;&#x5176;&#x4E2D;&#x7684; <code>[0][1][2][3]</code> &#x76F4;&#x63A5;&#x89E3;&#x91CA;&#x4E3A;&#x4E00;&#x4E2A;&#x5185;&#x5B58;&#x5355;&#x5143;&#x3002;&#x4F7F;&#x7528; <code>MASM</code> &#x548C; <code>LINK</code> &#x7F16;&#x8BD1;&#x3001;&#x8FDE;&#x63A5;&#x4E4B;&#x540E;&#x5F97;&#x5230; exe&#xFF0C; &#x5176;&#x4E2D;&#x7684;  <code>[0][1][2][3]</code> &#x88AB;&#x89E3;&#x91CA;&#x4E3A; <code>idata</code> &#x3002;</p>
 <p>&#x90A3;&#x4E48;&#x5982;&#x4F55;&#x5728;&#x6E90;&#x7A0B;&#x5E8F;&#x4E2D;&#x5B9E;&#x73B0;&#x5C06;&#x5185;&#x5B58; 2000:1&#x3001;2000:2&#x3001;2000:3&#x3001;2000:4 &#x5355;&#x5143;&#x7684;&#x6570;&#x636E;&#x4F20;&#x5165; AL&#x3001;BL&#x3001;CL&#x3001;DL &#x4E2D;&#x5462;&#xFF1F;</p>
 <p>&#x7B54;&#x6848;&#x662F;&#x501F;&#x52A9; BX &#x5BC4;&#x5B58;&#x5668;&#xFF1A;</p>
-<pre class="language-"><code class="lang-asm6502">mov ax,2000h
+<pre><code class="lang-asm6502">mov ax,2000h
 mov ds,ax
 mov bx,&#x504F;&#x79FB;&#x5730;&#x5740;
 mov al,[bx]    ; [ds:bx] &#x7684;&#x6570;&#x636E;&#x9001;&#x5165; al
@@ -523,7 +523,7 @@ mov al,[bx]    ; [ds:bx] &#x7684;&#x6570;&#x636E;&#x9001;&#x5165; al
 </blockquote>
 <p>&#x5E94;&#x7528;&#x4E3E;&#x4F8B;&#xFF1A;&#x590D;&#x5236; ffff:0 ~ ffff:b &#x4E2D;&#x7684;&#x6570;&#x636E;&#x5230; 0:200 ~ 0:20b &#x4E2D;&#x3002;</p>
 <p>&#x6E90;&#x4EE3;&#x7801;&#xFF1A;</p>
-<pre class="language-"><code class="lang-asm6502">assume cs:code
+<pre><code class="lang-asm6502">assume cs:code
 
 code segment
 
@@ -602,7 +602,7 @@ end
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.4 [BX] 和 LOOP 指令","level":"1.4.4","depth":2,"next":{"title":"3.5 包含多个段的程序","level":"1.4.5","depth":2,"path":"asmcommands/multisegment.md","ref":"asmcommands/multisegment.md","articles":[]},"previous":{"title":"3.3 第一个程序","level":"1.4.3","depth":2,"path":"asmcommands/helloworld.md","ref":"asmcommands/helloworld.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","anchors","multipart","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"asm-kmahyyg"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"kmahyyg <16604643+kmahyyg@users.noreply.github.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"none","variables":{},"title":"汇编语言程序设计 - 大学笔记","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"About Me":"https://www.kmahyyg.xyz/about","My Blog":"https://www.kmahyyg.xyz"}},"gitbook":"*","description":"Learning Notes about Assembly Language","extension":null},"file":{"path":"asmcommands/bxloop.md","mtime":"2018-07-26T12:51:21.510Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-26T12:52:19.889Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3.4 [BX] 和 LOOP 指令","level":"1.4.4","depth":2,"next":{"title":"3.5 包含多个段的程序","level":"1.4.5","depth":2,"path":"asmcommands/multisegment.md","ref":"asmcommands/multisegment.md","articles":[]},"previous":{"title":"3.3 第一个程序","level":"1.4.3","depth":2,"path":"asmcommands/helloworld.md","ref":"asmcommands/helloworld.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","anchors","multipart"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"asm-kmahyyg"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"kmahyyg <16604643+kmahyyg@users.noreply.github.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"none","variables":{},"title":"汇编语言程序设计 - 大学笔记","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"About Me":"https://www.kmahyyg.xyz/about","My Blog":"https://www.kmahyyg.xyz"}},"gitbook":"*","description":"Learning Notes about Assembly Language","extension":null},"file":{"path":"asmcommands/bxloop.md","mtime":"2018-07-26T13:07:54.693Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-26T13:08:49.556Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -29,7 +29,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
                 
             
                 
@@ -515,7 +515,7 @@
 </ol>
 <h2 id="&#x5B9E;&#x9A8C;&#x4E60;&#x9898;"><a name="&#x5B9E;&#x9A8C;&#x4E60;&#x9898;" class="plugin-anchor" href="#&#x5B9E;&#x9A8C;&#x4E60;&#x9898;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B9E;&#x9A8C;&#x4E60;&#x9898;</h2>
 <p>&#xFF08;1&#xFF09; &#x5C06;&#x4E0B;&#x5217;&#x7A0B;&#x5E8F;&#x6BB5;&#x4F7F;&#x7528; A&#x3001;E&#x7B49;&#x6307;&#x4EE4;&#x5199;&#x5165;&#x5185;&#x5B58;&#xFF0C;&#x9010;&#x6761;&#x6267;&#x884C;&#xFF0C;&#x89C2;&#x5BDF;&#x5404;&#x79CD;&#x5BC4;&#x5B58;&#x5668;&#xFF08;CS&#x3001;IP&#x7B49;&#xFF09;&#x7684;&#x53D8;&#x5316;&#x3002;</p>
-<pre class="language-"><code class="lang-asm6502">&#x673A;&#x5668;&#x7801;      &#x6C47;&#x7F16;&#x6307;&#x4EE4;
+<pre><code class="lang-asm6502">&#x673A;&#x5668;&#x7801;      &#x6C47;&#x7F16;&#x6307;&#x4EE4;
 B8 20 4E   MOV AX, 4E20H
 05 16 14   ADD AX, 1416H
 BB 00 20   MOV BX, 2000H
@@ -532,12 +532,12 @@ B4 00      MOV AH, 0
 04 9C      ADD AL, 9CH
 </code></pre>
 <p>&#xFF08;2&#xFF09;&#x5728; &#x8D77;&#x59CB;&#x5730;&#x5740;&#x4E3A; 2000:0 &#x7684; &#x8FDE;&#x7EED;&#x5730;&#x5740;&#x5355;&#x5143;&#x4E2D;&#xFF0C;&#x5199;&#x5165;&#x4E0B;&#x5217;&#x6307;&#x4EE4;</p>
-<pre class="language-"><code class="lang-asm6502">MOV AX, 1
+<pre><code class="lang-asm6502">MOV AX, 1
 ADD AX, AX
 JMP 2000:0003
 </code></pre>
 <p>&#xFF08;3&#xFF09;&#x5411;&#x5185;&#x5B58;&#x4ECE; B8100H &#x5F00;&#x59CB;&#x7684;&#x5355;&#x5143;&#x4E2D;&#x586B;&#x5199;&#x6570;&#x636E;</p>
-<pre class="language-"><code>-e B810:0000 01 01 02 02 03 03 04 04
+<pre><code>-e B810:0000 01 01 02 02 03 03 04 04
 </code></pre><p>&#xFF08;4&#xFF09; PC&#x673A;&#x4E3B;&#x677F;&#x7684; ROM &#x4E0A;&#x5199;&#x6709;&#x4E00;&#x4E2A;&#x751F;&#x4EA7;&#x65E5;&#x671F;&#xFF0C;&#x5728;&#x5185;&#x5B58; FFF00H &#xFF5E; FFFFFH &#x7684;&#x67D0;&#x51E0;&#x4E2A;&#x5355;&#x5143;&#x4E2D;&#xFF0C;&#x8BF7;&#x5C1D;&#x8BD5;&#x627E;&#x5230;&#x8FD9;&#x4E2A;&#x751F;&#x4EA7;&#x65E5;&#x671F;&#x5E76;&#x8BD5;&#x56FE;&#x6539;&#x53D8;&#x5B83;&#x3002;&#xFF08;PS. &#x90FD;&#x8BF4;&#x4E86; ROM&#xFF0C;&#x600E;&#x4E48;&#x53EF;&#x80FD;&#x6539;&#x53D8;......&#xFF09;</p>
 <h2 id="&#x5B9E;&#x9A8C;&#x6570;&#x636E;&#x53CA;&#x7ED3;&#x679C;"><a name="&#x5B9E;&#x9A8C;&#x6570;&#x636E;&#x53CA;&#x7ED3;&#x679C;" class="plugin-anchor" href="#&#x5B9E;&#x9A8C;&#x6570;&#x636E;&#x53CA;&#x7ED3;&#x679C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B9E;&#x9A8C;&#x6570;&#x636E;&#x53CA;&#x7ED3;&#x679C;</h2>
 <p>&#x6B64;&#x5904;&#x4EC5;&#x5C55;&#x793A;&#x90E8;&#x5206;&#x6307;&#x4EE4;&#x6267;&#x884C;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x4E0D;&#x4F1A;&#x5C55;&#x793A;&#x4EFB;&#x4F55;&#x4E60;&#x9898;&#x76F8;&#x5173;&#x5185;&#x5BB9;&#xFF0C;&#x4EE5;&#x540E;&#x7684;&#x5B9E;&#x9A8C;&#x5747;&#x9075;&#x5FAA;&#x6B64;&#x60EF;&#x4F8B;&#x3002;</p>
@@ -602,7 +602,7 @@ JMP 2000:0003
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"实验一：DOS 中 DEBUG 的基本使用","level":"1.5.1","depth":2,"next":{"title":"实验二：编程、编译、链接、跟踪 :star:","level":"1.5.2","depth":2,"path":"exps/exp2-firsttry.md","ref":"exps/exp2-firsttry.md","articles":[]},"previous":{"title":"All Experiments","level":"1.5","depth":1,"path":"exps/README.md","ref":"exps/README.md","articles":[{"title":"实验一：DOS 中 DEBUG 的基本使用","level":"1.5.1","depth":2,"path":"exps/exp1-dosdbg.md","ref":"exps/exp1-dosdbg.md","articles":[]},{"title":"实验二：编程、编译、链接、跟踪 :star:","level":"1.5.2","depth":2,"path":"exps/exp2-firsttry.md","ref":"exps/exp2-firsttry.md","articles":[]},{"title":"实验三：[BX] 和 LOOP 指令的使用","level":"1.5.3","depth":2,"path":"exps/exp3-bxloop.md","ref":"exps/exp3-bxloop.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["disqus","anchors","multipart","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"asm-kmahyyg"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"kmahyyg <16604643+kmahyyg@users.noreply.github.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"none","variables":{},"title":"汇编语言程序设计 - 大学笔记","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"About Me":"https://www.kmahyyg.xyz/about","My Blog":"https://www.kmahyyg.xyz"}},"gitbook":"*","description":"Learning Notes about Assembly Language","extension":null},"file":{"path":"exps/exp1-dosdbg.md","mtime":"2018-07-26T12:51:21.614Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-26T12:52:19.889Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"实验一：DOS 中 DEBUG 的基本使用","level":"1.5.1","depth":2,"next":{"title":"实验二：编程、编译、链接、跟踪 :star:","level":"1.5.2","depth":2,"path":"exps/exp2-firsttry.md","ref":"exps/exp2-firsttry.md","articles":[]},"previous":{"title":"All Experiments","level":"1.5","depth":1,"path":"exps/README.md","ref":"exps/README.md","articles":[{"title":"实验一：DOS 中 DEBUG 的基本使用","level":"1.5.1","depth":2,"path":"exps/exp1-dosdbg.md","ref":"exps/exp1-dosdbg.md","articles":[]},{"title":"实验二：编程、编译、链接、跟踪 :star:","level":"1.5.2","depth":2,"path":"exps/exp2-firsttry.md","ref":"exps/exp2-firsttry.md","articles":[]},{"title":"实验三：[BX] 和 LOOP 指令的使用","level":"1.5.3","depth":2,"path":"exps/exp3-bxloop.md","ref":"exps/exp3-bxloop.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["disqus","anchors","multipart"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"asm-kmahyyg"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"kmahyyg <16604643+kmahyyg@users.noreply.github.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"none","variables":{},"title":"汇编语言程序设计 - 大学笔记","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"About Me":"https://www.kmahyyg.xyz/about","My Blog":"https://www.kmahyyg.xyz"}},"gitbook":"*","description":"Learning Notes about Assembly Language","extension":null},"file":{"path":"exps/exp1-dosdbg.md","mtime":"2018-07-26T13:07:54.813Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-26T13:08:49.556Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
