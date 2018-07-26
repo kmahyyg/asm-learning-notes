@@ -10,7 +10,7 @@
 
 2. 代码解释：传输 ```mov ax,4c00h``` 之前的指令至```0:200``` 。补全下列指令，编译、调试、跟踪。
 
-   ```asm6502
+   ```x86asm
    assume cs:code
    code segment
    

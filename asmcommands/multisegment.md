@@ -23,7 +23,7 @@
 
 示例：
 
-```asm6502
+```x86asm
 assume cs:code
 code segment
    dw 0123h,0456h,0789h,0abch
