@@ -66,7 +66,7 @@ idata 和 rdata 都表示一个常量：
 
 源代码：
 
-```assembly
+```asm6502
 assume cs:code
 code segment
    mov ax,2000h   ; directly input this to debug
@@ -89,7 +89,7 @@ end
 
 答案是借助 BX 寄存器：
 
-```assembly
+```asm6502
 mov ax,2000h
 mov ds,ax
 mov bx,偏移地址
@@ -124,7 +124,7 @@ mov al,[bx]    ; [ds:bx] 的数据送入 al
 
 源代码：
 
-```assembly
+```asm6502
 assume cs:code
 
 code segment

@@ -17,3 +17,33 @@
 
 ## 在代码段中使用数据
 
+有请 “dw” 关键字出场。
+
+> "dw", which means "double words" instead of  "define word", defined a word with double space. It means that, if a single word is considered 8-byte long, it means the size of the target operand is 16 bits.
+
+示例：
+
+```asm6502
+assume cs:code
+code segment
+   dw 0123h,0456h,0789h,0abch
+   mov bx,0
+   mov ax,0
+   
+   mov cx,8
+s: add ax,cs:[bx]
+   add bx,2
+   loop s
+   
+   mov ax,4c00h
+   int 21h
+   
+code ends
+end
+```
+
+
+
+## Reference
+
+[1] http://www.cs.virginia.edu/~evans/cs216/guides/x86.html

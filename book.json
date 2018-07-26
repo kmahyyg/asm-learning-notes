@@ -34,7 +34,9 @@
     "plugins": [
         "disqus",
         "anchors",
-        "multipart"
+        "multipart",
+        "prism",
+        "-highlight"
     ],
     "pluginsConfig": {
         "disqus": {
