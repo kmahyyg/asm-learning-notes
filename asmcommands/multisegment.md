@@ -15,9 +15,9 @@
 1. 在一个段中存放数据、代码、栈。
 2. 将代码、数据、栈放入不同段中。
 
-## 在代码段中使用数据
+## 在代码段中使用数据: DW
 
-有请 “dw” 关键字出场。
+### 不指明第一条指令的起始位置
 
 > "dw", which means "double words" instead of  "define word", defined a word with double space. It means that, if a single word is considered 8-byte long, it means the size of the target operand is 16 bits.
 
@@ -26,11 +26,11 @@
 ```x86asm
 assume cs:code
 code segment
-   dw 0123h,0456h,0789h,0abch
-   mov bx,0
-   mov ax,0
+   dw 0123h,0456h,0789h,0abch      ; offset 2 addrs.
+   mov bx,0         ; offset addr storage
+   mov ax,0         ; base addr
    
-   mov cx,8
+   mov cx,8         ; loop times * 8
 s: add ax,cs:[bx]
    add bx,2
    loop s
@@ -42,8 +42,44 @@ code ends
 end
 ```
 
+```dw``` 定义的 n 个数据，保存在 DS 寄存器中的对应地址的 前 2n 个单元，处于代码段最开始的位置。 
+
+### 指明第一条指令的起始位置
+
+```x86asm
+assume cs:code
+
+code segment
+   dw 0123h,0456h,0789h
+   
+   start:   mov bx,0
+            mov ax,0
+            
+            mov cx,8
+       s:   add ax,cs:[bx]
+            add bx,2
+            loop s
+            
+            mov ax,4c00h
+            int 21h
+            
+code ends
+
+end start
+```
+
+现在让我们先回顾一下程序的加载执行过程：
+
+> 可执行文件有描述信息和程序组成，程序来源于源程序中的汇编指令和定义的数据，描述信息则主要是编译、连接程序对源程序中相关伪指令进行处理之后得到的信息。
+
+``` end start``` 指令在此处用于指明 CPU 从何处开始执行程序，也就是指明了程序入口对应的入口地址，存储在可执行文件的描述信息中，供加载调用。
+
+## 在代码段中使用栈
+
 
 
 ## Reference
 
 [1] http://www.cs.virginia.edu/~evans/cs216/guides/x86.html
+
+[2] https://stackoverflow.com/questions/2987876/what-does-dword-ptr-mean
