@@ -34,11 +34,19 @@
     "plugins": [
         "disqus",
         "anchors",
-        "multipart"
+        "multipart",
+        "-highlight",
+        "prism",
+        "prism-themes"
     ],
     "pluginsConfig": {
         "disqus": {
             "shortName": "asm-kmahyyg"
+        },
+        "prism":{
+          "css": [
+            "prism-themes/themes/prism-darcula.css"
+          ]
         }
     },
     "title": "汇编语言程序设计 - 大学笔记",

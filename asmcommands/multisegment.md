@@ -23,7 +23,7 @@
 
 示例：
 
-```x86asm
+```asm6502
 assume cs:code
 code segment
    dw 0123h,0456h,0789h,0abch      ; offset 2 addrs.
@@ -46,7 +46,7 @@ end
 
 ### 指明第一条指令的起始位置
 
-```x86asm
+```asm6502
 assume cs:code
 
 code segment

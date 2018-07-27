@@ -10,7 +10,7 @@
 
 ## 源代码说明
 
-```x86asm
+```asm6502
 assume cs:codesg    ;假设代码段 codesg 与寄存器 CS 关联
 
 codesg segment      ;定义一个段，段标号 codesg，编译过程中指定一个段地址
