@@ -76,6 +76,88 @@ end start
 
 ## 在代码段中使用栈
 
+这一部分中，我们继续使用 ```dw``` 关键字，配合 SS 、SP 寄存器，预先申请一段空间作为栈空间来使用，练习进栈、出栈操作。
+
+示例代码：
+
+```asm6502
+assume cs:codesg
+
+codesg segment
+   dw 0123h,0456h,0789h   ; dword cost 2 bytes
+   dw 0,0,0
+   
+start: mov ax,cs     ; dw stored before code
+       mov ss,ax     ; set stack segment base addr
+       ; at the very beginning, you should point it to the bottom of stack, cuz the stack is empty.
+       mov sp,06h    ; stack top tag
+       
+       mov bx,0      ; offset addr
+       mov cx,3      ; loop times *3
+       
+    s: push cs:[bx]  ; insert data into stack
+    ; I have to notice u agn that data saved at the very first beginning units of CS.
+       add bx,2      ; offset +=2
+       loop s
+       
+   s0: pop cs:[bx]   ; output the data from the stack
+       add bx,2
+       loop s0
+       
+       mov ax,4c00h
+       int 21h
+       
+codesg ends
+end start
+```
+
+## 不同类型的数据放入不同的段
+
+> Talk is cheap, show me the code.
+
+```asm6502
+assume cs:code,ds:data,ss:stack
+data segment
+   dw 0123h,0456h,0789h  ; define a new data segment
+data ends
+
+stack segment
+  dw 0,0,0    ; define a new stack segment
+stack ends
+
+code segment
+start: mov ax,stack    ; point at stack segment
+       mov ss,ax
+       mov sp,06h
+       
+       mov ax,data     ; point at data segment 
+       mov ds,ax
+       mov bx,0        ; if u need to send another data in data segment, use ds:[index] instead of 0
+       
+       mov cx,3
+    s: push [bx]      ; write in the data
+       add bx,2
+       loop s
+       
+       mov bx,0       ; offset addr == 0
+       
+       mov cx,3       ; loop 3 times
+       
+   s0: pop [bx]       ; output the data
+       add bx,2       ; single data offset == 2
+       loop s0        
+       
+       mov ax,4c00h
+       int 21h
+       
+code ends
+end start
+```
+
+一切遵循汇编语法和寻址规则，正如我们之前所提到的，这一切完全由你自己定义，细节上的问题请查看代码注释， 否则请在下方评论区留言。
+
+## 请完成实验四
+
 
 
 ## Reference
