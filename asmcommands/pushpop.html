@@ -29,7 +29,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-darcula.css">
                 
             
                 
@@ -457,15 +457,15 @@
 </ul>
 <p>&#x5728;&#x5BF9;&#x5185;&#x5B58;&#x5355;&#x5143;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x53EA;&#x7ED9;&#x51FA;&#x504F;&#x79FB;&#x5730;&#x5740;&#xFF0C;CPU &#x5C06;&#x81EA;&#x52A8;&#x4ECE; DS &#x5BC4;&#x5B58;&#x5668;&#x4E2D;&#x53D6;&#x51FA;&#x6BB5;&#x57FA;&#x5740;&#x3002;</p>
 <p>&#x57FA;&#x7840;&#x7684;&#x5165;&#x6808;&#x64CD;&#x4F5C;&#x4E3B;&#x8981;&#x5305;&#x62EC;&#xFF1A;</p>
-<pre><code class="lang-x86asm"><span class="hljs-keyword">MOV</span> <span class="hljs-built_in">AX</span>, <span class="hljs-number">1000H</span>
-<span class="hljs-keyword">MOV</span> <span class="hljs-built_in">SS</span>, <span class="hljs-built_in">AX</span>    <span class="hljs-comment">;&#x8BBE;&#x5B9A;&#x6808;&#x9876;&#x7684;&#x6BB5;&#x57FA;&#x5740;</span>
-<span class="hljs-keyword">MOV</span> <span class="hljs-built_in">SP</span>, <span class="hljs-number">0010H</span>     <span class="hljs-comment">;&#x8BBE;&#x5B9A;&#x6808;&#x9876;&#x7684;&#x504F;&#x79FB;&#x5730;&#x5740;</span>
-<span class="hljs-keyword">PUSH</span> <span class="hljs-built_in">AX</span>   <span class="hljs-comment">;&#x5165;&#x6808;&#xFF1A;First in, Last out</span>
-<span class="hljs-keyword">PUSH</span> <span class="hljs-built_in">BX</span>
-<span class="hljs-keyword">PUSH</span> <span class="hljs-built_in">DS</span>
-<span class="hljs-keyword">POP</span> <span class="hljs-built_in">DS</span>   <span class="hljs-comment">;&#x51FA;&#x6808;&#xFF1A;&#x6B63;&#x597D;&#x4E0E;&#x5165;&#x6808;&#x987A;&#x5E8F;&#x76F8;&#x53CD;</span>
-<span class="hljs-keyword">POP</span> <span class="hljs-built_in">BX</span>
-<span class="hljs-keyword">POP</span> <span class="hljs-built_in">AX</span>
+<pre class="language-"><code class="lang-asm6502">MOV AX, <span class="token decimalnumber string">1000</span>H
+MOV SS, AX    <span class="token comment">;&#x8BBE;&#x5B9A;&#x6808;&#x9876;&#x7684;&#x6BB5;&#x57FA;&#x5740;</span>
+MOV SP, <span class="token decimalnumber string">0010</span>H     <span class="token comment">;&#x8BBE;&#x5B9A;&#x6808;&#x9876;&#x7684;&#x504F;&#x79FB;&#x5730;&#x5740;</span>
+PUSH AX   <span class="token comment">;&#x5165;&#x6808;&#xFF1A;First in, Last out</span>
+PUSH BX
+PUSH DS
+POP DS   <span class="token comment">;&#x51FA;&#x6808;&#xFF1A;&#x6B63;&#x597D;&#x4E0E;&#x5165;&#x6808;&#x987A;&#x5E8F;&#x76F8;&#x53CD;</span>
+POP BX
+POP AX
 </code></pre>
 <h3 id="&#x5C0F;&#x7ED3;"><a name="&#x5C0F;&#x7ED3;" class="plugin-anchor" href="#&#x5C0F;&#x7ED3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5C0F;&#x7ED3;</h3>
 <p><code>PUSH</code> &#x548C; <code>POP</code> &#x6307;&#x4EE4;&#x7684;&#x672C;&#x8D28;&#x662F;&#x4E00;&#x79CD;&#x5185;&#x5B58;&#x4F20;&#x9001;&#x6307;&#x4EE4;&#xFF0C;8086 CPU &#x4E0D;&#x63D0;&#x4F9B;&#x6808;&#x7A7A;&#x95F4;&#x7684;&#x5927;&#x5C0F;&#x7BA1;&#x7406;&#x529F;&#x80FD;&#xFF0C;<code>PUSH</code> &#x6307;&#x4EE4;&#x7684;&#x6267;&#x884C;&#x6B65;&#x9AA4;&#x662F;&#xFF1A;(1) SP -= 2 (2) &#x5411; SS:SP &#x6307;&#x5411;&#x7684;&#x5B57;&#x5355;&#x5143;&#x4E2D;&#x9001;&#x5165;&#x6570;&#x636E;&#xFF0C;<code>POP</code> &#x6307;&#x4EE4;&#x7684;&#x6267;&#x884C;&#x6B65;&#x9AA4;&#x662F;&#xFF1A;(1) &#x4ECE; SS:SP &#x6307;&#x5411;&#x7684;&#x5B57;&#x5355;&#x5143;&#x4E2D;&#x8BFB;&#x53D6;&#x6570;&#x636E; (2) SP += 2</p>
@@ -523,7 +523,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.2 栈机制 与 PUSH、POP 指令","level":"1.4.2","depth":2,"next":{"title":"3.3 第一个程序","level":"1.4.3","depth":2,"path":"asmcommands/helloworld.md","ref":"asmcommands/helloworld.md","articles":[]},"previous":{"title":"3.1 MOV、ADD、SUB 指令","level":"1.4.1","depth":2,"path":"asmcommands/addsubmov.md","ref":"asmcommands/addsubmov.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","anchors","multipart"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"asm-kmahyyg"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"kmahyyg <16604643+kmahyyg@users.noreply.github.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"none","variables":{},"title":"汇编语言程序设计 - 大学笔记","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"About Me":"https://www.kmahyyg.xyz/about","My Blog":"https://www.kmahyyg.xyz"}},"gitbook":"*","description":"Learning Notes about Assembly Language","extension":null},"file":{"path":"asmcommands/pushpop.md","mtime":"2018-07-26T14:48:02.713Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-26T14:48:54.722Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3.2 栈机制 与 PUSH、POP 指令","level":"1.4.2","depth":2,"next":{"title":"3.3 第一个程序","level":"1.4.3","depth":2,"path":"asmcommands/helloworld.md","ref":"asmcommands/helloworld.md","articles":[]},"previous":{"title":"3.1 MOV、ADD、SUB 指令","level":"1.4.1","depth":2,"path":"asmcommands/addsubmov.md","ref":"asmcommands/addsubmov.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","anchors","multipart","-highlight","prism","prism-themes"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-darcula.css"]},"disqus":{"useIdentifier":false,"shortName":"asm-kmahyyg"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"prism-themes":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"kmahyyg <16604643+kmahyyg@users.noreply.github.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"none","variables":{},"title":"汇编语言程序设计 - 大学笔记","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"About Me":"https://www.kmahyyg.xyz/about","My Blog":"https://www.kmahyyg.xyz"}},"gitbook":"*","description":"Learning Notes about Assembly Language","extension":null},"file":{"path":"asmcommands/pushpop.md","mtime":"2018-07-27T00:34:47.144Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-27T00:35:51.974Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

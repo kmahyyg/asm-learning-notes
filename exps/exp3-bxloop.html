@@ -29,7 +29,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-darcula.css">
                 
             
                 
@@ -437,24 +437,24 @@
 <li><p>&#x7F16;&#x7A0B;&#xFF0C;&#x5411;&#x5185;&#x5B58; 0:200~0:23F &#x4F9D;&#x6B21;&#x4F20;&#x9001;&#x6570;&#x636E; 0~63 (3FH)&#xFF0C;&#x8FD9;&#x4E2A;&#x7A0B;&#x5E8F;&#x5305;&#x62EC;&#x8FD4;&#x56DE;&#x7A0B;&#x5E8F;&#x5728;&#x5185;&#x53EA;&#x80FD;&#x4F7F;&#x7528; 9 &#x6761;&#x6307;&#x4EE4;&#x3002;</p>
 </li>
 <li><p>&#x4EE3;&#x7801;&#x89E3;&#x91CA;&#xFF1A;&#x4F20;&#x8F93; <code>mov ax,4c00h</code> &#x4E4B;&#x524D;&#x7684;&#x6307;&#x4EE4;&#x81F3;<code>0:200</code> &#x3002;&#x8865;&#x5168;&#x4E0B;&#x5217;&#x6307;&#x4EE4;&#xFF0C;&#x7F16;&#x8BD1;&#x3001;&#x8C03;&#x8BD5;&#x3001;&#x8DDF;&#x8E2A;&#x3002;</p>
-<pre><code class="lang-x86asm"><span class="hljs-meta">assume</span> <span class="hljs-built_in">cs</span>:code
-code <span class="hljs-meta">segment</span>
+<pre class="language-"><code class="lang-asm6502">assume cs:code
+code segment
 
-   <span class="hljs-keyword">mov</span> <span class="hljs-built_in">ax</span>,__________
-   <span class="hljs-keyword">mov</span> <span class="hljs-built_in">ds</span>,<span class="hljs-built_in">ax</span>
-   <span class="hljs-keyword">mov</span> <span class="hljs-built_in">ax</span>,<span class="hljs-number">0020h</span>
-   <span class="hljs-keyword">mov</span> <span class="hljs-built_in">es</span>,<span class="hljs-built_in">ax</span>
-   <span class="hljs-keyword">mov</span> <span class="hljs-built_in">bx</span>,<span class="hljs-number">0</span>
-   <span class="hljs-keyword">mov</span> <span class="hljs-built_in">cx</span>,___________
-<span class="hljs-symbol">
-s:</span> <span class="hljs-keyword">mov</span> <span class="hljs-built_in">al</span>,[<span class="hljs-built_in">bx</span>]
-   <span class="hljs-keyword">mov</span> <span class="hljs-built_in">es</span>:[<span class="hljs-built_in">bx</span>],<span class="hljs-built_in">al</span>
-   <span class="hljs-keyword">inc</span> <span class="hljs-built_in">bx</span>
+   mov ax,__________
+   mov ds,ax
+   mov ax,<span class="token decimalnumber string">0020</span>h
+   mov es,ax
+   mov bx,<span class="token decimalnumber string">0</span>
+   mov cx,___________
 
-   <span class="hljs-keyword">loop</span> s
+s: mov al,[bx]
+   mov es:[bx],al
+   <span class="token opcode property">inc</span> bx
 
-   <span class="hljs-keyword">mov</span> <span class="hljs-built_in">ax</span>,<span class="hljs-number">4c00h</span>
-   <span class="hljs-keyword">int</span> <span class="hljs-number">21h</span>
+   loop s
+
+   mov ax,<span class="token decimalnumber string">4</span>c<span class="token decimalnumber string">00</span>h
+   int <span class="token decimalnumber string">21</span>h
 
 code ends
 
@@ -507,7 +507,7 @@ end
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"实验三：[BX] 和 LOOP 指令的使用","level":"1.5.3","depth":2,"previous":{"title":"实验二：编程、编译、链接、跟踪 :star:","level":"1.5.2","depth":2,"path":"exps/exp2-firsttry.md","ref":"exps/exp2-firsttry.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","anchors","multipart"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"asm-kmahyyg"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"kmahyyg <16604643+kmahyyg@users.noreply.github.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"none","variables":{},"title":"汇编语言程序设计 - 大学笔记","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"About Me":"https://www.kmahyyg.xyz/about","My Blog":"https://www.kmahyyg.xyz"}},"gitbook":"*","description":"Learning Notes about Assembly Language","extension":null},"file":{"path":"exps/exp3-bxloop.md","mtime":"2018-07-26T14:48:02.809Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-26T14:48:54.722Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"实验三：[BX] 和 LOOP 指令的使用","level":"1.5.3","depth":2,"previous":{"title":"实验二：编程、编译、链接、跟踪 :star:","level":"1.5.2","depth":2,"path":"exps/exp2-firsttry.md","ref":"exps/exp2-firsttry.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","anchors","multipart","-highlight","prism","prism-themes"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-darcula.css"]},"disqus":{"useIdentifier":false,"shortName":"asm-kmahyyg"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"prism-themes":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"kmahyyg <16604643+kmahyyg@users.noreply.github.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"none","variables":{},"title":"汇编语言程序设计 - 大学笔记","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"About Me":"https://www.kmahyyg.xyz/about","My Blog":"https://www.kmahyyg.xyz"}},"gitbook":"*","description":"Learning Notes about Assembly Language","extension":null},"file":{"path":"exps/exp3-bxloop.md","mtime":"2018-07-27T00:34:47.248Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-27T00:35:51.974Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -29,7 +29,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-darcula.css">
                 
             
                 
@@ -448,40 +448,40 @@
 <p>&quot;dw&quot;, which means &quot;double words&quot; instead of  &quot;define word&quot;, defined a word with double space. It means that, if a single word is considered 8-byte long, it means the size of the target operand is 16 bits.</p>
 </blockquote>
 <p>&#x793A;&#x4F8B;&#xFF1A;</p>
-<pre><code class="lang-x86asm"><span class="hljs-meta">assume</span> <span class="hljs-built_in">cs</span>:code
-code <span class="hljs-meta">segment</span>
-   <span class="hljs-built_in">dw</span> <span class="hljs-number">0123h</span>,<span class="hljs-number">0456h</span>,<span class="hljs-number">0789h</span>,<span class="hljs-number">0abch</span>      <span class="hljs-comment">; offset 2 addrs.</span>
-   <span class="hljs-keyword">mov</span> <span class="hljs-built_in">bx</span>,<span class="hljs-number">0</span>         <span class="hljs-comment">; offset addr storage</span>
-   <span class="hljs-keyword">mov</span> <span class="hljs-built_in">ax</span>,<span class="hljs-number">0</span>         <span class="hljs-comment">; base addr</span>
+<pre class="language-"><code class="lang-asm6502">assume cs:code
+code segment
+   dw <span class="token decimalnumber string">0123</span>h,<span class="token decimalnumber string">0456</span>h,<span class="token decimalnumber string">0789</span>h,<span class="token decimalnumber string">0</span>abch      <span class="token comment">; offset 2 addrs.</span>
+   mov bx,<span class="token decimalnumber string">0</span>         <span class="token comment">; offset addr storage</span>
+   mov ax,<span class="token decimalnumber string">0</span>         <span class="token comment">; base addr</span>
 
-   <span class="hljs-keyword">mov</span> <span class="hljs-built_in">cx</span>,<span class="hljs-number">8</span>         <span class="hljs-comment">; loop times * 8</span>
-<span class="hljs-symbol">s:</span> <span class="hljs-keyword">add</span> <span class="hljs-built_in">ax</span>,<span class="hljs-built_in">cs</span>:[<span class="hljs-built_in">bx</span>]
-   <span class="hljs-keyword">add</span> <span class="hljs-built_in">bx</span>,<span class="hljs-number">2</span>
-   <span class="hljs-keyword">loop</span> s
+   mov cx,<span class="token decimalnumber string">8</span>         <span class="token comment">; loop times * 8</span>
+s: add ax,cs:[bx]
+   add bx,<span class="token decimalnumber string">2</span>
+   loop s
 
-   <span class="hljs-keyword">mov</span> <span class="hljs-built_in">ax</span>,<span class="hljs-number">4c00h</span>
-   <span class="hljs-keyword">int</span> <span class="hljs-number">21h</span>
+   mov ax,<span class="token decimalnumber string">4</span>c<span class="token decimalnumber string">00</span>h
+   int <span class="token decimalnumber string">21</span>h
 
 code ends
 end
 </code></pre>
 <p><code>dw</code> &#x5B9A;&#x4E49;&#x7684; n &#x4E2A;&#x6570;&#x636E;&#xFF0C;&#x4FDD;&#x5B58;&#x5728; DS &#x5BC4;&#x5B58;&#x5668;&#x4E2D;&#x7684;&#x5BF9;&#x5E94;&#x5730;&#x5740;&#x7684; &#x524D; 2n &#x4E2A;&#x5355;&#x5143;&#xFF0C;&#x5904;&#x4E8E;&#x4EE3;&#x7801;&#x6BB5;&#x6700;&#x5F00;&#x59CB;&#x7684;&#x4F4D;&#x7F6E;&#x3002; </p>
 <h3 id="&#x6307;&#x660E;&#x7B2C;&#x4E00;&#x6761;&#x6307;&#x4EE4;&#x7684;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;"><a name="&#x6307;&#x660E;&#x7B2C;&#x4E00;&#x6761;&#x6307;&#x4EE4;&#x7684;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;" class="plugin-anchor" href="#&#x6307;&#x660E;&#x7B2C;&#x4E00;&#x6761;&#x6307;&#x4EE4;&#x7684;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6307;&#x660E;&#x7B2C;&#x4E00;&#x6761;&#x6307;&#x4EE4;&#x7684;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;</h3>
-<pre><code class="lang-x86asm"><span class="hljs-meta">assume</span> <span class="hljs-built_in">cs</span>:code
+<pre class="language-"><code class="lang-asm6502">assume cs:code
 
-code <span class="hljs-meta">segment</span>
-   <span class="hljs-built_in">dw</span> <span class="hljs-number">0123h</span>,<span class="hljs-number">0456h</span>,<span class="hljs-number">0789h</span>
-<span class="hljs-symbol">
-   start:</span>   <span class="hljs-keyword">mov</span> <span class="hljs-built_in">bx</span>,<span class="hljs-number">0</span>
-            <span class="hljs-keyword">mov</span> <span class="hljs-built_in">ax</span>,<span class="hljs-number">0</span>
+code segment
+   dw <span class="token decimalnumber string">0123</span>h,<span class="token decimalnumber string">0456</span>h,<span class="token decimalnumber string">0789</span>h
 
-            <span class="hljs-keyword">mov</span> <span class="hljs-built_in">cx</span>,<span class="hljs-number">8</span>
-<span class="hljs-symbol">       s:</span>   <span class="hljs-keyword">add</span> <span class="hljs-built_in">ax</span>,<span class="hljs-built_in">cs</span>:[<span class="hljs-built_in">bx</span>]
-            <span class="hljs-keyword">add</span> <span class="hljs-built_in">bx</span>,<span class="hljs-number">2</span>
-            <span class="hljs-keyword">loop</span> s
+   start:   mov bx,<span class="token decimalnumber string">0</span>
+            mov ax,<span class="token decimalnumber string">0</span>
 
-            <span class="hljs-keyword">mov</span> <span class="hljs-built_in">ax</span>,<span class="hljs-number">4c00h</span>
-            <span class="hljs-keyword">int</span> <span class="hljs-number">21h</span>
+            mov cx,<span class="token decimalnumber string">8</span>
+       s:   add ax,cs:[bx]
+            add bx,<span class="token decimalnumber string">2</span>
+            loop s
+
+            mov ax,<span class="token decimalnumber string">4</span>c<span class="token decimalnumber string">00</span>h
+            int <span class="token decimalnumber string">21</span>h
 
 code ends
 
@@ -539,7 +539,7 @@ end start
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.5 包含多个段的程序","level":"1.4.5","depth":2,"next":{"title":"All Experiments","level":"1.5","depth":1,"path":"exps/README.md","ref":"exps/README.md","articles":[{"title":"实验一：DOS 中 DEBUG 的基本使用","level":"1.5.1","depth":2,"path":"exps/exp1-dosdbg.md","ref":"exps/exp1-dosdbg.md","articles":[]},{"title":"实验二：编程、编译、链接、跟踪 :star:","level":"1.5.2","depth":2,"path":"exps/exp2-firsttry.md","ref":"exps/exp2-firsttry.md","articles":[]},{"title":"实验三：[BX] 和 LOOP 指令的使用","level":"1.5.3","depth":2,"path":"exps/exp3-bxloop.md","ref":"exps/exp3-bxloop.md","articles":[]}]},"previous":{"title":"3.4 [BX] 和 LOOP 指令","level":"1.4.4","depth":2,"path":"asmcommands/bxloop.md","ref":"asmcommands/bxloop.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","anchors","multipart"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"asm-kmahyyg"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"kmahyyg <16604643+kmahyyg@users.noreply.github.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"none","variables":{},"title":"汇编语言程序设计 - 大学笔记","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"About Me":"https://www.kmahyyg.xyz/about","My Blog":"https://www.kmahyyg.xyz"}},"gitbook":"*","description":"Learning Notes about Assembly Language","extension":null},"file":{"path":"asmcommands/multisegment.md","mtime":"2018-07-26T14:48:02.713Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-26T14:48:54.722Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3.5 包含多个段的程序","level":"1.4.5","depth":2,"next":{"title":"All Experiments","level":"1.5","depth":1,"path":"exps/README.md","ref":"exps/README.md","articles":[{"title":"实验一：DOS 中 DEBUG 的基本使用","level":"1.5.1","depth":2,"path":"exps/exp1-dosdbg.md","ref":"exps/exp1-dosdbg.md","articles":[]},{"title":"实验二：编程、编译、链接、跟踪 :star:","level":"1.5.2","depth":2,"path":"exps/exp2-firsttry.md","ref":"exps/exp2-firsttry.md","articles":[]},{"title":"实验三：[BX] 和 LOOP 指令的使用","level":"1.5.3","depth":2,"path":"exps/exp3-bxloop.md","ref":"exps/exp3-bxloop.md","articles":[]}]},"previous":{"title":"3.4 [BX] 和 LOOP 指令","level":"1.4.4","depth":2,"path":"asmcommands/bxloop.md","ref":"asmcommands/bxloop.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","anchors","multipart","-highlight","prism","prism-themes"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-darcula.css"]},"disqus":{"useIdentifier":false,"shortName":"asm-kmahyyg"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"prism-themes":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"kmahyyg <16604643+kmahyyg@users.noreply.github.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"none","variables":{},"title":"汇编语言程序设计 - 大学笔记","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"About Me":"https://www.kmahyyg.xyz/about","My Blog":"https://www.kmahyyg.xyz"}},"gitbook":"*","description":"Learning Notes about Assembly Language","extension":null},"file":{"path":"asmcommands/multisegment.md","mtime":"2018-07-27T00:34:47.144Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-27T00:35:51.974Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

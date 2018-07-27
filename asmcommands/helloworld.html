@@ -29,7 +29,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-darcula.css">
                 
             
                 
@@ -440,20 +440,20 @@
 </ol>
 <p>&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x5305;&#x62EC;&#x4E24;&#x4E2A;&#x90E8;&#x5206;&#xFF1A;&#x7A0B;&#x5E8F;&#xFF08;&#x673A;&#x5668;&#x7801;&#xFF09;&#x3001;&#x6570;&#x636E;&#x3001;Metadata&#xFF08;&#x7A0B;&#x5E8F;&#x7684;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#xFF09;</p>
 <h2 id="&#x6E90;&#x4EE3;&#x7801;&#x8BF4;&#x660E;"><a name="&#x6E90;&#x4EE3;&#x7801;&#x8BF4;&#x660E;" class="plugin-anchor" href="#&#x6E90;&#x4EE3;&#x7801;&#x8BF4;&#x660E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6E90;&#x4EE3;&#x7801;&#x8BF4;&#x660E;</h2>
-<pre><code class="lang-x86asm"><span class="hljs-meta">assume</span> <span class="hljs-built_in">cs</span>:codesg    <span class="hljs-comment">;&#x5047;&#x8BBE;&#x4EE3;&#x7801;&#x6BB5; codesg &#x4E0E;&#x5BC4;&#x5B58;&#x5668; CS &#x5173;&#x8054;</span>
+<pre class="language-"><code class="lang-asm6502">assume cs:codesg    <span class="token comment">;&#x5047;&#x8BBE;&#x4EE3;&#x7801;&#x6BB5; codesg &#x4E0E;&#x5BC4;&#x5B58;&#x5668; CS &#x5173;&#x8054;</span>
 
-codesg <span class="hljs-meta">segment</span>      <span class="hljs-comment">;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x6BB5;&#xFF0C;&#x6BB5;&#x6807;&#x53F7; codesg&#xFF0C;&#x7F16;&#x8BD1;&#x8FC7;&#x7A0B;&#x4E2D;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x6BB5;&#x5730;&#x5740;</span>
-        <span class="hljs-keyword">mov</span> <span class="hljs-built_in">ax</span>,<span class="hljs-number">0123h</span>
-        <span class="hljs-keyword">mov</span> <span class="hljs-built_in">bx</span>,<span class="hljs-number">0456h</span>
-        <span class="hljs-keyword">add</span> <span class="hljs-built_in">ax</span>,<span class="hljs-built_in">bx</span>
-        <span class="hljs-keyword">add</span> <span class="hljs-built_in">ax</span>,<span class="hljs-built_in">ax</span>
+codesg segment      <span class="token comment">;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x6BB5;&#xFF0C;&#x6BB5;&#x6807;&#x53F7; codesg&#xFF0C;&#x7F16;&#x8BD1;&#x8FC7;&#x7A0B;&#x4E2D;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x6BB5;&#x5730;&#x5740;</span>
+        mov ax,<span class="token decimalnumber string">0123</span>h
+        mov bx,<span class="token decimalnumber string">0456</span>h
+        add ax,bx
+        add ax,ax
 
-        <span class="hljs-keyword">mov</span> <span class="hljs-built_in">ax</span>,<span class="hljs-number">4c00h</span>   <span class="hljs-comment">;&#x4E2D;&#x65AD;&#x4FE1;&#x53F7;</span>
-        <span class="hljs-keyword">int</span> <span class="hljs-number">21h</span>        <span class="hljs-comment">;&#x53D1;&#x9001; 21 &#x53F7;&#x8FD4;&#x56DE;&#x4E2D;&#x65AD;</span>
+        mov ax,<span class="token decimalnumber string">4</span>c<span class="token decimalnumber string">00</span>h   <span class="token comment">;&#x4E2D;&#x65AD;&#x4FE1;&#x53F7;</span>
+        int <span class="token decimalnumber string">21</span>h        <span class="token comment">;&#x53D1;&#x9001; 21 &#x53F7;&#x8FD4;&#x56DE;&#x4E2D;&#x65AD;</span>
 
-codesg ends         <span class="hljs-comment">;&#x6BB5;&#x5B9A;&#x4E49;&#x7ED3;&#x675F;</span>
+codesg ends         <span class="token comment">;&#x6BB5;&#x5B9A;&#x4E49;&#x7ED3;&#x675F;</span>
 
-end                 <span class="hljs-comment">;&#x6C47;&#x7F16;&#x7A0B;&#x5E8F;&#x7ED3;&#x675F;</span>
+end                 <span class="token comment">;&#x6C47;&#x7F16;&#x7A0B;&#x5E8F;&#x7ED3;&#x675F;</span>
 </code></pre>
 <h2 id="&#x5B9E;&#x9645;&#x64CD;&#x4F5C;&#x8FC7;&#x7A0B;-step-by-step"><a name="&#x5B9E;&#x9645;&#x64CD;&#x4F5C;&#x8FC7;&#x7A0B;-step-by-step" class="plugin-anchor" href="#&#x5B9E;&#x9645;&#x64CD;&#x4F5C;&#x8FC7;&#x7A0B;-step-by-step"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B9E;&#x9645;&#x64CD;&#x4F5C;&#x8FC7;&#x7A0B; (Step-By-Step)</h2>
 <p>&#x4EE5;&#x4E0B;&#x4EE5;&#x672C;&#x4E66;&#x4E2D;&#x9644;&#x5E26;&#x7684; MASM 6.11 &#x548C; MS-DOS 7.1 &#x4E3A;&#x4F8B;&#xFF1A;</p>
@@ -521,7 +521,7 @@ end                 <span class="hljs-comment">;&#x6C47;&#x7F16;&#x7A0B;&#x5E8F;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.3 第一个程序","level":"1.4.3","depth":2,"next":{"title":"3.4 [BX] 和 LOOP 指令","level":"1.4.4","depth":2,"path":"asmcommands/bxloop.md","ref":"asmcommands/bxloop.md","articles":[]},"previous":{"title":"3.2 栈机制 与 PUSH、POP 指令","level":"1.4.2","depth":2,"path":"asmcommands/pushpop.md","ref":"asmcommands/pushpop.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","anchors","multipart"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"asm-kmahyyg"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"kmahyyg <16604643+kmahyyg@users.noreply.github.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"none","variables":{},"title":"汇编语言程序设计 - 大学笔记","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"About Me":"https://www.kmahyyg.xyz/about","My Blog":"https://www.kmahyyg.xyz"}},"gitbook":"*","description":"Learning Notes about Assembly Language","extension":null},"file":{"path":"asmcommands/helloworld.md","mtime":"2018-07-26T14:48:02.713Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-26T14:48:54.722Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3.3 第一个程序","level":"1.4.3","depth":2,"next":{"title":"3.4 [BX] 和 LOOP 指令","level":"1.4.4","depth":2,"path":"asmcommands/bxloop.md","ref":"asmcommands/bxloop.md","articles":[]},"previous":{"title":"3.2 栈机制 与 PUSH、POP 指令","level":"1.4.2","depth":2,"path":"asmcommands/pushpop.md","ref":"asmcommands/pushpop.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","anchors","multipart","-highlight","prism","prism-themes"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-darcula.css"]},"disqus":{"useIdentifier":false,"shortName":"asm-kmahyyg"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"prism-themes":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"kmahyyg <16604643+kmahyyg@users.noreply.github.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"none","variables":{},"title":"汇编语言程序设计 - 大学笔记","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"About Me":"https://www.kmahyyg.xyz/about","My Blog":"https://www.kmahyyg.xyz"}},"gitbook":"*","description":"Learning Notes about Assembly Language","extension":null},"file":{"path":"asmcommands/helloworld.md","mtime":"2018-07-27T00:34:47.144Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-27T00:35:51.974Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

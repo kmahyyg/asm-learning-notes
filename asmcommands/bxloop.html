@@ -29,7 +29,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-darcula.css">
                 
             
                 
@@ -441,7 +441,7 @@
 <p>&#x4E66;&#x4E2D;&#x8FD8;&#x4F7F;&#x7528;&#x4E86; <code>INC BX</code> &#x6307;&#x4EE4;&#xFF0C;&#x7B49;&#x4EF7;&#x4E8E; <code>ADD BX,1</code></p>
 </blockquote>
 <h2 id="loop"><a name="loop" class="plugin-anchor" href="#loop"><i class="fa fa-link" aria-hidden="true"></i></a>LOOP</h2>
-<pre><code>MOV CX,&#x5FAA;&#x73AF;&#x6B21;&#x6570;
+<pre class="language-"><code>MOV CX,&#x5FAA;&#x73AF;&#x6B21;&#x6570;
 S:
     &#x4EE3;&#x7801;&#x6BB5;
     loop S
@@ -451,7 +451,7 @@ S:
 </code></pre><p>&#x4EE3;&#x7801;&#x89E3;&#x91CA;&#xFF1A;&#x5C06;&#x5FAA;&#x73AF;&#x6B21;&#x6570;&#x7F6E;&#x5165; CX &#x4E2D;&#xFF0C;S&#x662F;&#x4E00;&#x6BB5;&#x4EE3;&#x7801;&#x7684;&#x6807;&#x53F7;&#xFF0C;&#x6807;&#x8BC6;&#x7740;&#x4E00;&#x4E2A;&#x5730;&#x5740;&#x3002;&#x5F53; CPU &#x6267;&#x884C; loop s&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C06; CX -=1 &#x76F4;&#x81F3;&#x5224;&#x65AD;&#x5230; CX &#x4E3A; 0&#xFF0C;&#x4E0D;&#x4E3A; 0, &#x5219;&#x8DF3;&#x8F6C;&#x5230; S &#x6807;&#x53F7;&#x5BF9;&#x5E94;&#x7684;&#x5730;&#x5740;&#x5904;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#xFF0C;&#x4E3A; 0, &#x5219;&#x8DF3;&#x8F6C;&#x5230;&#x4E0B;&#x4E00;&#x6761;&#x6307;&#x4EE4;&#x3002;</p>
 <h2 id="idata--rdata"><a name="idata--rdata" class="plugin-anchor" href="#idata--rdata"><i class="fa fa-link" aria-hidden="true"></i></a>idata &amp; rdata</h2>
 <p>idata &#x548C; rdata &#x90FD;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x5E38;&#x91CF;&#xFF1A;</p>
-<pre><code>.text: Code 
+<pre class="language-"><code>.text: Code 
 .data: Initialized data
 .bss: Uninitialized data
 .rdata: Const/read-only (and initialized) data
@@ -478,17 +478,17 @@ S:
 </ul>
 <h2 id="debug-&#x548C;-masm-&#x5BF9;&#x6307;&#x4EE4;&#x7684;&#x4E0D;&#x540C;&#x5904;&#x7406;"><a name="debug-&#x548C;-masm-&#x5BF9;&#x6307;&#x4EE4;&#x7684;&#x4E0D;&#x540C;&#x5904;&#x7406;" class="plugin-anchor" href="#debug-&#x548C;-masm-&#x5BF9;&#x6307;&#x4EE4;&#x7684;&#x4E0D;&#x540C;&#x5904;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a>DEBUG &#x548C; MASM &#x5BF9;&#x6307;&#x4EE4;&#x7684;&#x4E0D;&#x540C;&#x5904;&#x7406;</h2>
 <p>&#x6E90;&#x4EE3;&#x7801;&#xFF1A;</p>
-<pre><code class="lang-x86asm"><span class="hljs-meta">assume</span> <span class="hljs-built_in">cs</span>:code
-code <span class="hljs-meta">segment</span>
-   <span class="hljs-keyword">mov</span> <span class="hljs-built_in">ax</span>,<span class="hljs-number">2000h</span>   <span class="hljs-comment">; directly input this to debug</span>
-   <span class="hljs-keyword">mov</span> <span class="hljs-built_in">ds</span>,<span class="hljs-built_in">ax</span>      <span class="hljs-comment">; directly input this to debug</span>
-   <span class="hljs-keyword">mov</span> <span class="hljs-built_in">al</span>,[<span class="hljs-number">0</span>]     <span class="hljs-comment">; directly input this to debug</span>
-   <span class="hljs-keyword">mov</span> <span class="hljs-built_in">bl</span>,[<span class="hljs-number">1</span>]     <span class="hljs-comment">; directly input this to debug</span>
-   <span class="hljs-keyword">mov</span> <span class="hljs-built_in">cl</span>,[<span class="hljs-number">2</span>]     <span class="hljs-comment">; directly input this to debug</span>
-   <span class="hljs-keyword">mov</span> <span class="hljs-built_in">dl</span>,[<span class="hljs-number">3</span>]     <span class="hljs-comment">; directly input this to debug</span>
+<pre class="language-"><code class="lang-asm6502">assume cs:code
+code segment
+   mov ax,<span class="token decimalnumber string">2000</span>h   <span class="token comment">; directly input this to debug</span>
+   mov ds,ax      <span class="token comment">; directly input this to debug</span>
+   mov al,[<span class="token decimalnumber string">0</span>]     <span class="token comment">; directly input this to debug</span>
+   mov bl,[<span class="token decimalnumber string">1</span>]     <span class="token comment">; directly input this to debug</span>
+   mov cl,[<span class="token decimalnumber string">2</span>]     <span class="token comment">; directly input this to debug</span>
+   mov dl,[<span class="token decimalnumber string">3</span>]     <span class="token comment">; directly input this to debug</span>
 
-   <span class="hljs-keyword">mov</span> <span class="hljs-built_in">ax</span>,<span class="hljs-number">4c00h</span>
-   <span class="hljs-keyword">int</span> <span class="hljs-number">21h</span>
+   mov ax,<span class="token decimalnumber string">4</span>c<span class="token decimalnumber string">00</span>h
+   int <span class="token decimalnumber string">21</span>h
 
 code ends
 end
@@ -496,10 +496,10 @@ end
 <p>&#x5982;&#x679C;&#x4F60;&#x5C06;&#x4E0A;&#x8BC9;&#x6807;&#x6CE8;&#x4E86;&#x76F4;&#x63A5;&#x8F93;&#x5165;&#x7684;&#x4EE3;&#x7801;&#x8F93;&#x5165;&#x5230; <code>DEBUG</code> &#x4E2D;&#x6267;&#x884C;&#xFF0C;&#x4F60;&#x4F1A;&#x770B;&#x5230;&#xFF1A; <code>DEBUG</code> &#x5C06;&#x5176;&#x4E2D;&#x7684; <code>[0][1][2][3]</code> &#x76F4;&#x63A5;&#x89E3;&#x91CA;&#x4E3A;&#x4E00;&#x4E2A;&#x5185;&#x5B58;&#x5355;&#x5143;&#x3002;&#x4F7F;&#x7528; <code>MASM</code> &#x548C; <code>LINK</code> &#x7F16;&#x8BD1;&#x3001;&#x8FDE;&#x63A5;&#x4E4B;&#x540E;&#x5F97;&#x5230; exe&#xFF0C; &#x5176;&#x4E2D;&#x7684;  <code>[0][1][2][3]</code> &#x88AB;&#x89E3;&#x91CA;&#x4E3A; <code>idata</code> &#x3002;</p>
 <p>&#x90A3;&#x4E48;&#x5982;&#x4F55;&#x5728;&#x6E90;&#x7A0B;&#x5E8F;&#x4E2D;&#x5B9E;&#x73B0;&#x5C06;&#x5185;&#x5B58; 2000:1&#x3001;2000:2&#x3001;2000:3&#x3001;2000:4 &#x5355;&#x5143;&#x7684;&#x6570;&#x636E;&#x4F20;&#x5165; AL&#x3001;BL&#x3001;CL&#x3001;DL &#x4E2D;&#x5462;&#xFF1F;</p>
 <p>&#x7B54;&#x6848;&#x662F;&#x501F;&#x52A9; BX &#x5BC4;&#x5B58;&#x5668;&#xFF1A;</p>
-<pre><code class="lang-x86asm"><span class="hljs-keyword">mov</span> <span class="hljs-built_in">ax</span>,<span class="hljs-number">2000h</span>
-<span class="hljs-keyword">mov</span> <span class="hljs-built_in">ds</span>,<span class="hljs-built_in">ax</span>
-<span class="hljs-keyword">mov</span> <span class="hljs-built_in">bx</span>,&#x504F;&#x79FB;&#x5730;&#x5740;
-<span class="hljs-keyword">mov</span> <span class="hljs-built_in">al</span>,[<span class="hljs-built_in">bx</span>]    <span class="hljs-comment">; [ds:bx] &#x7684;&#x6570;&#x636E;&#x9001;&#x5165; al</span>
+<pre class="language-"><code class="lang-asm6502">mov ax,<span class="token decimalnumber string">2000</span>h
+mov ds,ax
+mov bx,&#x504F;&#x79FB;&#x5730;&#x5740;
+mov al,[bx]    <span class="token comment">; [ds:bx] &#x7684;&#x6570;&#x636E;&#x9001;&#x5165; al</span>
 </code></pre>
 <p>&#x6216;&#x8005; <code>mov al,ds:[0]</code> &#x663E;&#x5F0F;&#x7ED9;&#x51FA;&#x6BB5;&#x57FA;&#x5730;&#x5740;&#x6240;&#x5728;&#x7684;&#x5BC4;&#x5B58;&#x5668;&#x3002;</p>
 <h2 id="loop-&#x548C;-bx-&#x7684;&#x8054;&#x5408;&#x5E94;&#x7528;"><a name="loop-&#x548C;-bx-&#x7684;&#x8054;&#x5408;&#x5E94;&#x7528;" class="plugin-anchor" href="#loop-&#x548C;-bx-&#x7684;&#x8054;&#x5408;&#x5E94;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>LOOP &#x548C; [BX] &#x7684;&#x8054;&#x5408;&#x5E94;&#x7528;</h2>
@@ -523,26 +523,26 @@ end
 </blockquote>
 <p>&#x5E94;&#x7528;&#x4E3E;&#x4F8B;&#xFF1A;&#x590D;&#x5236; ffff:0 ~ ffff:b &#x4E2D;&#x7684;&#x6570;&#x636E;&#x5230; 0:200 ~ 0:20b &#x4E2D;&#x3002;</p>
 <p>&#x6E90;&#x4EE3;&#x7801;&#xFF1A;</p>
-<pre><code class="lang-x86asm"><span class="hljs-meta">assume</span> <span class="hljs-built_in">cs</span>:code
+<pre class="language-"><code class="lang-asm6502">assume cs:code
 
-code <span class="hljs-meta">segment</span>
+code segment
 
-   <span class="hljs-keyword">mov</span> <span class="hljs-built_in">ax</span>,<span class="hljs-number">0ffffh</span>   <span class="hljs-comment">; addr cannot start with letter,add 0&amp;h</span>
-   <span class="hljs-keyword">mov</span> <span class="hljs-built_in">ds</span>,<span class="hljs-built_in">ax</span>       <span class="hljs-comment">; remember the source addr</span>
-   <span class="hljs-keyword">mov</span> <span class="hljs-built_in">ax</span>,<span class="hljs-number">0020h</span>
-   <span class="hljs-keyword">mov</span> <span class="hljs-built_in">es</span>,<span class="hljs-built_in">ax</span>       <span class="hljs-comment">; remember the target addr</span>
-   <span class="hljs-keyword">mov</span> <span class="hljs-built_in">bx</span>,<span class="hljs-number">0</span>        <span class="hljs-comment">; addr offset</span>
+   mov ax,<span class="token decimalnumber string">0</span>ffffh   <span class="token comment">; addr cannot start with letter,add 0&amp;h</span>
+   mov ds,ax       <span class="token comment">; remember the source addr</span>
+   mov ax,<span class="token decimalnumber string">0020</span>h
+   mov es,ax       <span class="token comment">; remember the target addr</span>
+   mov bx,<span class="token decimalnumber string">0</span>        <span class="token comment">; addr offset</span>
 
-   <span class="hljs-keyword">mov</span> <span class="hljs-built_in">cx</span>,<span class="hljs-number">12</span>       <span class="hljs-comment">; loop * 12</span>
-<span class="hljs-symbol">
-s:</span> <span class="hljs-keyword">mov</span> <span class="hljs-built_in">dl</span>,[<span class="hljs-built_in">bx</span>]     <span class="hljs-comment">; dl=ds&lt;&lt;4+bx</span>
-   <span class="hljs-keyword">mov</span> <span class="hljs-built_in">es</span>:[<span class="hljs-built_in">bx</span>],<span class="hljs-built_in">dl</span>  <span class="hljs-comment">; send data in dl to 0020:bx</span>
-   <span class="hljs-keyword">inc</span> <span class="hljs-built_in">bx</span>
+   mov cx,<span class="token decimalnumber string">12</span>       <span class="token comment">; loop * 12</span>
 
-   <span class="hljs-keyword">loop</span> s
+s: mov dl,[bx]     <span class="token comment">; dl=ds&lt;&lt;4+bx</span>
+   mov es:[bx],dl  <span class="token comment">; send data in dl to 0020:bx</span>
+   <span class="token opcode property">inc</span> bx
 
-   <span class="hljs-keyword">mov</span> <span class="hljs-built_in">ax</span>,<span class="hljs-number">4c00h</span>
-   <span class="hljs-keyword">int</span> <span class="hljs-number">21h</span>
+   loop s
+
+   mov ax,<span class="token decimalnumber string">4</span>c<span class="token decimalnumber string">00</span>h
+   int <span class="token decimalnumber string">21</span>h
 
 code ends
 end
@@ -602,7 +602,7 @@ end
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.4 [BX] 和 LOOP 指令","level":"1.4.4","depth":2,"next":{"title":"3.5 包含多个段的程序","level":"1.4.5","depth":2,"path":"asmcommands/multisegment.md","ref":"asmcommands/multisegment.md","articles":[]},"previous":{"title":"3.3 第一个程序","level":"1.4.3","depth":2,"path":"asmcommands/helloworld.md","ref":"asmcommands/helloworld.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","anchors","multipart"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"asm-kmahyyg"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"kmahyyg <16604643+kmahyyg@users.noreply.github.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"none","variables":{},"title":"汇编语言程序设计 - 大学笔记","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"About Me":"https://www.kmahyyg.xyz/about","My Blog":"https://www.kmahyyg.xyz"}},"gitbook":"*","description":"Learning Notes about Assembly Language","extension":null},"file":{"path":"asmcommands/bxloop.md","mtime":"2018-07-26T14:48:02.713Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-26T14:48:54.722Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3.4 [BX] 和 LOOP 指令","level":"1.4.4","depth":2,"next":{"title":"3.5 包含多个段的程序","level":"1.4.5","depth":2,"path":"asmcommands/multisegment.md","ref":"asmcommands/multisegment.md","articles":[]},"previous":{"title":"3.3 第一个程序","level":"1.4.3","depth":2,"path":"asmcommands/helloworld.md","ref":"asmcommands/helloworld.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","anchors","multipart","-highlight","prism","prism-themes"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-darcula.css"]},"disqus":{"useIdentifier":false,"shortName":"asm-kmahyyg"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"prism-themes":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"kmahyyg <16604643+kmahyyg@users.noreply.github.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"none","variables":{},"title":"汇编语言程序设计 - 大学笔记","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"About Me":"https://www.kmahyyg.xyz/about","My Blog":"https://www.kmahyyg.xyz"}},"gitbook":"*","description":"Learning Notes about Assembly Language","extension":null},"file":{"path":"asmcommands/bxloop.md","mtime":"2018-07-27T00:34:47.140Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-27T00:35:51.974Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
