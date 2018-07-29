@@ -20,3 +20,4 @@
 2. MS-DOS 7.1 完整版 [ISO](../assets/binary/dos71cd.iso)
 3. MASM SDK 6.11 工具包 6 DISCS [RAR](../assets/binary/masm611.rar)
 4. 本书中所有用到的汇编代码 [Github](https://github.com/kmahyyg/asm-learning-notes/tree/master/assets/code) 
+5. 汇编语言代码风格指南 [PDF](../assets/binary/asm-coding-standard-hyde.pdf)

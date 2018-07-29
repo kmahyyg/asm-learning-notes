@@ -37,7 +37,8 @@
         "multipart",
         "-highlight",
         "prism",
-        "prism-themes"
+        "prism-themes",
+        "page-footer-copyright"
     ],
     "pluginsConfig": {
         "disqus": {
