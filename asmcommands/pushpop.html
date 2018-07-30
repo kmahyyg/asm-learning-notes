@@ -332,7 +332,52 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="../exps/">
+        <li class="chapter " data-level="1.5" data-path="../ramndata/">
+            
+                <a href="../ramndata/">
+            
+                    
+                    Chapter 4 - 内存地址定位与数据处理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../ramndata/andorstr.html">
+            
+                <a href="../ramndata/andorstr.html">
+            
+                    
+                    4.1 AND OR 与 字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../ramndata/bxPidata.html">
+            
+                <a href="../ramndata/bxPidata.html">
+            
+                    
+                    4.2 BX+IDATA
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../exps/">
             
                 <a href="../exps/">
             
@@ -346,7 +391,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="../exps/exp1-dosdbg.html">
+        <li class="chapter " data-level="1.6.1" data-path="../exps/exp1-dosdbg.html">
             
                 <a href="../exps/exp1-dosdbg.html">
             
@@ -359,7 +404,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="../exps/exp2-firsttry.html">
+        <li class="chapter " data-level="1.6.2" data-path="../exps/exp2-firsttry.html">
             
                 <a href="../exps/exp2-firsttry.html">
             
@@ -372,7 +417,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="../exps/exp3-bxloop.html">
+        <li class="chapter " data-level="1.6.3" data-path="../exps/exp3-bxloop.html">
             
                 <a href="../exps/exp3-bxloop.html">
             
@@ -385,7 +430,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4" data-path="../exps/exp4-multisegment.html">
+        <li class="chapter " data-level="1.6.4" data-path="../exps/exp4-multisegment.html">
             
                 <a href="../exps/exp4-multisegment.html">
             
@@ -540,7 +585,7 @@ POP AX
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.2 栈机制 与 PUSH、POP 指令","level":"1.4.2","depth":2,"next":{"title":"3.3 第一个程序","level":"1.4.3","depth":2,"path":"asmcommands/helloworld.md","ref":"asmcommands/helloworld.md","articles":[]},"previous":{"title":"3.1 MOV、ADD、SUB 指令","level":"1.4.1","depth":2,"path":"asmcommands/addsubmov.md","ref":"asmcommands/addsubmov.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","anchors","multipart","-highlight","prism","prism-themes","page-footer-copyright"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-darcula.css"]},"disqus":{"useIdentifier":false,"shortName":"asm-kmahyyg"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"page-footer-copyright":{},"prism-themes":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"kmahyyg <16604643+kmahyyg@users.noreply.github.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"none","variables":{},"title":"汇编语言程序设计 - 大学笔记","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"About Me":"https://www.kmahyyg.xyz/about","My Blog":"https://www.kmahyyg.xyz"}},"gitbook":"*","description":"Learning Notes about Assembly Language","extension":null},"file":{"path":"asmcommands/pushpop.md","mtime":"2018-07-29T08:02:42.834Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-29T08:03:37.800Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3.2 栈机制 与 PUSH、POP 指令","level":"1.4.2","depth":2,"next":{"title":"3.3 第一个程序","level":"1.4.3","depth":2,"path":"asmcommands/helloworld.md","ref":"asmcommands/helloworld.md","articles":[]},"previous":{"title":"3.1 MOV、ADD、SUB 指令","level":"1.4.1","depth":2,"path":"asmcommands/addsubmov.md","ref":"asmcommands/addsubmov.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","anchors","multipart","-highlight","prism","prism-themes","page-footer-copyright"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-darcula.css"]},"disqus":{"useIdentifier":false,"shortName":"asm-kmahyyg"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"page-footer-copyright":{},"prism-themes":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"kmahyyg <16604643+kmahyyg@users.noreply.github.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"none","variables":{},"title":"汇编语言程序设计 - 大学笔记","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"About Me":"https://www.kmahyyg.xyz/about","My Blog":"https://www.kmahyyg.xyz"}},"gitbook":"*","description":"Learning Notes about Assembly Language","extension":null},"file":{"path":"asmcommands/pushpop.md","mtime":"2018-07-30T06:51:59.729Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-30T06:52:49.786Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
