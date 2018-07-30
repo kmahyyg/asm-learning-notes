@@ -46,7 +46,7 @@
         },
         "prism":{
           "css": [
-            "prism-themes/themes/prism-darcula.css"
+            "prism-themes/themes/prism-duotone-light.css"
           ]
         }
     },
