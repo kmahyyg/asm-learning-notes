@@ -19,6 +19,10 @@
   - [3.4 \[BX\] 和 LOOP 指令](asmcommands/bxloop.md)]
   - [3.5 包含多个段的程序](asmcommands/multisegment.md)
 
+* [Chapter 4 - 内存地址定位与数据处理](ramndata/README.md)
+  - [4.1 AND OR 与 字符串](ramndata/andorstr.md)
+  - [4.2 BX+IDATA](ramndata/bxPidata.md)
+
 * [All Experiments](exps/README.md)
   - [实验一：DOS 中 ```DEBUG``` 的基本使用](exps/exp1-dosdbg.md)
   - [实验二：编程、编译、链接、跟踪 :star:](exps/exp2-firsttry.md)

@@ -6,7 +6,9 @@
 
 这是他的小伙伴们和他学习汇编语言过程中的笔记。
 
-也欢迎你来给我们提出改进建议，请直接前往 [Github](https://github.com/kmahyyg/asm-learning-notes) 发出你的 PR。
+本书在写作的过程中默认您已经较好地完成了《计算机组成结构与原理》课程并至少（曾经）掌握了一门高级语言，具有一定的使用高级语言编程的经验。
+
+也欢迎您来给我们提出改进建议，请直接前往 [Github](https://github.com/kmahyyg/asm-learning-notes) 发出您的 PR。
 
 本书使用了 Disqus 评论插件，如果您无法加载，请使用科学上网软件。
 

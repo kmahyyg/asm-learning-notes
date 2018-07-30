@@ -39,6 +39,8 @@
 
 题目一，写好的 [源代码](../assets/code/exp3-01.asm) 
 
+![exp3-1](../assets/exps/exp3-1.png)  传输数据之后
+
 题目二，已补全并通过调试的 [源代码](../assets/code/exp3-02.asm) 
 
 以上代码均在我本机测试通过。
