@@ -510,8 +510,8 @@ datasg ends
 
 codesg segment:
 
-    start: <span class="token comment">;TODO</span>
-           <span class="token comment">;TODO</span>
+    start:  <span class="token comment">;TODO</span>
+            <span class="token comment">;TODO</span>
 
 codesg ends
 
@@ -524,6 +524,61 @@ end start
 <h2 id="si-&#x548C;-di"><a name="si-&#x548C;-di" class="plugin-anchor" href="#si-&#x548C;-di"><i class="fa fa-link" aria-hidden="true"></i></a>SI &#x548C; DI</h2>
 <p>SI &#x6E90;&#x53D8;&#x5740;&#x5BC4;&#x5B58;&#x5668;&#xFF0C;DI &#x76EE;&#x7684;&#x53D8;&#x5740;&#x5BC4;&#x5B58;&#x5668;&#xFF0C;SI &#x548C; DI &#x4E0D;&#x80FD;&#x5206;&#x6210;&#x4E24;&#x4E2A; 8 &#x4F4D;&#x7684;&#x5BC4;&#x5B58;&#x5668;&#x6765;&#x4F7F;&#x7528;&#x3002;&#x5728;&#x4E32;&#x5904;&#x7406;&#x6307;&#x4EE4;&#x4E2D;&#xFF0C;SI &#x4E00;&#x822C;&#x7528;&#x4F5C;&#x9690;&#x542B;&#x7684;&#x6E90;&#x4E32;&#x5730;&#x5740;&#xFF0C;&#x9ED8;&#x8BA4;&#x5728; DS &#x4E2D;&#xFF1B;DI &#x7528;&#x505A;&#x9690;&#x542B;&#x7684;&#x76EE;&#x7684;&#x4E32;&#x5730;&#x5740;&#xFF0C;&#x9ED8;&#x8BA4;&#x5728; ES &#x4E2D;&#xFF0C;&#x4E8C;&#x8005;&#x90FD;&#x4E0E; BX &#x5BC4;&#x5B58;&#x5668;&#x7684;&#x529F;&#x80FD;&#x6709;&#x5173;&#x3002;</p>
 <h3 id="&#x5C1D;&#x8BD5;&#x590D;&#x5236;&#x5B57;&#x7B26;&#x4E32;"><a name="&#x5C1D;&#x8BD5;&#x590D;&#x5236;&#x5B57;&#x7B26;&#x4E32;" class="plugin-anchor" href="#&#x5C1D;&#x8BD5;&#x590D;&#x5236;&#x5B57;&#x7B26;&#x4E32;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5C1D;&#x8BD5;&#x590D;&#x5236;&#x5B57;&#x7B26;&#x4E32;</h3>
+<p>&#x9996;&#x5148;&#xFF0C;&#x5B9A;&#x4E49;&#x6570;&#x636E;&#x6BB5;&#xFF1A;</p>
+<pre class="language-"><code class="lang-asm6502">assume cs:codesg,ds:datasg
+
+datasg segment
+    db <span class="token string">&apos;welcome to asm!&apos;</span>
+    db <span class="token string">&apos;...............&apos;</span>    <span class="token comment">; 15-byte long data</span>
+datasg ends
+</code></pre>
+<p>&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x6211;&#x4EEC;&#x5C1D;&#x8BD5;&#x4F7F;&#x7528; SI&#x3001;DI &#x4E24;&#x4E2A;&#x5BC4;&#x5B58;&#x5668;&#x6765;&#x5BF9;&#x4E24;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x4F4D;&#x7F6E;&#x8FDB;&#x884C;&#x590D;&#x5236;&#x540E;&#x66FF;&#x6362;&#x3002;</p>
+<pre class="language-"><code class="lang-asm6502">codesg segment
+    start:  mov ax,datasg
+            mov ds,ax
+            mov si,<span class="token decimalnumber string">0</span>     <span class="token comment">; source addr offset</span>
+            mov di,<span class="token decimalnumber string">15</span>    <span class="token comment">; dest addr offset</span>
+
+            mov cx,<span class="token decimalnumber string">8</span>     <span class="token comment">; loop times 8</span>
+
+        s:  mov ax,[si]  <span class="token comment">; ds:si point at source str</span>
+            mov [di],ax  <span class="token comment">; ds:di point at dest str</span>
+            <span class="token comment">; finish copy process</span>
+            add si,<span class="token decimalnumber string">2</span>
+            add di,<span class="token decimalnumber string">2</span>     <span class="token comment">; exchange 2 bytes once</span>
+
+            loop s
+
+            mov ax,<span class="token decimalnumber string">4</span>c<span class="token decimalnumber string">00</span>h
+            int <span class="token decimalnumber string">21</span>h
+codesg ends
+
+end start
+</code></pre>
+<h4 id="&#x8FDB;&#x4E00;&#x6B65;&#x4F18;&#x5316;&#x590D;&#x5236;&#x8FC7;&#x7A0B;"><a name="&#x8FDB;&#x4E00;&#x6B65;&#x4F18;&#x5316;&#x590D;&#x5236;&#x8FC7;&#x7A0B;" class="plugin-anchor" href="#&#x8FDB;&#x4E00;&#x6B65;&#x4F18;&#x5316;&#x590D;&#x5236;&#x8FC7;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FDB;&#x4E00;&#x6B65;&#x4F18;&#x5316;&#x590D;&#x5236;&#x8FC7;&#x7A0B;</h4>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8DF3;&#x8FC7; DI &#x5BC4;&#x5B58;&#x5668;&#xFF0C;&#x53EA;&#x662F;&#x7528; SI &#x5BC4;&#x5B58;&#x5668;&#x6307;&#x660E;&#x521D;&#x59CB;&#x5730;&#x5740;&#xFF0C;&#x4E4B;&#x540E;&#x4F7F;&#x7528; <code>[BX(/SI/DI) + IDATA]</code> &#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x6765;&#x4F7F;&#x7A0B;&#x5E8F;&#x66F4;&#x52A0;&#x7B80;&#x6D01;&#x3002;</p>
+<p>&#x6279;&#x6CE8;&#xFF08;&#x4EE5;&#x4E0B;&#x4EC5;&#x4E3A;&#x4E2A;&#x4EBA;&#x610F;&#x89C1;&#xFF09;&#xFF1A; &#x4E2A;&#x4EBA;&#x5341;&#x5206;&#x53CD;&#x5BF9;&#x4E0B;&#x5217;&#x76F4;&#x63A5; hard-code &#x5B57;&#x7B26;&#x4E32;&#x957F;&#x5EA6;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x4E3A;&#x4E86;&#x7A0B;&#x5E8F;&#x7684;&#x540E;&#x7EED;&#x4F18;&#x5316;&#xFF0C;&#x4E0D;&#x5EFA;&#x8BAE;&#x5927;&#x5BB6;&#x8FD9;&#x6837;&#x7F16;&#x5199;&#x7A0B;&#x5E8F;&#x3002;&#x6B64;&#x5904;&#x5C55;&#x793A;&#x7684;&#x793A;&#x4F8B;&#x53EA;&#x4E3A;&#x4E86;&#x5C3D;&#x53EF;&#x80FD;&#x51CF;&#x5C11;&#x4EE3;&#x7801;&#x957F;&#x5EA6;&#x3002;</p>
+<pre class="language-"><code class="lang-asm6502">codesg segment
+    start:  mov ax,datasg
+            mov ds,ax
+            mov si,<span class="token decimalnumber string">0</span>  <span class="token comment">; set the source addr offset</span>
+
+            mov cx,<span class="token decimalnumber string">8</span>  <span class="token comment">; set loop times</span>
+
+        s:  mov ax,<span class="token decimalnumber string">0</span>[si]   <span class="token comment">; copy source</span>
+            mov <span class="token decimalnumber string">16</span>[si],ax  <span class="token comment">; paste at dest</span>
+            add si,<span class="token decimalnumber string">2</span>
+
+            loop s
+
+            mov ax,<span class="token decimalnumber string">4</span>c<span class="token decimalnumber string">00</span>h
+            int <span class="token decimalnumber string">21</span>h
+
+codesg segment
+
+end start
+</code></pre>
+<h2 id="&#x5176;&#x4ED6;&#x7684;&#x5229;&#x7528;-bx&#x3001;si&#x3001;di&#x3001;idata-&#x5B9E;&#x73B0;&#x7684;&#x66F4;&#x52A0;&#x7075;&#x6D3B;&#x7684;&#x5B9A;&#x4F4D;&#x65B9;&#x6CD5;"><a name="&#x5176;&#x4ED6;&#x7684;&#x5229;&#x7528;-bx&#x3001;si&#x3001;di&#x3001;idata-&#x5B9E;&#x73B0;&#x7684;&#x66F4;&#x52A0;&#x7075;&#x6D3B;&#x7684;&#x5B9A;&#x4F4D;&#x65B9;&#x6CD5;" class="plugin-anchor" href="#&#x5176;&#x4ED6;&#x7684;&#x5229;&#x7528;-bx&#x3001;si&#x3001;di&#x3001;idata-&#x5B9E;&#x73B0;&#x7684;&#x66F4;&#x52A0;&#x7075;&#x6D3B;&#x7684;&#x5B9A;&#x4F4D;&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5176;&#x4ED6;&#x7684;&#x5229;&#x7528; BX&#x3001;SI&#x3001;DI&#x3001;IDATA &#x5B9E;&#x73B0;&#x7684;&#x66F4;&#x52A0;&#x7075;&#x6D3B;&#x7684;&#x5B9A;&#x4F4D;&#x65B9;&#x6CD5;</h2>
 <h2 id="reference"><a name="reference" class="plugin-anchor" href="#reference"><i class="fa fa-link" aria-hidden="true"></i></a>Reference</h2>
 <p>[1] <a href="https://en.wikibooks.org/wiki/X86_Assembly/X86_Architecture" target="_blank">https://en.wikibooks.org/wiki/X86_Assembly/X86_Architecture</a></p>
 <footer class="page-footer"><span class="copyright">&#xA9; 2018  kmahyyg <16604643+kmahyyg@users.noreply.github.com>. All rights reserved.</16604643+kmahyyg@users.noreply.github.com></span><span class="footer-modification"><span id="busuanzi_container_site_uv" style="display:none">&#x672C;&#x7AD9;&#x8BBF;&#x5BA2;&#x6570; <span id="busuanzi_value_site_uv"></span> &#x4EBA;&#x6B21;</span></span></footer><script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -569,7 +624,7 @@ end start
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"4.2 BX+IDATA","level":"1.5.2","depth":2,"next":{"title":"All Experiments","level":"1.6","depth":1,"path":"exps/README.md","ref":"exps/README.md","articles":[{"title":"实验一：DOS 中 DEBUG 的基本使用","level":"1.6.1","depth":2,"path":"exps/exp1-dosdbg.md","ref":"exps/exp1-dosdbg.md","articles":[]},{"title":"实验二：编程、编译、链接、跟踪 :star:","level":"1.6.2","depth":2,"path":"exps/exp2-firsttry.md","ref":"exps/exp2-firsttry.md","articles":[]},{"title":"实验三：[BX] 和 LOOP 指令的使用","level":"1.6.3","depth":2,"path":"exps/exp3-bxloop.md","ref":"exps/exp3-bxloop.md","articles":[]},{"title":"实验四：编写、调试具有多个端的程序","level":"1.6.4","depth":2,"path":"exps/exp4-multisegment.md","ref":"exps/exp4-multisegment.md","articles":[]}]},"previous":{"title":"4.1 AND OR 与 字符串","level":"1.5.1","depth":2,"path":"ramndata/andorstr.md","ref":"ramndata/andorstr.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","anchors","multipart","-highlight","prism","prism-themes","page-footer-copyright"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-duotone-light.css"]},"disqus":{"useIdentifier":false,"shortName":"asm-kmahyyg"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"page-footer-copyright":{},"prism-themes":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"kmahyyg <16604643+kmahyyg@users.noreply.github.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"none","variables":{},"title":"汇编语言程序设计 - 大学笔记","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"About Me":"https://www.kmahyyg.xyz/about","My Blog":"https://www.kmahyyg.xyz"}},"gitbook":"*","description":"Learning Notes about Assembly Language","extension":null},"file":{"path":"ramndata/bxPidata.md","mtime":"2018-08-02T13:41:25.537Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-02T13:42:22.590Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4.2 BX+IDATA","level":"1.5.2","depth":2,"next":{"title":"All Experiments","level":"1.6","depth":1,"path":"exps/README.md","ref":"exps/README.md","articles":[{"title":"实验一：DOS 中 DEBUG 的基本使用","level":"1.6.1","depth":2,"path":"exps/exp1-dosdbg.md","ref":"exps/exp1-dosdbg.md","articles":[]},{"title":"实验二：编程、编译、链接、跟踪 :star:","level":"1.6.2","depth":2,"path":"exps/exp2-firsttry.md","ref":"exps/exp2-firsttry.md","articles":[]},{"title":"实验三：[BX] 和 LOOP 指令的使用","level":"1.6.3","depth":2,"path":"exps/exp3-bxloop.md","ref":"exps/exp3-bxloop.md","articles":[]},{"title":"实验四：编写、调试具有多个端的程序","level":"1.6.4","depth":2,"path":"exps/exp4-multisegment.md","ref":"exps/exp4-multisegment.md","articles":[]}]},"previous":{"title":"4.1 AND OR 与 字符串","level":"1.5.1","depth":2,"path":"ramndata/andorstr.md","ref":"ramndata/andorstr.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","anchors","multipart","-highlight","prism","prism-themes","page-footer-copyright"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-duotone-light.css"]},"disqus":{"useIdentifier":false,"shortName":"asm-kmahyyg"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"page-footer-copyright":{},"prism-themes":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"kmahyyg <16604643+kmahyyg@users.noreply.github.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"none","variables":{},"title":"汇编语言程序设计 - 大学笔记","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"About Me":"https://www.kmahyyg.xyz/about","My Blog":"https://www.kmahyyg.xyz"}},"gitbook":"*","description":"Learning Notes about Assembly Language","extension":null},"file":{"path":"ramndata/bxPidata.md","mtime":"2018-08-02T14:10:27.094Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-02T14:11:17.847Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
