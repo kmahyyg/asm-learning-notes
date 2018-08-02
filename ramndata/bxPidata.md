@@ -22,8 +22,8 @@ datasg ends
 
 codesg segment:
 
-    start: ;TODO
-           ;TODO
+    start:  ;TODO
+            ;TODO
            
 codesg ends
 
@@ -44,6 +44,72 @@ SI 源变址寄存器，DI 目的变址寄存器，SI 和 DI 不能分成两个 
 
 ### 尝试复制字符串
 
+首先，定义数据段：
+
+```asm6502
+assume cs:codesg,ds:datasg
+
+datasg segment
+    db 'welcome to asm!'
+    db '...............'    ; 15-byte long data
+datasg ends
+```
+
+接下来，我们尝试使用 SI、DI 两个寄存器来对两个字符串的位置进行复制后替换。
+
+```asm6502
+codesg segment
+    start:  mov ax,datasg
+            mov ds,ax
+            mov si,0     ; source addr offset
+            mov di,15    ; dest addr offset
+            
+            mov cx,8     ; loop times 8
+            
+        s:  mov ax,[si]  ; ds:si point at source str
+            mov [di],ax  ; ds:di point at dest str
+            ; finish copy process
+            add si,2
+            add di,2     ; exchange 2 bytes once
+            
+            loop s
+            
+            mov ax,4c00h
+            int 21h
+codesg ends
+
+end start
+```
+
+#### 进一步优化复制过程
+
+我们可以跳过 DI 寄存器，只是用 SI 寄存器指明初始地址，之后使用 `[BX(/SI/DI) + IDATA]` 的方式，来使程序更加简洁。
+
+批注（以下仅为个人意见）： 个人十分反对下列直接 hard-code 字符串长度的代码，为了程序的后续优化，不建议大家这样编写程序。此处展示的示例只为了尽可能减少代码长度。
+
+```asm6502
+codesg segment
+    start:  mov ax,datasg
+            mov ds,ax
+            mov si,0  ; set the source addr offset
+            
+            mov cx,8  ; set loop times
+            
+        s:  mov ax,0[si]   ; copy source
+            mov 16[si],ax  ; paste at dest
+            add si,2
+            
+            loop s
+            
+            mov ax,4c00h
+            int 21h
+            
+codesg segment
+
+end start
+```
+
+## 其他的利用 BX、SI、DI、IDATA 实现的更加灵活的定位方法
 
 
 
