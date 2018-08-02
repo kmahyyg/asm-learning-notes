@@ -111,6 +111,15 @@ end start
 
 ## 其他的利用 BX、SI、DI、IDATA 实现的更加灵活的定位方法
 
+访问字的单元的段基地址均有 DS 提供，偏移地址可用以下任意一种形式提供：
+
+  - [bx+si]  可以写作 `mov ax,[bx][si]`
+  - [bx+di]  同上
+  - [bx+si+idata]  可以写作 `mov ax,[bx][si+idata]`
+  - [bx+di+idata]
+  - [idata]
+
+## 请完成实验五
 
 
 ## Reference
