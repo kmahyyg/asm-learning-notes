@@ -20,4 +20,6 @@
 
 本书将持续更新完善，最终目标是写一本 Crowd-sourced, the easiest book for newbies to handle the normal usage of assembly language. 感谢大家一直以来的支持！
 
+> BTW, 计算机 Index 是从 0 开始的，而不是 1 ～ 
+
 联系作者： [Telegram](https://t.me/welovezoe)
