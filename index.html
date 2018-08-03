@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Introduction · 汇编语言程序设计 - 大学笔记</title>
+        <title>Introduction · 汇编语言程序设计</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -370,6 +370,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.3" data-path="ramndata/regnsreg.html">
+            
+                <a href="ramndata/regnsreg.html">
+            
+                    
+                    4.3 常见寄存器的一些总结
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -441,9 +454,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.5" data-path="exps/exp5-flexibleaddrfind.html">
+        <li class="chapter " data-level="1.6.5" data-path="exps/exp5-doubleloop.html">
             
-                <a href="exps/exp5-flexibleaddrfind.html">
+                <a href="exps/exp5-doubleloop.html">
             
                     
                     实验五：更加灵活的内存单元定位
@@ -515,6 +528,9 @@
 <p>&#x56E0;&#x4E3A;&#x672C;&#x4E66;&#x76EE;&#x524D;&#x4F7F;&#x7528;&#x7684;&#x53C2;&#x8003;&#x6559;&#x6750;&#x7F16;&#x5199;&#x987A;&#x5E8F;&#x6DF7;&#x4E71;&#xFF0C;&#x672C;&#x4E66;&#x76EE;&#x524D;&#x4EC5;&#x4E3A;&#x7B2C;&#x4E00;&#x7248;&#x672C;&#xFF0C;&#x53EF;&#x80FD;&#x7565;&#x663E;&#x6DF7;&#x4E71;&#xFF0C;&#x7F16;&#x5199;&#x56E2;&#x961F;&#x53CA;&#x4F5C;&#x8005;&#x5DF2;&#x7ECF;&#x5728;&#x5C3D;&#x529B;&#x6539;&#x5584;&#xFF0C;&#x6B22;&#x8FCE;&#x5404;&#x4F4D;&#x79EF;&#x6781; PR&#x3002;</p>
 <p>&#x672C;&#x4E66;&#x76EE;&#x524D;&#x7684;&#x6574;&#x4F53;&#x521B;&#x4F5C;&#x601D;&#x8DEF;&#x5728;&#x4E8E;&#x5728;&#x73B0;&#x6709;&#x6559;&#x6750;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x63D0;&#x70BC;&#x7CBE;&#x534E;&#xFF0C;&#x6307;&#x51FA;&#x5B9E;&#x8DF5;&#x4E2D;&#x5BB9;&#x6613;&#x9047;&#x5751;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x63D0;&#x9AD8;&#x5927;&#x5BB6;&#x7684;&#x5B66;&#x4E60;&#x6548;&#x7387;&#x3002;&#x540E;&#x671F;&#x6211;&#x4EEC;&#x4F1A;&#x6839;&#x636E;&#x5177;&#x4F53;&#x5B9E;&#x8DF5;&#x4E2D;&#x9047;&#x5230;&#x7684;&#x95EE;&#x9898;&#x8FDB;&#x884C;&#x8FDB;&#x4E00;&#x6B65;&#x4F18;&#x5316;&#x3001;&#x589E;&#x52A0;&#x66F4;&#x591A;&#x7684;&#x5B9E;&#x9A8C;&#xFF0C;&#x5E76;&#x8FDB;&#x884C;&#x7ED3;&#x6784;&#x8C03;&#x6574;&#x3001;&#x751A;&#x81F3;&#x5B8C;&#x5168;&#x91CD;&#x5199;&#xFF0C;&#x4EE5;&#x8FBE;&#x5230;&#x6211;&#x4EEC;&#x7684;&#x6700;&#x7EC8;&#x76EE;&#x6807;&#x3002;</p>
 <p>&#x672C;&#x4E66;&#x5C06;&#x6301;&#x7EED;&#x66F4;&#x65B0;&#x5B8C;&#x5584;&#xFF0C;&#x6700;&#x7EC8;&#x76EE;&#x6807;&#x662F;&#x5199;&#x4E00;&#x672C; Crowd-sourced, the easiest book for newbies to handle the normal usage of assembly language. &#x611F;&#x8C22;&#x5927;&#x5BB6;&#x4E00;&#x76F4;&#x4EE5;&#x6765;&#x7684;&#x652F;&#x6301;&#xFF01;</p>
+<blockquote>
+<p>BTW, &#x8BA1;&#x7B97;&#x673A; Index &#x662F;&#x4ECE; 0 &#x5F00;&#x59CB;&#x7684;&#xFF0C;&#x800C;&#x4E0D;&#x662F; 1 &#xFF5E; </p>
+</blockquote>
 <p>&#x8054;&#x7CFB;&#x4F5C;&#x8005;&#xFF1A; <a href="https://t.me/welovezoe" target="_blank">Telegram</a></p>
 <footer class="page-footer"><span class="copyright">&#xA9; 2018  kmahyyg <16604643+kmahyyg@users.noreply.github.com>. All rights reserved.</16604643+kmahyyg@users.noreply.github.com></span><span class="footer-modification"><span id="busuanzi_container_site_uv" style="display:none">&#x672C;&#x7AD9;&#x8BBF;&#x5BA2;&#x6570; <span id="busuanzi_value_site_uv"></span> &#x4EBA;&#x6B21;</span></span></footer><script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
                                 
@@ -555,7 +571,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"Chapter 1 - 环境搭建","level":"1.2","depth":1,"path":"envbuild/README.md","ref":"envbuild/README.md","articles":[{"title":"1.1 虚拟机搭建与安装","level":"1.2.1","depth":2,"path":"envbuild/vmsetup.md","ref":"envbuild/vmsetup.md","articles":[]},{"title":"1.2 安装编译器、调试器和连接器","level":"1.2.2","depth":2,"path":"envbuild/mountandinstall.md","ref":"envbuild/mountandinstall.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["disqus","anchors","multipart","-highlight","prism","prism-themes","page-footer-copyright"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-duotone-light.css"]},"disqus":{"useIdentifier":false,"shortName":"asm-kmahyyg"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"page-footer-copyright":{},"prism-themes":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"kmahyyg <16604643+kmahyyg@users.noreply.github.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"none","variables":{},"title":"汇编语言程序设计 - 大学笔记","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"About Me":"https://www.kmahyyg.xyz/about","My Blog":"https://www.kmahyyg.xyz"}},"gitbook":"*","description":"Learning Notes about Assembly Language","extension":null},"file":{"path":"README.md","mtime":"2018-08-02T16:08:33.909Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-02T16:09:29.992Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"Chapter 1 - 环境搭建","level":"1.2","depth":1,"path":"envbuild/README.md","ref":"envbuild/README.md","articles":[{"title":"1.1 虚拟机搭建与安装","level":"1.2.1","depth":2,"path":"envbuild/vmsetup.md","ref":"envbuild/vmsetup.md","articles":[]},{"title":"1.2 安装编译器、调试器和连接器","level":"1.2.2","depth":2,"path":"envbuild/mountandinstall.md","ref":"envbuild/mountandinstall.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["disqus","anchors","multipart","-highlight","prism","prism-themes","page-footer-copyright"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-duotone-light.css"]},"disqus":{"useIdentifier":false,"shortName":"asm-kmahyyg"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"page-footer-copyright":{},"prism-themes":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"kmahyyg <16604643+kmahyyg@users.noreply.github.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"none","variables":{},"title":"汇编语言程序设计","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"About Me":"https://www.kmahyyg.xyz/about","My Blog":"https://www.kmahyyg.xyz"}},"gitbook":"*","description":"Learning Notes about Assembly Language","extension":null},"file":{"path":"README.md","mtime":"2018-08-03T08:12:19.154Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-03T08:13:11.085Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
