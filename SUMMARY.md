@@ -32,3 +32,4 @@
   - [实验三：\[BX\] 和 LOOP 指令的使用](exps/exp3-bxloop.md)
   - [实验四：编写、调试具有多个端的程序](exps/exp4-multisegment.md)
   - [实验五：更加灵活的内存单元定位](exps/exp5-doubleloop.md)
+  - [实验六：结构化数据访问应用](exps/exp6-strudata.md)
