@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>1.1 虚拟机搭建与安装 · 汇编语言程序设计</title>
+        <title>实验六：结构化数据访问应用 · 汇编语言程序设计</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -73,10 +73,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="mountandinstall.html" />
     
-    
-    <link rel="prev" href="./" />
+    <link rel="prev" href="exp5-doubleloop.html" />
     
 
     </head>
@@ -132,9 +130,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="./">
+        <li class="chapter " data-level="1.2" data-path="../envbuild/">
             
-                <a href="./">
+                <a href="../envbuild/">
             
                     
                     Chapter 1 - 环境搭建
@@ -146,9 +144,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.2.1" data-path="vmsetup.html">
+        <li class="chapter " data-level="1.2.1" data-path="../envbuild/vmsetup.html">
             
-                <a href="vmsetup.html">
+                <a href="../envbuild/vmsetup.html">
             
                     
                     1.1 虚拟机搭建与安装
@@ -159,9 +157,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="mountandinstall.html">
+        <li class="chapter " data-level="1.2.2" data-path="../envbuild/mountandinstall.html">
             
-                <a href="mountandinstall.html">
+                <a href="../envbuild/mountandinstall.html">
             
                     
                     1.2 安装编译器、调试器和连接器
@@ -416,9 +414,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="../exps/">
+        <li class="chapter " data-level="1.6" data-path="./">
             
-                <a href="../exps/">
+                <a href="./">
             
                     
                     All Experiments
@@ -430,9 +428,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.1" data-path="../exps/exp1-dosdbg.html">
+        <li class="chapter " data-level="1.6.1" data-path="exp1-dosdbg.html">
             
-                <a href="../exps/exp1-dosdbg.html">
+                <a href="exp1-dosdbg.html">
             
                     
                     实验一：DOS 中 DEBUG 的基本使用
@@ -443,9 +441,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.2" data-path="../exps/exp2-firsttry.html">
+        <li class="chapter " data-level="1.6.2" data-path="exp2-firsttry.html">
             
-                <a href="../exps/exp2-firsttry.html">
+                <a href="exp2-firsttry.html">
             
                     
                     实验二：编程、编译、链接、跟踪 :star:
@@ -456,9 +454,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.3" data-path="../exps/exp3-bxloop.html">
+        <li class="chapter " data-level="1.6.3" data-path="exp3-bxloop.html">
             
-                <a href="../exps/exp3-bxloop.html">
+                <a href="exp3-bxloop.html">
             
                     
                     实验三：[BX] 和 LOOP 指令的使用
@@ -469,9 +467,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.4" data-path="../exps/exp4-multisegment.html">
+        <li class="chapter " data-level="1.6.4" data-path="exp4-multisegment.html">
             
-                <a href="../exps/exp4-multisegment.html">
+                <a href="exp4-multisegment.html">
             
                     
                     实验四：编写、调试具有多个端的程序
@@ -482,9 +480,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.5" data-path="../exps/exp5-doubleloop.html">
+        <li class="chapter " data-level="1.6.5" data-path="exp5-doubleloop.html">
             
-                <a href="../exps/exp5-doubleloop.html">
+                <a href="exp5-doubleloop.html">
             
                     
                     实验五：更加灵活的内存单元定位
@@ -495,9 +493,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.6" data-path="../exps/exp6-strudata.html">
+        <li class="chapter active" data-level="1.6.6" data-path="exp6-strudata.html">
             
-                <a href="../exps/exp6-strudata.html">
+                <a href="exp6-strudata.html">
             
                     
                     实验六：结构化数据访问应用
@@ -543,7 +541,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >1.1 虚拟机搭建与安装</a>
+        <a href=".." >实验六：结构化数据访问应用</a>
     </h1>
 </div>
 
@@ -558,72 +556,8 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="11-vm-&#x5B89;&#x88C5;&#x8BBE;&#x5B9A;"><a name="11-vm-&#x5B89;&#x88C5;&#x8BBE;&#x5B9A;" class="plugin-anchor" href="#11-vm-&#x5B89;&#x88C5;&#x8BBE;&#x5B9A;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1 VM &#x5B89;&#x88C5;&#x8BBE;&#x5B9A;</h1>
-<h2 id="&#x521B;&#x5EFA;&#x865A;&#x62DF;&#x673A;"><a name="&#x521B;&#x5EFA;&#x865A;&#x62DF;&#x673A;" class="plugin-anchor" href="#&#x521B;&#x5EFA;&#x865A;&#x62DF;&#x673A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x521B;&#x5EFA;&#x865A;&#x62DF;&#x673A;</h2>
-<p>&#x5173;&#x952E;&#x8BBE;&#x7F6E;&#x6E05;&#x5355;&#xFF1A;(&#x4EE5; KVM &#x4E3A;&#x4F8B;)</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">&#x8BBE;&#x7F6E;&#x540D;</th>
-<th style="text-align:center">&#x503C;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">&#x56FA;&#x4EF6;&#x53CA;&#x82AF;&#x7247;&#x7EC4;</td>
-<td style="text-align:center">BIOS - i440FX</td>
-</tr>
-<tr>
-<td style="text-align:center">CPU</td>
-<td style="text-align:center">486</td>
-</tr>
-<tr>
-<td style="text-align:center">RAM</td>
-<td style="text-align:center">128M</td>
-</tr>
-<tr>
-<td style="text-align:center">&#x5B58;&#x50A8;&#x5668;</td>
-<td style="text-align:center">&#x5168;&#x90E8;&#x8BBE;&#x7F6E;&#x4E3A;IDE&#xFF0C;&#x4ECE;ISO&#x542F;&#x52A8;&#x5B89;&#x88C5;</td>
-</tr>
-<tr>
-<td style="text-align:center">&#x663E;&#x5361;</td>
-<td style="text-align:center">VGA</td>
-</tr>
-<tr>
-<td style="text-align:center">&#x58F0;&#x5361;</td>
-<td style="text-align:center">AC97</td>
-</tr>
-</tbody>
-</table>
-<p>&#x542F;&#x52A8;&#x5B89;&#x88C5;&#x7A0B;&#x5E8F;&#xFF0C;&#x4E00;&#x8DEF;&#x4E0B;&#x4E00;&#x6B65;&#x3002;</p>
-<h3 id="&#x5206;&#x533A;"><a name="&#x5206;&#x533A;" class="plugin-anchor" href="#&#x5206;&#x533A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5206;&#x533A;</h3>
-<p>&#x5230;&#x5206;&#x533A;&#x8FD9;&#x4E00;&#x6B65;&#xFF0C;&#x9009;&#x62E9; &#x201C;&#x4F7F;&#x7528;&#x5B89;&#x88C5;&#x7A0B;&#x5E8F;&#x521B;&#x5EFA;FAT16/32&#x5206;&#x533A;&#x201D;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x7CFB;&#x7EDF;&#x91CD;&#x542F;&#x3002;</p>
-<p>&#x8FD9;&#x65F6;&#x5019;&#x5B89;&#x88C5;&#x7A0B;&#x5E8F;&#x4F1A;&#x81EA;&#x52A8;&#x5F39;&#x51FA;&#x5B89;&#x88C5;&#x955C;&#x50CF;&#xFF0C;&#x6B64;&#x65F6;&#x8BF7;&#x91CD;&#x542F;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#x5173;&#x95ED;&#x865A;&#x62DF;&#x673A;&#xFF0C;&#x624B;&#x52A8;&#x518D;&#x6B21;&#x6302;&#x8F7D;&#x5B89;&#x88C5;&#x955C;&#x50CF;&#x5E76;&#x4FEE;&#x6539;&#x5F15;&#x5BFC;&#x987A;&#x5E8F;&#x3001;&#x542F;&#x7528;&#x5F15;&#x5BFC;&#x83DC;&#x5355;&#x3002;</p>
-<p><img src="../assets/envbuild/vmsetup1.png" alt="Boot Order"></p>
-<p>&#x63A5;&#x4E0B;&#x6765;&#x542F;&#x52A8;&#x865A;&#x62DF;&#x673A;&#xFF0C;&#x6309;&#x4E0B; Esc &#x5E76;&#x9009;&#x62E9;&#x4ECE;&#x5149;&#x76D8;&#x542F;&#x52A8;&#xFF0C;&#x7EE7;&#x7EED;&#x4E0B;&#x4E00;&#x6B65;&#x5B89;&#x88C5;&#x3002;</p>
-<h3 id="&#x5B89;&#x88C5;"><a name="&#x5B89;&#x88C5;" class="plugin-anchor" href="#&#x5B89;&#x88C5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B89;&#x88C5;</h3>
-<p>&#x4E00;&#x8DEF;&#x4E0B;&#x4E00;&#x6B65;&#x4E4B;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x9009;&#x62E9;&#x5B89;&#x88C5;&#x53EF;&#x9009;&#x63D2;&#x4EF6;&#xFF0C;&#x6765;&#x5230;&#x58F0;&#x5361;&#x9A71;&#x52A8;&#x754C;&#x9762;&#xFF0C;&#x4E0A;&#x4E0B;&#x5DE6;&#x53F3;&#x8C03;&#x6574;&#x5230;&#x5BF9;&#x5E94;&#x4F4D;&#x7F6E;&#xFF0C;&#x7A7A;&#x683C;&#x9009;&#x4E2D;&#xFF0C;&#x9009;&#x62E9; <code>VIA AC97</code> &#x4E0B;&#x4E00;&#x6B65;&#x3002;</p>
-<p><img src="../assets/envbuild/vmsetup2.png" alt="SoundCardDriver"></p>
-<p>&#x4E00;&#x8DEF;&#x4E0B;&#x4E00;&#x6B65;&#x4E4B;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x6765;&#x5230;&#x542F;&#x52A8;&#x65E5;&#x5FD7;&#x4EA7;&#x751F;&#x754C;&#x9762;&#xFF0C;&#x4E00;&#x822C;&#x4E0D;&#x4F1A;&#x6709;&#x592A;&#x5927;&#x95EE;&#x9898;&#xFF0C;&#x9009;&#x62E9;&#x4E0D;&#x751F;&#x6210;&#x3002;</p>
-<p><img src="../assets/envbuild/vmsetup3.png" alt="BootlogSelect"></p>
-<p>&#x7531;&#x4E8E;&#x957F;&#x6587;&#x4EF6;&#x540D;&#x652F;&#x6301;&#x4E0D;&#x591F;&#x5B8C;&#x5584;&#xFF0C;&#x5E76;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x6587;&#x4EF6;&#x4E22;&#x5931;&#xFF0C;&#x4E3A;&#x4E86;&#x9632;&#x6B62;&#x6570;&#x636E;&#x4E22;&#x5931;&#xFF0C;DOS &#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x662F;&#x7981;&#x7528;&#x76F4;&#x63A5; I/O &#x3002;&#x8BE2;&#x95EE;&#x662F;&#x5426;&#x542F;&#x7528;&#x76F4;&#x63A5; I/O&#xFF0C;&#x7531;&#x4E8E;&#x4E2A;&#x4EBA;&#x4E00;&#x822C;&#x6CA1;&#x6709;&#x4F7F;&#x7528;&#x8D85;&#x957F;&#x6587;&#x4EF6;&#x540D;&#x7684;&#x4E60;&#x60EF;&#xFF0C;&#x57FA;&#x4E8E;&#x6027;&#x80FD;&#x8003;&#x8651;&#xFF0C;&#x9009;&#x62E9;&#x542F;&#x7528;&#x3002;</p>
-<p><img src="../assets/envbuild/vmsetup4.png" alt="DirectIO"></p>
-<p><strong>&#x5173;&#x952E;&#x7684;&#x4E00;&#x6B65;</strong>&#xFF1A; &#x9009;&#x62E9;&#x542F;&#x7528;&#x6269;&#x5C55;&#x5185;&#x5B58;&#xFF01;&#x5982;&#x56FE;&#x6240;&#x793A;&#x3002;</p>
-<p><img src="../assets/envbuild/vmsetup5.png" alt="ExtendedRAM"></p>
-<p>&#x4E00;&#x8DEF;&#x4E0B;&#x4E00;&#x6B65;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x5230;&#x4E86;&#x914D;&#x7F6E;&#x542F;&#x52A8;&#x9879;&#xFF0C;&#x5168;&#x90E8;&#x52FE;&#x9009;&#x540E;&#x7EE7;&#x7EED;&#x3002;</p>
-<p><img src="../assets/envbuild/vmsetup6.png" alt="BootupPlugin"></p>
-<p>&#x914D;&#x7F6E;&#x952E;&#x76D8;&#x5E03;&#x5C40;&#xFF0C;&#x4FDD;&#x6301;&#x9ED8;&#x8BA4;&#x3002;</p>
-<p>&#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x3002;&#x6B64;&#x65F6;&#xFF0C;&#x8BF7;&#x524D;&#x5F80;&#x865A;&#x62DF;&#x673A;&#x914D;&#x7F6E;&#x5904;&#x65AD;&#x5F00; ROM &#x7684; ISO &#x8FDE;&#x63A5;&#x540E;&#x91CD;&#x542F;&#x3002;</p>
-<p><img src="../assets/envbuild/vmsetup8.png" alt="RemoveISO"></p>
-<p><img src="../assets/envbuild/vmsetup7.png" alt="RebootFin"></p>
-<p>&#x91CD;&#x542F;&#x540E;&#x4F1A;&#x63D0;&#x793A;&#x5728; BIOS &#x4E2D;&#x5F00;&#x542F; Sound Blaster &#x58F0;&#x5361;&#xFF0C;&#x7531;&#x4E8E; Sound Blaster &#x58F0;&#x5361;&#x5DF2;&#x7ECF;&#x88AB; <strong>DEPRECATED</strong> &#xFF0C;&#x6211;&#x4EEC;&#x4E0D;&#x505A;&#x4EFB;&#x4F55;&#x64CD;&#x4F5C;&#xFF0C;&#x4FDD;&#x6301; AC97 &#x3002;</p>
-<h3 id="&#x542F;&#x52A8;&#x6210;&#x529F;"><a name="&#x542F;&#x52A8;&#x6210;&#x529F;" class="plugin-anchor" href="#&#x542F;&#x52A8;&#x6210;&#x529F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x542F;&#x52A8;&#x6210;&#x529F;</h3>
-<p>&#x4E2D;&#x6587;&#x652F;&#x6301;&#xFF1A; &#x8F93;&#x5165; <code>ccdos</code> &#x6216; <code>pdos</code> &#x542F;&#x52A8;&#x4E2D;&#x6587;&#x652F;&#x6301;&#x3002;</p>
-<p><img src="../assets/envbuild/msdos1.png" alt="msdos"></p>
-<p><img src="../assets/envbuild/ccdos1.png" alt="ccdos"></p>
-<p><img src="../assets/envbuild/pdos1.png" alt="pdos"></p>
-<p>&#x542F;&#x52A8;&#x5B8C;&#x6210;&#x3002;</p>
-<p>&#x5565;&#xFF1F;&#x4F60;&#x544A;&#x8BC9;&#x6211;&#x4E0D;&#x4F1A;&#x5173;&#x673A;&#xFF1F; &#x8F93;&#x5165; <code>shutdown</code>&#xFF0C;&#x5B8C;&#x4E8B;&#x3002;</p>
+                                <h1 id="&#x5B9E;&#x9A8C;&#x516D;&#xFF1A;&#x7ED3;&#x6784;&#x5316;&#x6570;&#x636E;&#x8BBF;&#x95EE;&#x5E94;&#x7528;"><a name="&#x5B9E;&#x9A8C;&#x516D;&#xFF1A;&#x7ED3;&#x6784;&#x5316;&#x6570;&#x636E;&#x8BBF;&#x95EE;&#x5E94;&#x7528;" class="plugin-anchor" href="#&#x5B9E;&#x9A8C;&#x516D;&#xFF1A;&#x7ED3;&#x6784;&#x5316;&#x6570;&#x636E;&#x8BBF;&#x95EE;&#x5E94;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B9E;&#x9A8C;&#x516D;&#xFF1A;&#x7ED3;&#x6784;&#x5316;&#x6570;&#x636E;&#x8BBF;&#x95EE;&#x5E94;&#x7528;</h1>
+<h2 id="todo"><a name="todo" class="plugin-anchor" href="#todo"><i class="fa fa-link" aria-hidden="true"></i></a>TODO</h2>
 <footer class="page-footer"><span class="copyright">&#xA9; 2018  kmahyyg <16604643+kmahyyg@users.noreply.github.com>. All rights reserved.</16604643+kmahyyg@users.noreply.github.com></span><span class="footer-modification"><span id="busuanzi_container_site_uv" style="display:none">&#x672C;&#x7AD9;&#x8BBF;&#x5BA2;&#x6570; <span id="busuanzi_value_site_uv"></span> &#x4EBA;&#x6B21;</span></span></footer><script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
                                 
                                 </section>
@@ -651,14 +585,10 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Chapter 1 - 环境搭建">
+                <a href="exp5-doubleloop.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 实验五：更加灵活的内存单元定位">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="mountandinstall.html" class="navigation navigation-next " aria-label="Next page: 1.2 安装编译器、调试器和连接器">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -667,7 +597,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1.1 虚拟机搭建与安装","level":"1.2.1","depth":2,"next":{"title":"1.2 安装编译器、调试器和连接器","level":"1.2.2","depth":2,"path":"envbuild/mountandinstall.md","ref":"envbuild/mountandinstall.md","articles":[]},"previous":{"title":"Chapter 1 - 环境搭建","level":"1.2","depth":1,"path":"envbuild/README.md","ref":"envbuild/README.md","articles":[{"title":"1.1 虚拟机搭建与安装","level":"1.2.1","depth":2,"path":"envbuild/vmsetup.md","ref":"envbuild/vmsetup.md","articles":[]},{"title":"1.2 安装编译器、调试器和连接器","level":"1.2.2","depth":2,"path":"envbuild/mountandinstall.md","ref":"envbuild/mountandinstall.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["disqus","anchors","multipart","-highlight","prism","prism-themes","page-footer-copyright"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-duotone-light.css"]},"disqus":{"useIdentifier":false,"shortName":"asm-kmahyyg"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"page-footer-copyright":{},"prism-themes":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"kmahyyg <16604643+kmahyyg@users.noreply.github.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"none","variables":{},"title":"汇编语言程序设计","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"About Me":"https://www.kmahyyg.xyz/about","My Blog":"https://www.kmahyyg.xyz"}},"gitbook":"*","description":"Learning Notes about Assembly Language","extension":null},"file":{"path":"envbuild/vmsetup.md","mtime":"2018-08-04T12:47:18.215Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-04T12:48:33.087Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"实验六：结构化数据访问应用","level":"1.6.6","depth":2,"previous":{"title":"实验五：更加灵活的内存单元定位","level":"1.6.5","depth":2,"path":"exps/exp5-doubleloop.md","ref":"exps/exp5-doubleloop.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","anchors","multipart","-highlight","prism","prism-themes","page-footer-copyright"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-duotone-light.css"]},"disqus":{"useIdentifier":false,"shortName":"asm-kmahyyg"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"page-footer-copyright":{},"prism-themes":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"kmahyyg <16604643+kmahyyg@users.noreply.github.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"none","variables":{},"title":"汇编语言程序设计","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"About Me":"https://www.kmahyyg.xyz/about","My Blog":"https://www.kmahyyg.xyz"}},"gitbook":"*","description":"Learning Notes about Assembly Language","extension":null},"file":{"path":"exps/exp6-strudata.md","mtime":"2018-08-04T12:47:18.215Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-04T12:48:33.087Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
