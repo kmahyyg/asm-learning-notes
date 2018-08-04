@@ -22,7 +22,8 @@
 * [Chapter 4 - 内存地址定位与数据处理](ramndata/README.md)
   - [4.1 AND OR 与 字符串](ramndata/andorstr.md)
   - [4.2 更加灵活的内存单元定位方法](ramndata/bxPidata.md)
-  - [4.3 汇编语言中数据定位及位置表达](ramndata/regnsreg.md)
+  - [4.3 数据定位及位置表达](ramndata/regnsreg.md)
+  - [4.4 数据处理数据的长度及综合应用](ramndata/lengthodata.md)
 
 * [All Experiments](exps/README.md)
   - [实验一：DOS 中 ```DEBUG``` 的基本使用](exps/exp1-dosdbg.md)
