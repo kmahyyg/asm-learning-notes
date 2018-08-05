@@ -563,20 +563,55 @@
 <p>DIV&#xFF0C;&#x9664;&#x6CD5;&#x6307;&#x4EE4;&#x3002;</p>
 <ul>
 <li>&#x9664;&#x6570;&#xFF1A; 8 Bits / 16 Bits&#xFF0C;&#x7531;&#x6307;&#x4EE4;&#x7ED9;&#x51FA;&#x3002;</li>
-<li><p>&#x88AB;&#x9664;&#x6570;&#xFF1A; </p>
-<p>| &#x9664;&#x6570; | &#x88AB;&#x9664;&#x6570; | &#x5B58;&#x653E;&#x4F4D;&#x7F6E; |
-| :--: | :--: | :-----: |
-| 8 Bits | 16 Bits | AX |
-| 16 Bits | 32 Bits | DX(High 16 Bits) + AX (Low 16 Bits) |</p>
-</li>
-<li><p>&#x7ED3;&#x679C;&#xFF1A;</p>
-<p>| &#x9664;&#x6570;&#x957F;&#x5EA6; | &#x5546;&#x5B58;&#x653E;&#x4F4D;&#x7F6E; | &#x4F59;&#x6570;&#x5B58;&#x653E;&#x4F4D;&#x7F6E; |
-| :-----: | :------: | :---------: |
-| 8 Bits | AL | AH |
-| 16 Bits | AX | DX |</p>
-</li>
-<li><p>&#x683C;&#x5F0F;&#xFF1A;</p>
-<pre class="language-"><code class="lang-asm6502">div reg
+<li>&#x88AB;&#x9664;&#x6570;&#xFF1A; </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x9664;&#x6570;</th>
+<th style="text-align:center">&#x88AB;&#x9664;&#x6570;</th>
+<th style="text-align:center">&#x5B58;&#x653E;&#x4F4D;&#x7F6E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">8 Bits</td>
+<td style="text-align:center">16 Bits</td>
+<td style="text-align:center">AX</td>
+</tr>
+<tr>
+<td style="text-align:center">16 Bits</td>
+<td style="text-align:center">32 Bits</td>
+<td style="text-align:center">DX(High 16 Bits) + AX (Low 16 Bits)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>&#x7ED3;&#x679C;&#xFF1A;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x9664;&#x6570;&#x957F;&#x5EA6;</th>
+<th style="text-align:center">&#x5546;&#x5B58;&#x653E;&#x4F4D;&#x7F6E;</th>
+<th style="text-align:center">&#x4F59;&#x6570;&#x5B58;&#x653E;&#x4F4D;&#x7F6E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">8 Bits</td>
+<td style="text-align:center">AL</td>
+<td style="text-align:center">AH</td>
+</tr>
+<tr>
+<td style="text-align:center">16 Bits</td>
+<td style="text-align:center">AX</td>
+<td style="text-align:center">DX</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>&#x683C;&#x5F0F;&#xFF1A;<pre class="language-"><code class="lang-asm6502">div reg
 div RAM
 </code></pre>
 </li>
@@ -630,7 +665,7 @@ div RAM
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.6 DIV DD DUP 指令","level":"1.4.6","depth":2,"next":{"title":"Chapter 4 - 内存地址定位与数据处理","level":"1.5","depth":1,"path":"ramndata/README.md","ref":"ramndata/README.md","articles":[{"title":"4.1 AND OR 与 字符串","level":"1.5.1","depth":2,"path":"ramndata/andorstr.md","ref":"ramndata/andorstr.md","articles":[]},{"title":"4.2 更加灵活的内存单元定位方法","level":"1.5.2","depth":2,"path":"ramndata/bxPidata.md","ref":"ramndata/bxPidata.md","articles":[]},{"title":"4.3 数据定位及位置表达","level":"1.5.3","depth":2,"path":"ramndata/regnsreg.md","ref":"ramndata/regnsreg.md","articles":[]},{"title":"4.4 数据处理数据的长度及综合应用","level":"1.5.4","depth":2,"path":"ramndata/lengthodata.md","ref":"ramndata/lengthodata.md","articles":[]}]},"previous":{"title":"3.5 包含多个段的程序","level":"1.4.5","depth":2,"path":"asmcommands/multisegment.md","ref":"asmcommands/multisegment.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","anchors","multipart","-highlight","prism","prism-themes","page-footer-copyright"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-duotone-light.css"]},"disqus":{"useIdentifier":false,"shortName":"asm-kmahyyg"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"page-footer-copyright":{},"prism-themes":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"kmahyyg <16604643+kmahyyg@users.noreply.github.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"none","variables":{},"title":"汇编语言程序设计","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"About Me":"https://www.kmahyyg.xyz/about","My Blog":"https://www.kmahyyg.xyz"}},"gitbook":"*","description":"Learning Notes about Assembly Language","extension":null},"file":{"path":"asmcommands/divdddup.md","mtime":"2018-08-05T02:03:02.493Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-05T02:03:54.399Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3.6 DIV DD DUP 指令","level":"1.4.6","depth":2,"next":{"title":"Chapter 4 - 内存地址定位与数据处理","level":"1.5","depth":1,"path":"ramndata/README.md","ref":"ramndata/README.md","articles":[{"title":"4.1 AND OR 与 字符串","level":"1.5.1","depth":2,"path":"ramndata/andorstr.md","ref":"ramndata/andorstr.md","articles":[]},{"title":"4.2 更加灵活的内存单元定位方法","level":"1.5.2","depth":2,"path":"ramndata/bxPidata.md","ref":"ramndata/bxPidata.md","articles":[]},{"title":"4.3 数据定位及位置表达","level":"1.5.3","depth":2,"path":"ramndata/regnsreg.md","ref":"ramndata/regnsreg.md","articles":[]},{"title":"4.4 数据处理数据的长度及综合应用","level":"1.5.4","depth":2,"path":"ramndata/lengthodata.md","ref":"ramndata/lengthodata.md","articles":[]}]},"previous":{"title":"3.5 包含多个段的程序","level":"1.4.5","depth":2,"path":"asmcommands/multisegment.md","ref":"asmcommands/multisegment.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","anchors","multipart","-highlight","prism","prism-themes","page-footer-copyright"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-duotone-light.css"]},"disqus":{"useIdentifier":false,"shortName":"asm-kmahyyg"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"page-footer-copyright":{},"prism-themes":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"kmahyyg <16604643+kmahyyg@users.noreply.github.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"none","variables":{},"title":"汇编语言程序设计","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"About Me":"https://www.kmahyyg.xyz/about","My Blog":"https://www.kmahyyg.xyz"}},"gitbook":"*","description":"Learning Notes about Assembly Language","extension":null},"file":{"path":"asmcommands/divdddup.md","mtime":"2018-08-05T07:25:20.718Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-05T07:26:12.281Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
