@@ -3,7 +3,7 @@
 ;by kmahyyg
 ;licensed under agplV3
 
-assume cs:codesg
+assume cs:codesg,ds:datasg,ss:table
 
 datasg segment   ; seen as stack
 
@@ -21,28 +21,32 @@ table ends
 
 codesg segment
 
-    start:  mov ax,datasg
-            mov ss,ax    ; set datasg segmeng as stack
-            mov bp,0   ; stack base pointer(bp): point at the base of the stack
+    start:  mov ax,datasg 
+            mov ss,ax    ; ss point to datasg segment
+            mov di,0   
             
             mov ax,table 
-            mov ds,ax
+            mov es,ax   ; es point to table segment
             
-            ; stack pointer(sp): point at the top of stack
-            
-            mov si,0   ; source index register
+            mov si,0   
             mov bx,0   ; base register: locate data in DS 
             mov cx,5   ; loop times: 5 groups of data
             
-     inpt:  mov ax,[bp]
-            mov [bx],ax
-            ; years in table
+     inpt:  mov al,[di]
+            mov es:[bx],ax
+            mov al,[di+1]
+            mov es:[bx],ax
+            mov al,[di+2]
+            mov es:[bx],ax
+            mov al,[di+3]
+            mov es:[bx],ax
+            ; years in table 4bytes
             
             ; remember data structure 
-            mov ax,[bp+20]     ; jump to the start of salary
-            mov [bx+5],ax      ; offset for write data
-            mov ax,[bx+22]     ; choose the salary data
-            mov [bx+7],ax      ; write salary
+            mov ax,14h[di]     ; jump to the start of salary, 20 bytes offset
+            mov dx,16h[di]      ; offset for write data
+            mov es:5h[bx],ax     ; choose the salary data
+            mov es:7h[bx],dx      ; write salary
             
             mov ax,ss:[si+38]
             mov [bx+10],ax     ; offset 10 for employees
@@ -53,7 +57,7 @@ codesg segment
             mov [bx+13],ax
             
             add bx,16
-            add bp,4
+            add di,4
             add si,2
             
             loop inpt
