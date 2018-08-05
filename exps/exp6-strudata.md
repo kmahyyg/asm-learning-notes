@@ -21,6 +21,30 @@
 3. 对于 TABLE 段中数据的访问，我们可以使用类似这样的格式来完成。 Example: `[bx].idata[si]`
    这里我们用 bx 来 定位 段中的每一个结构体， 用 idata 来 定位 结构体中的每一个数据项， 用 si 来定位 数据项中的每一个元素。
 
+## 实验数据
+
+![exp6 datasg segment photo](../assets/exps/exp6-1.png)
+
+[ ASCII ENCODED ]
+1975 - 31 39 37 35 ASCII(HEX)  BYTES
+1976 - 31 39 37 36 ASCII(HEX)  BYTES
+1977 - 31 39 37 37 ASCII(HEX)  BYTES
+1978 - 31 39 37 38 ASCII(HEX)  BYTES
+1995 - 31 39 39 35 ASCII(HEX)  BYTES
+
+L -> H  [ DIRECT ]
+16 00 00 00 DOUBLE WORD
+7E 01 00 00 DOUBLE WORD
+B0 05 00 00 DOUBLE WORD
+68 97 5A 00 DOUBLE WORD
+
+L -> H  [ DIRECT ]
+03 00 WORD
+07 00 WORD
+09 00 WORD
+0D 00 WORD
+88 45 WORD
+
 ## 预定义数据及代码
 
 [点击此处查看预定义的实验数据与实验代码](../assets/code/exp6.asm)
