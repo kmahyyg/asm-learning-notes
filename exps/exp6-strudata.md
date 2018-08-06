@@ -20,46 +20,33 @@
 2. TABLE 段中的数据可以看作一个结构体数据，每个结构型数据包含多个数据项。
 3. 对于 TABLE 段中数据的访问，我们可以使用类似这样的格式来完成。 Example: `[bx].idata[si]`
    这里我们用 bx 来 定位 段中的每一个结构体， 用 idata 来 定位 结构体中的每一个数据项， 用 si 来定位 数据项中的每一个元素。
-
+4. 仔细阅读实验代码，你会发现： 我们使用了 STRING 类型以 `db` 存储年份，接下来的数据使用的是 `dd` `dw` 直接存储 INT 类型的数据，这样的话，在 年份的末尾，会有一个 `DLE` 控制字符，长度 8 位， ASCII 编码为 0x00000010，请注意。
+   
 ## 实验数据
 
 ![exp6 datasg segment photo](../assets/exps/exp6-1.png)
 
-[ ASCII ENCODED ]
+\[ ASCII ENCODED \] \[ YEARS \]
 
-1975 - 31 39 37 35 ASCII(HEX)  BYTES
+1975 1976 - 31 39 37 35 ASCII(HEX)  BYTES 31 39 37 36 ASCII(HEX)  BYTES
 
-1976 - 31 39 37 36 ASCII(HEX)  BYTES
-
-1977 - 31 39 37 37 ASCII(HEX)  BYTES
-
-1978 - 31 39 37 38 ASCII(HEX)  BYTES
+1977 1978 - 31 39 37 37 ASCII(HEX)  BYTES 31 39 37 38 ASCII(HEX)  BYTES
 
 1995 - 31 39 39 35 ASCII(HEX)  BYTES
 
+\[ Salary \]
 
-L -> H  [ DIRECT ]
+L -> H  \[ DIRECT \]
 
-16 00 00 00 DOUBLE WORD
+16 00 00 00 DOUBLE WORD 7E 01 00 00 DOUBLE WORD
 
-7E 01 00 00 DOUBLE WORD
+B0 05 00 00 DOUBLE WORD 68 97 5A 00 DOUBLE WORD
 
-B0 05 00 00 DOUBLE WORD
+\[ Employees \]
 
-68 97 5A 00 DOUBLE WORD
+L -> H  \[ DIRECT \]
 
-
-L -> H  [ DIRECT ]
-
-03 00 WORD
-
-07 00 WORD
-
-09 00 WORD
-
-0D 00 WORD
-
-88 45 WORD
+03 00 WORD 07 00 WORD 09 00 WORD 0D 00 WORD 88 45 WORD
 
 
 ## 预定义数据及代码
@@ -73,3 +60,7 @@ L -> H  [ DIRECT ]
 ## 实验反思
 
 通过这次实验，你学习到了那些实践技巧，注意到哪些你之前没有注意到的细节问题，有哪些地方经过这次实验得到巩固或产生了更多的疑问？欢迎在讨论区中与我们交流。
+
+## Reference
+
+[1] https://read01.com/Jyn8AJ.html
