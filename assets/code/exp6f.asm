@@ -43,7 +43,7 @@ codesg segment
             mov bx,0   ; base register: locate data in DS 
             mov cx,5   ; loop times: 5 groups of data
             
-     s1:  mov al,[di]
+       s1:  mov al,[di]
             mov es:[bx],ax
             mov al,[di+1]
             mov es:[bx+1],ax
@@ -69,10 +69,10 @@ codesg segment
             add di,4   ; 4 bytes offset (other datas)
             add si,2   ; 2 bytes offset (employees)
             
-                loop s1  ; loop code
+        loop s1  ; loop code
                 
-                mov ax,4c00h
-                int 21h      ; back to normal
+        mov ax,4c00h
+        int 21h      ; back to normal
             
 codesg ends
 
