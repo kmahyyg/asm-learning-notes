@@ -19,6 +19,7 @@
   - [3.4 \[BX\] 和 LOOP 指令](asmcommands/bxloop.md)]
   - [3.5 包含多个段的程序](asmcommands/multisegment.md)
   - [3.6 DIV DD DUP 指令](asmcommands/divdddup.md)
+  - [3.7 转移指令(1): 操作符 OFFSET](asmcommands/transfer_offset.md)
 
 * [Chapter 4 - 内存地址定位与数据处理](ramndata/README.md)
   - [4.1 AND OR 与 字符串](ramndata/andorstr.md)
