@@ -35,3 +35,10 @@
   - [实验四：编写、调试具有多个端的程序](exps/exp4-multisegment.md)
   - [实验五：更加灵活的内存单元定位](exps/exp5-doubleloop.md)
   - [实验六：结构化数据访问应用](exps/exp6-strudata.md)
+  
+* [Reference: 附注](README.md)
+  - [Intel 系列微处理器的 3 种工作模式](register/ref_tb1.md)
+  - [补码表示与重码问题](register/ref_tb2.md)
+  - [MASM 编译器对 JMP 的相关处理](asmcommands/ref_tb3.md)
+  - [用栈传递参数](ramndata/ref_tb4.md)
+  - [除法溢出避免公式证明](ramndata/ref_tb5.md)
