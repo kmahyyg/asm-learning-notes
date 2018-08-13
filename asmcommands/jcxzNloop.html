@@ -73,7 +73,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="transfer_note.html" />
+    <link rel="next" href="../ramndata/" />
     
     
     <link rel="prev" href="transfer_jmp.html" />
@@ -379,19 +379,6 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.10" data-path="transfer_note.html">
-            
-                <a href="transfer_note.html">
-            
-                    
-                    3.10 转移指令(4): 转移指令的注意事项
-            
-                </a>
-            
-
-            
-        </li>
-    
 
             </ul>
             
@@ -553,6 +540,19 @@
             
                     
                     实验六：结构化数据访问应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../exps/exp7-transfer.html">
+            
+                <a href="../exps/exp7-transfer.html">
+            
+                    
+                    实验七：位移指令
             
                 </a>
             
@@ -730,6 +730,35 @@ inc bx</p>
 <p><code>loop <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>&#x6807;&#x53F7;</span><span class="token punctuation">&gt;</span></span></code>&#xFF0C;&#x6240;&#x6709;&#x7684;&#x5FAA;&#x73AF;&#x6307;&#x4EE4;&#x90FD;&#x662F;&#x77ED;&#x8F6C;&#x79FB;&#xFF0C;&#x5BF9;&#x5E94;&#x673A;&#x5668;&#x7801;&#x4F7F;&#x7528;&#x8F6C;&#x79FB;&#x4F4D;&#x79FB;&#x8868;&#x793A;&#xFF0C;&#x4FEE;&#x6539; IP&#xFF0C;&#x8303;&#x56F4;&#xFF1A;-128~127&#x3002;</p>
 <p>&#x8F6C;&#x79FB;&#x6761;&#x4EF6;&#xFF1A; <strong>(CX) = (CX) - 1, (CX) != 0</strong> &#x65F6;&#x8F6C;&#x79FB;&#x5230;&#x6807;&#x53F7;&#x5904;&#x6267;&#x884C;&#x3002;</p>
 <p>&#x5176;&#x4F59;&#x540C; <code>jcxz</code> &#x6307;&#x4EE4;&#x3002;</p>
+<h3 id="quiz-2-fill-in-the-blank"><a name="quiz-2-fill-in-the-blank" class="plugin-anchor" href="#quiz-2-fill-in-the-blank"><i class="fa fa-link" aria-hidden="true"></i></a>Quiz 2: Fill in the blank</h3>
+<p>&#x8865;&#x5168;&#x4E0B;&#x5217;&#x7A0B;&#x5E8F;&#xFF0C;&#x5229;&#x7528; <code>loop</code> &#x5728; 2000H &#x6BB5;&#x67E5;&#x627E;&#x7B2C;&#x4E00;&#x4E2A;&#x503C;&#x4E3A; 0 &#x7684;&#x5B57;&#x8282;&#xFF0C;&#x627E;&#x5230;&#x540E;&#x5C06;&#x5B83;&#x7684;&#x504F;&#x79FB;&#x5730;&#x5740;&#x5B58;&#x50A8;&#x5728; DX &#x4E2D;&#x3002;</p>
+<pre class="language-"><code class="lang-asm6502">assume cs:codesg
+codesg segment
+    start:  mov ax,<span class="token decimalnumber string">2000</span>h
+            mov ds,ax
+            mov bx,<span class="token decimalnumber string">0</span>
+        s:  mov cl,[bx]
+            mov ch,<span class="token decimalnumber string">0</span>
+            <span class="token comment">;(TODO)</span>
+            <span class="token opcode property">inc</span> bx
+            loop s
+       ok:  <span class="token opcode property">dec</span> bx    <span class="token comment">; dec = -1</span>
+            mov dx,bx
+            mov ax,<span class="token decimalnumber string">4</span>c<span class="token decimalnumber string">00</span>h
+            int <span class="token decimalnumber string">21</span>h
+codesg ends
+end start
+</code></pre>
+<blockquote>
+<p>&#x7B54;&#x6848;&#xFF1A; inc cx
+&#x539F;&#x56E0;&#xFF1A; [CX] == 1 &#x65F6;&#x518D;&#x51CF;&#x4E00;&#x5F97;0&#xFF0C;&#x8DF3;&#x51FA;&#x5FAA;&#x73AF;&#xFF0C;&#x5E76;&#x672A;&#x627E;&#x5230;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7684;&#x6570;&#x636E;&#x3002; &#x5F53;&#x51CF;&#x4E00;&#x5F97;&#x5230;-1&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x624D;&#x662F;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7684; 0 &#x6570;&#x636E;&#x3002;</p>
+</blockquote>
+<h2 id="&#x4E00;&#x4E9B;&#x6CE8;&#x610F;&#x4E8B;&#x9879;"><a name="&#x4E00;&#x4E9B;&#x6CE8;&#x610F;&#x4E8B;&#x9879;" class="plugin-anchor" href="#&#x4E00;&#x4E9B;&#x6CE8;&#x610F;&#x4E8B;&#x9879;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E00;&#x4E9B;&#x6CE8;&#x610F;&#x4E8B;&#x9879;</h2>
+<h3 id="&#x6839;&#x636E;&#x4F4D;&#x79FB;&#x8FDB;&#x884C;&#x8F6C;&#x79FB;&#x7684;&#x610F;&#x4E49;"><a name="&#x6839;&#x636E;&#x4F4D;&#x79FB;&#x8FDB;&#x884C;&#x8F6C;&#x79FB;&#x7684;&#x610F;&#x4E49;" class="plugin-anchor" href="#&#x6839;&#x636E;&#x4F4D;&#x79FB;&#x8FDB;&#x884C;&#x8F6C;&#x79FB;&#x7684;&#x610F;&#x4E49;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6839;&#x636E;&#x4F4D;&#x79FB;&#x8FDB;&#x884C;&#x8F6C;&#x79FB;&#x7684;&#x610F;&#x4E49;</h3>
+<p>&#x8FD9;&#x6837;&#x8BBE;&#x8BA1;&#x662F;&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x7A0B;&#x5E8F;&#x6BB5;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x6D6E;&#x52A8;&#x88C5;&#x914D;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x524D;&#x9762;&#x63D0;&#x5230;&#xFF0C;&#x7A0B;&#x5E8F;&#x6240;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x7684;&#x7A7A;&#x95F4;&#x7531;&#x8BA1;&#x7B97;&#x673A;&#x5728;&#x8FD0;&#x884C;&#x7A0B;&#x5E8F;&#x65F6;&#x9884;&#x5148;&#x56FA;&#x5B9A;&#x5206;&#x914D;&#x4E00;&#x5757;&#x7A7A;&#x95F2;&#x53EF;&#x7528;&#x7684;&#x7A7A;&#x95F4;&#xFF0C;&#x8FD9;&#x6BB5;&#x7A7A;&#x95F4;&#x7684;&#x5730;&#x5740;&#x5E76;&#x4E0D;&#x56FA;&#x5B9A;&#x3002;&#x8FD9;&#x6837;&#x8BBE;&#x8BA1;&#x53EF;&#x4EE5;&#x4FDD;&#x8BC1;&#x65E0;&#x8BBA;&#x5982;&#x4F55;&#x7A0B;&#x5E8F;&#x90FD;&#x53EF;&#x4EE5;&#x6B63;&#x5E38;&#x8FD0;&#x884C;&#xFF0C;&#x56E0;&#x4E3A;&#x8F6C;&#x79FB;&#x6307;&#x4EE4;&#x7684;&#x76F8;&#x5BF9;&#x4F4D;&#x7F6E;&#x6C38;&#x8FDC;&#x4E0D;&#x53D8;&#x3002;</p>
+<h3 id="&#x7F16;&#x8BD1;&#x5668;&#x5BF9;&#x8F6C;&#x79FB;&#x4F4D;&#x79FB;&#x8D85;&#x754C;&#x7684;&#x68C0;&#x6D4B;"><a name="&#x7F16;&#x8BD1;&#x5668;&#x5BF9;&#x8F6C;&#x79FB;&#x4F4D;&#x79FB;&#x8D85;&#x754C;&#x7684;&#x68C0;&#x6D4B;" class="plugin-anchor" href="#&#x7F16;&#x8BD1;&#x5668;&#x5BF9;&#x8F6C;&#x79FB;&#x4F4D;&#x79FB;&#x8D85;&#x754C;&#x7684;&#x68C0;&#x6D4B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7F16;&#x8BD1;&#x5668;&#x5BF9;&#x8F6C;&#x79FB;&#x4F4D;&#x79FB;&#x8D85;&#x754C;&#x7684;&#x68C0;&#x6D4B;</h3>
+<p>&#x6CE8;&#x610F;&#x6BCF;&#x6761;&#x6307;&#x4EE4;&#x5141;&#x8BB8;&#x7684;&#x6700;&#x5927;&#x8F6C;&#x79FB;&#x8303;&#x56F4;&#xFF0C;&#x8F6C;&#x79FB;&#x8303;&#x56F4;&#x8D85;&#x754C;&#x4F1A;&#x5F15;&#x53D1;&#x7F16;&#x8BD1;&#x5668;&#x62A5;&#x9519;&#x3002;&#x5F62;&#x5982; <code>jmp 2000:0100</code> &#x53EA;&#x80FD;&#x5728; <code>debug</code> &#x4E2D;&#x4F7F;&#x7528;&#xFF0C;&#x4E0D;&#x80FD;&#x7528;&#x4E8E;&#x7F16;&#x8BD1;&#x5668;&#x7F16;&#x8BD1;&#x7684;&#x6E90;&#x7801;&#x4E2D;&#x3002;</p>
 <footer class="page-footer"><span class="copyright">&#xA9; 2018  kmahyyg <16604643+kmahyyg@users.noreply.github.com>. All rights reserved.</16604643+kmahyyg@users.noreply.github.com></span><span class="footer-modification"><span id="busuanzi_container_site_uv" style="display:none">&#x672C;&#x7AD9;&#x8BBF;&#x5BA2;&#x6570; <span id="busuanzi_value_site_uv"></span> &#x4EBA;&#x6B21;</span></span></footer><script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
                                 
                                 </section>
@@ -762,7 +791,7 @@ inc bx</p>
                 </a>
                 
                 
-                <a href="transfer_note.html" class="navigation navigation-next " aria-label="Next page: 3.10 转移指令(4): 转移指令的注意事项">
+                <a href="../ramndata/" class="navigation navigation-next " aria-label="Next page: Chapter 4 - 内存地址定位与数据处理">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -773,7 +802,7 @@ inc bx</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.9 转移指令(3): JCXZ & LOOP","level":"1.4.9","depth":2,"next":{"title":"3.10 转移指令(4): 转移指令的注意事项","level":"1.4.10","depth":2,"path":"asmcommands/transfer_note.md","ref":"asmcommands/transfer_note.md","articles":[]},"previous":{"title":"3.8 转移指令(2): JMP","level":"1.4.8","depth":2,"path":"asmcommands/transfer_jmp.md","ref":"asmcommands/transfer_jmp.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","anchors","multipart","-highlight","prism","prism-themes","page-footer-copyright"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-duotone-light.css"]},"disqus":{"useIdentifier":false,"shortName":"asm-kmahyyg"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"page-footer-copyright":{},"prism-themes":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"kmahyyg <16604643+kmahyyg@users.noreply.github.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"none","variables":{},"title":"汇编语言程序设计","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"About Me":"https://www.kmahyyg.xyz/about","My Blog":"https://www.kmahyyg.xyz"}},"gitbook":"*","description":"Learning Notes about Assembly Language","extension":null},"file":{"path":"asmcommands/jcxzNloop.md","mtime":"2018-08-13T04:01:15.138Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-13T04:02:07.646Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3.9 转移指令(3): JCXZ & LOOP","level":"1.4.9","depth":2,"next":{"title":"Chapter 4 - 内存地址定位与数据处理","level":"1.5","depth":1,"path":"ramndata/README.md","ref":"ramndata/README.md","articles":[{"title":"4.1 AND OR 与 字符串","level":"1.5.1","depth":2,"path":"ramndata/andorstr.md","ref":"ramndata/andorstr.md","articles":[]},{"title":"4.2 更加灵活的内存单元定位方法","level":"1.5.2","depth":2,"path":"ramndata/bxPidata.md","ref":"ramndata/bxPidata.md","articles":[]},{"title":"4.3 数据定位及位置表达","level":"1.5.3","depth":2,"path":"ramndata/regnsreg.md","ref":"ramndata/regnsreg.md","articles":[]},{"title":"4.4 数据处理数据的长度及综合应用","level":"1.5.4","depth":2,"path":"ramndata/lengthodata.md","ref":"ramndata/lengthodata.md","articles":[]}]},"previous":{"title":"3.8 转移指令(2): JMP","level":"1.4.8","depth":2,"path":"asmcommands/transfer_jmp.md","ref":"asmcommands/transfer_jmp.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","anchors","multipart","-highlight","prism","prism-themes","page-footer-copyright"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-duotone-light.css"]},"disqus":{"useIdentifier":false,"shortName":"asm-kmahyyg"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"page-footer-copyright":{},"prism-themes":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"kmahyyg <16604643+kmahyyg@users.noreply.github.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"none","variables":{},"title":"汇编语言程序设计","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"About Me":"https://www.kmahyyg.xyz/about","My Blog":"https://www.kmahyyg.xyz"}},"gitbook":"*","description":"Learning Notes about Assembly Language","extension":null},"file":{"path":"asmcommands/jcxzNloop.md","mtime":"2018-08-13T06:15:57.182Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-13T06:16:52.265Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
