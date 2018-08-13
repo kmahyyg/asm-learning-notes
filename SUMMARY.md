@@ -22,7 +22,6 @@
   - [3.7 转移指令(1): 操作符 OFFSET](asmcommands/transfer_offset.md)
   - [3.8 转移指令(2): JMP](asmcommands/transfer_jmp.md)
   - [3.9 转移指令(3): JCXZ & LOOP](asmcommands/jcxzNloop.md)
-  - [3.10 转移指令(4): 转移指令的注意事项](asmcommands/transfer_note.md)
 
 * [Chapter 4 - 内存地址定位与数据处理](ramndata/README.md)
   - [4.1 AND OR 与 字符串](ramndata/andorstr.md)
@@ -37,6 +36,7 @@
   - [实验四：编写、调试具有多个端的程序](exps/exp4-multisegment.md)
   - [实验五：更加灵活的内存单元定位](exps/exp5-doubleloop.md)
   - [实验六：结构化数据访问应用](exps/exp6-strudata.md)
+  - [实验七：位移指令](exps/exp7-transfer.md)
   
 * [Reference: 附注](README.md)
   - [Intel 系列微处理器的 3 种工作模式](register/ref_tb1.md)
