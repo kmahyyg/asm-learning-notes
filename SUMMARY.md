@@ -39,8 +39,8 @@
   - [实验七：位移指令](exps/exp7-transfer.md)
   
 * [Reference: 附注](README.md)
-  - [Intel 系列微处理器的 3 种工作模式](register/ref_tb1.md)
-  - [补码表示与重码问题](register/ref_tb2.md)
-  - [MASM 编译器对 JMP 的相关处理](asmcommands/ref_tb3.md)
-  - [用栈传递参数](ramndata/ref_tb4.md)
-  - [除法溢出避免公式证明](ramndata/ref_tb5.md)
+  - [1 Intel 系列微处理器的 3 种工作模式](register/ref_tb1.md)
+  - [2 补码表示与重码问题](register/ref_tb2.md)
+  - [3 MASM 编译器对 JMP 的相关处理](asmcommands/ref_tb3.md)
+  - [4 用栈传递参数](ramndata/ref_tb4.md)
+  - [5 除法溢出避免公式证明](ramndata/ref_tb5.md)
