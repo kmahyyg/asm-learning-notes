@@ -539,6 +539,90 @@
             
         </li>
     
+        <li class="chapter " data-level="1.7" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Reference: 附注
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../register/ref_tb1.html">
+            
+                <a href="../register/ref_tb1.html">
+            
+                    
+                    Intel 系列微处理器的 3 种工作模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../register/ref_tb2.html">
+            
+                <a href="../register/ref_tb2.html">
+            
+                    
+                    补码表示与重码问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="ref_tb3.html">
+            
+                <a href="ref_tb3.html">
+            
+                    
+                    MASM 编译器对 JMP 的相关处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../ramndata/ref_tb4.html">
+            
+                <a href="../ramndata/ref_tb4.html">
+            
+                    
+                    用栈传递参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../ramndata/ref_tb5.html">
+            
+                <a href="../ramndata/ref_tb5.html">
+            
+                    
+                    除法溢出避免公式证明
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
     
 
@@ -585,6 +669,67 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="38-&#x8F6C;&#x79FB;&#x6307;&#x4EE4;2-jmp"><a name="38-&#x8F6C;&#x79FB;&#x6307;&#x4EE4;2-jmp" class="plugin-anchor" href="#38-&#x8F6C;&#x79FB;&#x6307;&#x4EE4;2-jmp"><i class="fa fa-link" aria-hidden="true"></i></a>3.8 &#x8F6C;&#x79FB;&#x6307;&#x4EE4;(2): JMP</h1>
+<h2 id="jmp-&#x65E0;&#x6761;&#x4EF6;&#x8F6C;&#x79FB;&#x6307;&#x4EE4;"><a name="jmp-&#x65E0;&#x6761;&#x4EF6;&#x8F6C;&#x79FB;&#x6307;&#x4EE4;" class="plugin-anchor" href="#jmp-&#x65E0;&#x6761;&#x4EF6;&#x8F6C;&#x79FB;&#x6307;&#x4EE4;"><i class="fa fa-link" aria-hidden="true"></i></a>JMP &#x65E0;&#x6761;&#x4EF6;&#x8F6C;&#x79FB;&#x6307;&#x4EE4;</h2>
+<p>JMP&#xFF0C;&#x65E0;&#x6761;&#x4EF6;&#x8F6C;&#x79FB;&#x6307;&#x4EE4;&#xFF0C;&#x53EF;&#x4EE5;&#x4FEE;&#x6539; CS &#x548C; IP, JMP &#x6307;&#x4EE4;&#x9700;&#x8981;&#x7ED9;&#x51FA;&#x4E24;&#x79CD;&#x4FE1;&#x606F;&#xFF1A;</p>
+<ul>
+<li>&#x8F6C;&#x79FB;&#x7684;&#x76EE;&#x7684;&#x5730;&#x5740;</li>
+<li>&#x8F6C;&#x79FB;&#x7684;&#x8DDD;&#x79BB;&#xFF08;&#x6BB5;&#x95F4;&#x8F6C;&#x79FB;&#xFF0C;&#x6BB5;&#x5185;&#x77ED;&#x8F6C;&#x79FB;&#xFF0C;&#x6BB5;&#x5185;&#x8FD1;&#x8F6C;&#x79FB;&#xFF09;</li>
+</ul>
+<h2 id="&#x6267;&#x884C;-jmp-&#x8F6C;&#x79FB;&#x6307;&#x4EE4;&#x7684;&#x57FA;&#x672C;&#x539F;&#x7406;"><a name="&#x6267;&#x884C;-jmp-&#x8F6C;&#x79FB;&#x6307;&#x4EE4;&#x7684;&#x57FA;&#x672C;&#x539F;&#x7406;" class="plugin-anchor" href="#&#x6267;&#x884C;-jmp-&#x8F6C;&#x79FB;&#x6307;&#x4EE4;&#x7684;&#x57FA;&#x672C;&#x539F;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6267;&#x884C; JMP &#x8F6C;&#x79FB;&#x6307;&#x4EE4;&#x7684;&#x57FA;&#x672C;&#x539F;&#x7406;</h2>
+<p><img src="../assets/asmcommands/jmp_tb91.png" alt="code 9-1-1"></p>
+<p><img src="../assets/asmcommands/jmp_tb92.png" alt="code 9-1-2"></p>
+<p>&#x4ED4;&#x7EC6;&#x89C2;&#x5BDF;&#x8FD9;&#x4E24;&#x5F20;&#x56FE;&#x7247;&#xFF0C;&#x4F60;&#x53D1;&#x73B0;&#x4E86;&#x4EC0;&#x4E48;&#xFF1F;</p>
+<blockquote>
+<p>&#x9664;&#x4E86; JMP &#x6307;&#x4EE4;&#x4E4B;&#x5916;&#xFF0C;&#x5176;&#x4ED6;&#x7684;&#x6307;&#x4EE4;&#x90FD;&#x63D0;&#x4F9B;&#x4E86;&#x9700;&#x8981;&#x5904;&#x7406;&#x7684;&#x6570;&#x636E;&#x6216;&#x5730;&#x5740;&#x5BF9;&#x5E94;&#x7684; IDATA(&#x7ACB;&#x5373;&#x6570;)&#xFF0C;&#x5E76;&#x5728;&#x673A;&#x5668;&#x7801;&#x4E2D;&#x4F53;&#x73B0;&#x3002;&#x800C;&#x56FE;&#x4E2D;&#x4E0D;&#x540C;&#x7684;&#x4E24;&#x6761;&#x7279;&#x5B9A;&#x7684; JMP &#x6307;&#x4EE4;&#xFF0C;&#x673A;&#x5668;&#x7801;&#x76F8;&#x540C;&#x3002;<code>JMP 0008</code> &#x548C; <code>JMP 000B</code> &#x7684; &#x673A;&#x5668;&#x7801;&#x90FD;&#x662F; <code>EB 03</code>&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x8FD9;&#x4E2A;&#x673A;&#x5668;&#x7801;&#x4E2D;&#x6CA1;&#x6709;&#x5305;&#x542B;&#x76EE;&#x7684;&#x5730;&#x5740;&#x3002;</p>
+</blockquote>
+<p>&#x6CA1;&#x6709;&#x76EE;&#x7684;&#x5730;&#x5740;&#xFF0C;&#x90A3; CPU &#x6839;&#x636E;&#x4EC0;&#x4E48;&#x8FDB;&#x884C;&#x8F6C;&#x79FB;&#x5462;&#xFF1F;&#x8F6C;&#x79FB;&#x5230;&#x54EA;&#x91CC;&#x5462;&#xFF1F;</p>
+<p>&#x6211;&#x4EEC;&#x5148;&#x6765;&#x56DE;&#x987E;&#x4E00;&#x4E0B; CPU &#x8BFB;&#x53D6;&#x548C;&#x6267;&#x884C;&#x6307;&#x4EE4;&#x7684;&#x8FC7;&#x7A0B;&#xFF1A;&#xFF08;&#x4EE5; &#x56FE;2&#x4E2D;&#x7684;&#x7A0B;&#x5E8F;&#x4EE3;&#x7801; &#x4E3A;&#x4F8B;&#xFF09;</p>
+<ol>
+<li>(CS) == 2AFBH, (IP) == 00006H, CS:IP &#x6307;&#x5411; EB 03</li>
+<li>&#x8BFB;&#x53D6;&#x6307;&#x4EE4;&#x5BF9;&#x5E94;&#x673A;&#x5668;&#x7801; EB 03 &#x8FDB;&#x5165; IR &#x6307;&#x4EE4;&#x7F13;&#x51B2;&#x5668;</li>
+<li>(IP) = (IP) + &#x6240;&#x8BFB;&#x53D6;&#x7684;&#x6307;&#x4EE4;&#x957F;&#x5EA6; = (IP) + 2 = 00008H&#xFF0C;CS:IP &#x6307;&#x5411; <code>add ax,1</code></li>
+<li>CPU &#x6267;&#x884C; IR &#x6307;&#x4EE4;&#x7F13;&#x51B2;&#x5668;&#x4E2D;&#x7684;&#x6307;&#x4EE4; EB 03</li>
+<li>&#x6307;&#x4EE4; EB 03 &#x6267;&#x884C;&#x540E;&#xFF0C; (IP) == 0000BH, CS:IP &#x6307;&#x5411; <code>inc ax</code></li>
+</ol>
+<p>&#x8FD9;&#x6837;&#xFF0C;&#x6211;&#x4EEC;&#x4FBF;&#x786E;&#x5B9A;&#x4E86; CPU &#x5728;&#x63A5;&#x6536; EB 03 &#x6307;&#x4EE4;&#x540E;&#x4FEE;&#x6539;&#x4E86; IP &#x7684;&#x503C;&#x3002;&#x4ED4;&#x7EC6;&#x89C2;&#x5BDF;&#x56FE;&#x7247;&#xFF0C;&#x4F60;&#x4F1A;&#x53D1;&#x73B0;&#xFF1A;CPU &#x6267;&#x884C; EB 03 &#x4E4B;&#x65F6;&#xFF0C; (IP)== 00008H&#xFF0C;&#x5C06; IP + 3 ( <code>EB 03</code> &#x4E2D;&#x7684; 03)&#xFF0C;&#x6B63;&#x597D;&#x662F; 0000BH&#x3002;
+&#x6307;&#x4EE4; <code>EB 03</code> &#x6CA1;&#x6709;&#x544A;&#x8BC9; CPU &#x5E94;&#x5F53;&#x8F6C;&#x79FB;&#x5230;&#x7684;&#x76EE;&#x7684;&#x5730;&#x5740;&#xFF0C;&#x5374;&#x544A;&#x8BC9;&#x4E86; CPU &#x5E94;&#x5F53;&#x8F6C;&#x79FB;&#x7684;&#x4F4D;&#x79FB;&#xFF0C;&#x4E5F;&#x5C31;&#x662F; 3&#xFF0C;&#x5373;&#x5C06;&#x5F53;&#x524D;&#x7684; IP &#x5411;&#x540E;&#x79FB;&#x52A8; 3 &#x4E2A;&#x5B57;&#x8282;&#x3002;&#x56E0;&#x4E3A;&#x56FE; 1&#x3001;2 &#x4E2D;&#x7684;&#x7A0B;&#x5E8F;&#x6240;&#x5199;&#x7684; jmp &#x6307;&#x4EE4;&#x8F6C;&#x79FB;&#x7684;&#x4F4D;&#x79FB;&#x76F8;&#x540C;&#xFF0C;&#x90FD;&#x662F;&#x5411;&#x540E; 3 &#x4E2A;&#x5B57;&#x8282;&#xFF0C;&#x6240;&#x4EE5;&#x5B83;&#x4EEC;&#x7684;&#x673A;&#x5668;&#x7801;&#x90FD;&#x662F; <code>EB 03</code>&#x3002;</p>
+<p>&#x8FD9;&#x4E2A;&#x4F4D;&#x79FB;&#xFF0C;&#x7531;&#x7F16;&#x8BD1;&#x5668;&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#x8BA1;&#x7B97;&#x800C;&#x5F97;&#xFF0C;&#x4F7F;&#x7528;&#x8865;&#x7801;&#x8868;&#x793A;&#x3002;</p>
+<blockquote>
+<p>&#x8865;&#x7801;&#xFF0C;&#x5BF9;&#x4E8E;&#x81EA;&#x7136;&#x6570;&#xFF0C;&#x8865;&#x7801; = &#x539F;&#x7801;&#xFF0C;&#x5BF9;&#x4E8E;&#x8D1F;&#x6570;&#xFF0C;&#x8865;&#x7801; = &#x539F;&#x7801;&#x6309;&#x4F4D;&#x53D6;&#x53CD; + 1&#x3002;</p>
+</blockquote>
+<h2 id="jmp-&#x6307;&#x4EE4;&#x7684;&#x57FA;&#x672C;&#x5E94;&#x7528;&#x683C;&#x5F0F;"><a name="jmp-&#x6307;&#x4EE4;&#x7684;&#x57FA;&#x672C;&#x5E94;&#x7528;&#x683C;&#x5F0F;" class="plugin-anchor" href="#jmp-&#x6307;&#x4EE4;&#x7684;&#x57FA;&#x672C;&#x5E94;&#x7528;&#x683C;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>JMP &#x6307;&#x4EE4;&#x7684;&#x57FA;&#x672C;&#x5E94;&#x7528;&#x683C;&#x5F0F;</h2>
+<h3 id="&#x4F9D;&#x636E;&#x4F4D;&#x79FB;"><a name="&#x4F9D;&#x636E;&#x4F4D;&#x79FB;" class="plugin-anchor" href="#&#x4F9D;&#x636E;&#x4F4D;&#x79FB;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F9D;&#x636E;&#x4F4D;&#x79FB;</h3>
+<p><code>jmp short &#x6807;&#x53F7;</code>&#xFF0C;&#x6BB5;&#x5185;&#x77ED;&#x8F6C;&#x79FB;&#xFF0C;&#x5BF9; IP &#x7684;&#x4FEE;&#x6539;&#x8303;&#x56F4;&#x4E3A; -128&#xFF5E;127&#x3002;&#x6307;&#x4EE4;&#x4E2D;&#x7684;&#x6807;&#x53F7;&#x662F;&#x4EE3;&#x7801;&#x6BB5;&#x4E2D;&#x7684;&#x6807;&#x53F7;&#xFF0C;&#x6307;&#x660E;&#x4E86;&#x6307;&#x4EE4;&#x8981;&#x8F6C;&#x79FB;&#x7684;&#x76EE;&#x7684;&#x5730;&#xFF0C;&#x8F6C;&#x79FB;&#x6307;&#x4EE4;&#x7ED3;&#x675F;&#x540E;&#xFF0C;CS:IP &#x5E94;&#x5F53;&#x6307;&#x5411;&#x6807;&#x53F7;&#x5904;&#x7684;&#x6307;&#x4EE4;&#x3002;</p>
+<p>&#x5B9E;&#x9645;&#x529F;&#x80FD;&#xFF1A;(IP) = (IP) + 8 &#x4F4D;&#x4F4D;&#x79FB;</p>
+<p>(1) <strong>8 &#x4F4D;&#x4F4D;&#x79FB; = &#x6807;&#x53F7;&#x5904;&#x7684;&#x5730;&#x5740; - jmp &#x6307;&#x4EE4;&#x540E;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x8282;&#x7684;&#x5730;&#x5740;&#xFF0C;</strong>
+(2) <code>short</code> &#x6307;&#x660E;&#x6B64;&#x5904;&#x7684;&#x4F4D;&#x79FB; &#x4E3A; 8 &#x4F4D;&#x4F4D;&#x79FB;&#xFF0C;&#x8865;&#x7801;&#x8868;&#x793A;&#xFF0C;&#x7531;&#x7F16;&#x8BD1;&#x5668;&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#x8BA1;&#x7B97;&#x800C;&#x5F97;</p>
+<p><code>jmp near ptr &#x6807;&#x53F7;</code>&#xFF0C;&#x6BB5;&#x5185;&#x8FD1;&#x8F6C;&#x79FB;&#xFF0C;&#x5BF9; IP &#x7684;&#x4FEE;&#x6539;&#x8303;&#x56F4;&#x4E3A; -32768&#xFF5E;32767&#x3002;&#x6307;&#x4EE4;&#x4E2D;&#x7684;&#x6807;&#x53F7;&#x662F;&#x4EE3;&#x7801;&#x6BB5;&#x4E2D;&#x7684;&#x6807;&#x53F7;&#xFF0C;&#x6307;&#x660E;&#x4E86;&#x6307;&#x4EE4;&#x8981;&#x8F6C;&#x79FB;&#x7684;&#x76EE;&#x7684;&#x5730;&#xFF0C;&#x8F6C;&#x79FB;&#x6307;&#x4EE4;&#x7ED3;&#x675F;&#x540E;&#xFF0C;CS:IP &#x5E94;&#x5F53;&#x6307;&#x5411;&#x6807;&#x53F7;&#x5904;&#x7684;&#x6307;&#x4EE4;&#x3002;</p>
+<p>&#x5B9E;&#x9645;&#x529F;&#x80FD;&#xFF1A;(IP) = (IP) + 16 &#x4F4D;&#x4F4D;&#x79FB;</p>
+<p>(1) <strong>16 &#x4F4D;&#x4F4D;&#x79FB; = &#x6807;&#x53F7;&#x5904;&#x7684;&#x5730;&#x5740; - jmp &#x6307;&#x4EE4;&#x540E;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x8282;&#x7684;&#x5730;&#x5740;&#xFF0C;</strong>
+(2) <code>near ptr</code> &#x6307;&#x660E;&#x6B64;&#x5904;&#x7684;&#x4F4D;&#x79FB; &#x4E3A; 16 &#x4F4D;&#x4F4D;&#x79FB;&#xFF0C;&#x8865;&#x7801;&#x8868;&#x793A;&#xFF0C;&#x7531;&#x7F16;&#x8BD1;&#x5668;&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#x8BA1;&#x7B97;&#x800C;&#x5F97;</p>
+<h3 id="&#x8F6C;&#x79FB;&#x7684;&#x76EE;&#x7684;&#x5730;&#x5740;&#x5728;&#x6307;&#x4EE4;&#x4E2D;"><a name="&#x8F6C;&#x79FB;&#x7684;&#x76EE;&#x7684;&#x5730;&#x5740;&#x5728;&#x6307;&#x4EE4;&#x4E2D;" class="plugin-anchor" href="#&#x8F6C;&#x79FB;&#x7684;&#x76EE;&#x7684;&#x5730;&#x5740;&#x5728;&#x6307;&#x4EE4;&#x4E2D;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8F6C;&#x79FB;&#x7684;&#x76EE;&#x7684;&#x5730;&#x5740;&#x5728;&#x6307;&#x4EE4;&#x4E2D;</h3>
+<p><code>jmp far ptr &#x6807;&#x53F7;</code> &#x5B9E;&#x73B0;&#x7684;&#x6BB5;&#x95F4;&#x8F6C;&#x79FB;&#xFF0C;&#x5373;&#x8FDC;&#x8F6C;&#x79FB;&#xFF0C;&#x6307;&#x660E;&#x4F7F;&#x7528;&#x6307;&#x4EE4;&#x7528;&#x7684;&#x6807;&#x53F7;&#x7684;&#x6BB5;&#x5730;&#x5740;&#x548C;&#x504F;&#x79FB;&#x5730;&#x5740;&#x4FEE;&#x6539; CS &#x548C; IP&#x3002;
+CS = &#x6807;&#x53F7;&#x6240;&#x5728;&#x6BB5;&#x7684;&#x6BB5;&#x5730;&#x5740; &#xFF0C; IP = &#x6807;&#x53F7;&#x5728;&#x6BB5;&#x4E2D;&#x7684;&#x504F;&#x79FB;&#x5730;&#x5740;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre class="language-"><code class="lang-asm6502">assume cs:codesg
+codesg segment 
+    start:  mov ax,<span class="token decimalnumber string">0</span>
+            mov bx,<span class="token decimalnumber string">0</span>
+            <span class="token opcode property">jmp</span> far ptr s
+            db <span class="token decimalnumber string">256</span> dup (<span class="token decimalnumber string">0</span>)
+        s:  add ax,<span class="token decimalnumber string">1</span>
+            <span class="token opcode property">inc</span> ax
+codesg ends
+end start
+</code></pre>
+<p>&#x7F16;&#x8BD1;&#x540E;&#x5F97;&#x5230;&#x7684;&#x673A;&#x5668;&#x7801;&#x5927;&#x81F4;&#x5982;&#x4E0B;&#xFF08;&#x6B64;&#x5904;&#x76F4;&#x63A5;&#x501F;&#x7528;&#x53C2;&#x8003;&#x6559;&#x6750;&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#xFF09;&#xFF1A;</p>
+<pre class="language-"><code>0BBD:0006 EA 0B 01 BD 0B  JMP 0BBD:010B
+</code></pre><p>&#x548C;&#x6570;&#x636E;&#x4FDD;&#x5B58;&#x7684;&#x65B9;&#x6CD5;&#x4E00;&#x6837;&#xFF0C;&#x9AD8;&#x4F4D;&#x5730;&#x5740;(<code>0B BD</code>)&#x4FDD;&#x5B58;&#x9AD8;&#x4F4D;&#x6570;&#x636E;(&#x6BB5;&#x5730;&#x5740;)&#xFF0C;&#x4F4E;&#x4F4D;&#x5730;&#x5740;(<code>01 0B</code>)&#x4FDD;&#x5B58;&#x4F4E;&#x4F4D;&#x6570;&#x636E;(&#x504F;&#x79FB;&#x5730;&#x5740;)&#x3002;</p>
+<blockquote>
+<p>&#x5BF9;&#x4E8E; <code>jmp X &#x6807;&#x53F7;</code> &#x7684;&#x6DF1;&#x5165;&#x5206;&#x6790;&#x8BF7;&#x53C2;&#x770B;&#x53C2;&#x8003;&#x6559;&#x6750;&#x9644;&#x6CE8; 3&#xFF0C;&#x6216;&#x70B9;&#x51FB; <a href="ref_tb3.html">&#x6B64;&#x5904;</a> &#x3002;</p>
+</blockquote>
+<h3 id="&#x8F6C;&#x79FB;&#x7684;&#x76EE;&#x7684;&#x5730;&#x5740;&#x5728;&#x5BC4;&#x5B58;&#x5668;&#x4E2D;"><a name="&#x8F6C;&#x79FB;&#x7684;&#x76EE;&#x7684;&#x5730;&#x5740;&#x5728;&#x5BC4;&#x5B58;&#x5668;&#x4E2D;" class="plugin-anchor" href="#&#x8F6C;&#x79FB;&#x7684;&#x76EE;&#x7684;&#x5730;&#x5740;&#x5728;&#x5BC4;&#x5B58;&#x5668;&#x4E2D;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8F6C;&#x79FB;&#x7684;&#x76EE;&#x7684;&#x5730;&#x5740;&#x5728;&#x5BC4;&#x5B58;&#x5668;&#x4E2D;</h3>
+<h3 id="&#x8F6C;&#x79FB;&#x7684;&#x76EE;&#x7684;&#x5730;&#x5740;&#x5728;&#x5185;&#x5B58;&#x4E2D;"><a name="&#x8F6C;&#x79FB;&#x7684;&#x76EE;&#x7684;&#x5730;&#x5740;&#x5728;&#x5185;&#x5B58;&#x4E2D;" class="plugin-anchor" href="#&#x8F6C;&#x79FB;&#x7684;&#x76EE;&#x7684;&#x5730;&#x5740;&#x5728;&#x5185;&#x5B58;&#x4E2D;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8F6C;&#x79FB;&#x7684;&#x76EE;&#x7684;&#x5730;&#x5740;&#x5728;&#x5185;&#x5B58;&#x4E2D;</h3>
 <footer class="page-footer"><span class="copyright">&#xA9; 2018  kmahyyg <16604643+kmahyyg@users.noreply.github.com>. All rights reserved.</16604643+kmahyyg@users.noreply.github.com></span><span class="footer-modification"><span id="busuanzi_container_site_uv" style="display:none">&#x672C;&#x7AD9;&#x8BBF;&#x5BA2;&#x6570; <span id="busuanzi_value_site_uv"></span> &#x4EBA;&#x6B21;</span></span></footer><script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
                                 
                                 </section>
@@ -628,7 +773,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.8 转移指令(2): JMP","level":"1.4.8","depth":2,"next":{"title":"Chapter 4 - 内存地址定位与数据处理","level":"1.5","depth":1,"path":"ramndata/README.md","ref":"ramndata/README.md","articles":[{"title":"4.1 AND OR 与 字符串","level":"1.5.1","depth":2,"path":"ramndata/andorstr.md","ref":"ramndata/andorstr.md","articles":[]},{"title":"4.2 更加灵活的内存单元定位方法","level":"1.5.2","depth":2,"path":"ramndata/bxPidata.md","ref":"ramndata/bxPidata.md","articles":[]},{"title":"4.3 数据定位及位置表达","level":"1.5.3","depth":2,"path":"ramndata/regnsreg.md","ref":"ramndata/regnsreg.md","articles":[]},{"title":"4.4 数据处理数据的长度及综合应用","level":"1.5.4","depth":2,"path":"ramndata/lengthodata.md","ref":"ramndata/lengthodata.md","articles":[]}]},"previous":{"title":"3.7 转移指令(1): 操作符 OFFSET","level":"1.4.7","depth":2,"path":"asmcommands/transfer_offset.md","ref":"asmcommands/transfer_offset.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","anchors","multipart","-highlight","prism","prism-themes","page-footer-copyright"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-duotone-light.css"]},"disqus":{"useIdentifier":false,"shortName":"asm-kmahyyg"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"page-footer-copyright":{},"prism-themes":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"kmahyyg <16604643+kmahyyg@users.noreply.github.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"none","variables":{},"title":"汇编语言程序设计","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"About Me":"https://www.kmahyyg.xyz/about","My Blog":"https://www.kmahyyg.xyz"}},"gitbook":"*","description":"Learning Notes about Assembly Language","extension":null},"file":{"path":"asmcommands/transfer_jmp.md","mtime":"2018-08-12T16:05:14.417Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-12T16:06:15.838Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3.8 转移指令(2): JMP","level":"1.4.8","depth":2,"next":{"title":"Chapter 4 - 内存地址定位与数据处理","level":"1.5","depth":1,"path":"ramndata/README.md","ref":"ramndata/README.md","articles":[{"title":"4.1 AND OR 与 字符串","level":"1.5.1","depth":2,"path":"ramndata/andorstr.md","ref":"ramndata/andorstr.md","articles":[]},{"title":"4.2 更加灵活的内存单元定位方法","level":"1.5.2","depth":2,"path":"ramndata/bxPidata.md","ref":"ramndata/bxPidata.md","articles":[]},{"title":"4.3 数据定位及位置表达","level":"1.5.3","depth":2,"path":"ramndata/regnsreg.md","ref":"ramndata/regnsreg.md","articles":[]},{"title":"4.4 数据处理数据的长度及综合应用","level":"1.5.4","depth":2,"path":"ramndata/lengthodata.md","ref":"ramndata/lengthodata.md","articles":[]}]},"previous":{"title":"3.7 转移指令(1): 操作符 OFFSET","level":"1.4.7","depth":2,"path":"asmcommands/transfer_offset.md","ref":"asmcommands/transfer_offset.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","anchors","multipart","-highlight","prism","prism-themes","page-footer-copyright"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-duotone-light.css"]},"disqus":{"useIdentifier":false,"shortName":"asm-kmahyyg"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"page-footer-copyright":{},"prism-themes":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"kmahyyg <16604643+kmahyyg@users.noreply.github.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"none","variables":{},"title":"汇编语言程序设计","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"About Me":"https://www.kmahyyg.xyz/about","My Blog":"https://www.kmahyyg.xyz"}},"gitbook":"*","description":"Learning Notes about Assembly Language","extension":null},"file":{"path":"asmcommands/transfer_jmp.md","mtime":"2018-08-13T01:36:05.324Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-13T01:37:05.953Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
