@@ -82,8 +82,27 @@ end start
 
 ### 转移的目的地址在寄存器中
 
-
+`jmp <16 bits reg>` ，功能：(IP)==(16 Bits Reg)
 
 ### 转移的目的地址在内存中
+
+`jmp word ptr <memory unit addr>` 段内转移。
+
+功能：从内存单元地址处开始存放一个字，为转移的目的偏移地址。
+
+`jmp dword ptr <memory unit addr>` 段间转移。
+
+功能：从内存单元地址处开始存放两个字，高地址处的字为转移的目的段地址，低地址处为转移的目的偏移地址。
+
+(CS)=(内存单元地址+2)
+(IP)=(内存单元地址)
+
+```asm6502
+mov ax,0123h
+mov ds:[0],ax
+mov word ptr ds:[2],0
+jmp dword ptr ds:[0]
+```
+
 
 
