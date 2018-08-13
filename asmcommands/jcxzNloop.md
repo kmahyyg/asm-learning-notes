@@ -46,3 +46,29 @@ end start
 转移条件： **(CX) = (CX) - 1, (CX) != 0** 时转移到标号处执行。
 
 其余同 `jcxz` 指令。
+
+### Quiz 2: Fill in the blank
+
+补全下列程序，利用 `loop` 在 2000H 段查找第一个值为 0 的字节，找到后将它的偏移地址存储在 DX 中。
+
+```asm6502
+assume cs:codesg
+codesg segment
+    start:  mov ax,2000h
+            mov ds,ax
+            mov bx,0
+        s:  mov cl,[bx]
+            mov ch,0
+            ;(TODO)
+            inc bx
+            loop s
+       ok:  dec bx    ; dec = -1
+            mov dx,bx
+            mov ax,4c00h
+            int 21h
+codesg ends
+end start
+```
+
+> 答案： inc cx
+> 原因： [CX] == 1 时再减一得0，跳出循环，并未找到我们需要的数据。 当减一得到-1的时候，才是我们需要的 0 数据。
