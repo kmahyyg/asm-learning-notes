@@ -16,12 +16,13 @@
   - [3.1 MOV、ADD、SUB 指令](asmcommands/addsubmov.md)
   - [3.2 栈机制 与 PUSH、POP 指令](asmcommands/pushpop.md)
   - [3.3 第一个程序](asmcommands/helloworld.md)
-  - [3.4 \[BX\] 和 LOOP 指令](asmcommands/bxloop.md)]
+  - [3.4 \[BX\] 和 LOOP 指令](asmcommands/bxloop.md)
   - [3.5 包含多个段的程序](asmcommands/multisegment.md)
   - [3.6 DIV DD DUP 指令](asmcommands/divdddup.md)
   - [3.7 转移指令(1): 操作符 OFFSET](asmcommands/transfer_offset.md)
   - [3.8 转移指令(2): JMP](asmcommands/transfer_jmp.md)
   - [3.9 转移指令(3): JCXZ & LOOP](asmcommands/jcxzNloop.md)
+  - [3.10 转移指令(4): 转移指令的注意事项](asmcommands/transfer_note.md)
 
 * [Chapter 4 - 内存地址定位与数据处理](ramndata/README.md)
   - [4.1 AND OR 与 字符串](ramndata/andorstr.md)
