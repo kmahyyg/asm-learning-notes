@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>实验二：编程、编译、链接、跟踪 :star: · 汇编语言程序设计</title>
+        <title>7 80×25 显示缓冲区结构 · 汇编语言程序设计</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -73,10 +73,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="exp3-bxloop.html" />
     
-    
-    <link rel="prev" href="exp1-dosdbg.html" />
+    <link rel="prev" href="../ramndata/ref_ascii.html" />
     
 
     </head>
@@ -482,7 +480,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.6.2" data-path="exp2-firsttry.html">
+        <li class="chapter " data-level="1.6.2" data-path="exp2-firsttry.html">
             
                 <a href="exp2-firsttry.html">
             
@@ -657,7 +655,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.7" data-path="exp7-02ref.html">
+        <li class="chapter active" data-level="1.7.7" data-path="exp7-02ref.html">
             
                 <a href="exp7-02ref.html">
             
@@ -705,7 +703,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >实验二：编程、编译、链接、跟踪 :star:</a>
+        <a href=".." >7 80×25 显示缓冲区结构</a>
     </h1>
 </div>
 
@@ -720,19 +718,46 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x5B9E;&#x9A8C;&#x4E8C;&#xFF1A;&#x7F16;&#x7A0B;&#x3001;&#x7F16;&#x8BD1;&#x3001;&#x94FE;&#x63A5;&#x3001;&#x8DDF;&#x8E2A;-&#x2B50;&#xFE0F;"><a name="&#x5B9E;&#x9A8C;&#x4E8C;&#xFF1A;&#x7F16;&#x7A0B;&#x3001;&#x7F16;&#x8BD1;&#x3001;&#x94FE;&#x63A5;&#x3001;&#x8DDF;&#x8E2A;-&#x2B50;&#xFE0F;" class="plugin-anchor" href="#&#x5B9E;&#x9A8C;&#x4E8C;&#xFF1A;&#x7F16;&#x7A0B;&#x3001;&#x7F16;&#x8BD1;&#x3001;&#x94FE;&#x63A5;&#x3001;&#x8DDF;&#x8E2A;-&#x2B50;&#xFE0F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B9E;&#x9A8C;&#x4E8C;&#xFF1A;&#x7F16;&#x7A0B;&#x3001;&#x7F16;&#x8BD1;&#x3001;&#x94FE;&#x63A5;&#x3001;&#x8DDF;&#x8E2A; &#x2B50;&#xFE0F;</h1>
-<h2 id="&#x5B9E;&#x9A8C;&#x76EE;&#x7684;"><a name="&#x5B9E;&#x9A8C;&#x76EE;&#x7684;" class="plugin-anchor" href="#&#x5B9E;&#x9A8C;&#x76EE;&#x7684;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B9E;&#x9A8C;&#x76EE;&#x7684;</h2>
-<p>&#x901A;&#x8FC7;&#x4E4B;&#x524D;&#x7684;&#x7406;&#x8BBA;&#x94FA;&#x57AB;&#xFF0C;&#x8BF7;&#x4F60;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x5B9E;&#x9A8C;&#x5B8C;&#x6210;&#x4E00;&#x6B21;&#x6C47;&#x7F16;&#x8BED;&#x8A00;&#x4ECE;&#x6E90;&#x7801;&#x5230;&#x6267;&#x884C;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x5E76;&#x4F7F;&#x7528; <code>DEBUG</code> &#x8DDF;&#x8E2A;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x7684;&#x8FD0;&#x884C;&#x8FC7;&#x7A0B;&#x3002;</p>
-<h2 id="&#x5B9E;&#x9A8C;&#x9898;&#x76EE;"><a name="&#x5B9E;&#x9A8C;&#x9898;&#x76EE;" class="plugin-anchor" href="#&#x5B9E;&#x9A8C;&#x9898;&#x76EE;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B9E;&#x9A8C;&#x9898;&#x76EE;</h2>
-<p>&#x6839;&#x636E; <a href="../assets/code/exp2.asm">&#x6E90;&#x7801;</a>&#xFF0C;&#x8FDB;&#x884C;&#x7F16;&#x8BD1;&#x3001;&#x8FDE;&#x63A5;&#x3001;&#x8FD0;&#x884C;&#xFF0C;&#x5E76;&#x901A;&#x8FC7; <code>DEBUG</code> &#x8FFD;&#x8E2A;&#xFF0C;&#x67E5;&#x770B; PSP &#x4E2D;&#x7684;&#x5185;&#x5BB9;&#x3002;</p>
-<p>&#x63D0;&#x793A;&#xFF1A;PSP &#x4E2D;&#x7684; &#x5934;&#x4E24;&#x4E2A;&#x5B57;&#x8282;&#x662F; <code>CD 20</code> &#x3002;</p>
-<h2 id="&#x5B9E;&#x9A8C;&#x7ED3;&#x679C;&#x8BB0;&#x5F55;"><a name="&#x5B9E;&#x9A8C;&#x7ED3;&#x679C;&#x8BB0;&#x5F55;" class="plugin-anchor" href="#&#x5B9E;&#x9A8C;&#x7ED3;&#x679C;&#x8BB0;&#x5F55;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B9E;&#x9A8C;&#x7ED3;&#x679C;&#x8BB0;&#x5F55;</h2>
-<p><img src="../assets/exps/exp2/exp2-1.png" alt="source">  &#x5199;&#x5165;&#x6E90;&#x4EE3;&#x7801;</p>
-<p><img src="../assets/exps/exp2/exp2-2.png" alt="compile">  &#x7F16;&#x8BD1;</p>
-<p><img src="../assets/exps/exp2/exp2-3.png" alt="link">  &#x94FE;&#x63A5;</p>
-<p><img src="../assets/exps/exp2/exp2-4.png" alt="debugx">  &#x8C03;&#x8BD5;&#x5E76;&#x67E5;&#x770B; PSP</p>
-<h2 id="&#x5B9E;&#x9A8C;&#x53CD;&#x601D;&#x4EA4;&#x6D41;"><a name="&#x5B9E;&#x9A8C;&#x53CD;&#x601D;&#x4EA4;&#x6D41;" class="plugin-anchor" href="#&#x5B9E;&#x9A8C;&#x53CD;&#x601D;&#x4EA4;&#x6D41;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B9E;&#x9A8C;&#x53CD;&#x601D;&#x4EA4;&#x6D41;</h2>
-<p>&#x8BF7;&#x5728;&#x4E0B;&#x65B9;&#x63D0;&#x51FA;&#x4F60;&#x7684;&#x7591;&#x95EE;&#x3001;&#x89C2;&#x70B9;&#x3001;&#x770B;&#x6CD5;&#x3002;</p>
+                                <h1 id="&#x5B9E;&#x9A8C;-7-quiz-2-&#x53C2;&#x8003;&#xFF1A;-80&#xD7;25-&#x5F69;&#x8272;&#x5B57;&#x7B26;&#x6A21;&#x5F0F;&#x663E;&#x793A;&#x7F13;&#x51B2;&#x533A;&#x7ED3;&#x6784;"><a name="&#x5B9E;&#x9A8C;-7-quiz-2-&#x53C2;&#x8003;&#xFF1A;-80&#xD7;25-&#x5F69;&#x8272;&#x5B57;&#x7B26;&#x6A21;&#x5F0F;&#x663E;&#x793A;&#x7F13;&#x51B2;&#x533A;&#x7ED3;&#x6784;" class="plugin-anchor" href="#&#x5B9E;&#x9A8C;-7-quiz-2-&#x53C2;&#x8003;&#xFF1A;-80&#xD7;25-&#x5F69;&#x8272;&#x5B57;&#x7B26;&#x6A21;&#x5F0F;&#x663E;&#x793A;&#x7F13;&#x51B2;&#x533A;&#x7ED3;&#x6784;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B9E;&#x9A8C; 7 Quiz 2 &#x53C2;&#x8003;&#xFF1A; 80&#xD7;25 &#x5F69;&#x8272;&#x5B57;&#x7B26;&#x6A21;&#x5F0F;&#x663E;&#x793A;&#x7F13;&#x51B2;&#x533A;&#x7ED3;&#x6784;</h1>
+<h2 id="&#x663E;&#x793A;&#x7F13;&#x51B2;&#x533A;"><a name="&#x663E;&#x793A;&#x7F13;&#x51B2;&#x533A;" class="plugin-anchor" href="#&#x663E;&#x793A;&#x7F13;&#x51B2;&#x533A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x663E;&#x793A;&#x7F13;&#x51B2;&#x533A;</h2>
+<p>&#x5185;&#x5B58;&#x5730;&#x5740;&#x7A7A;&#x95F4;&#x4E2D; B8000H&#xFF5E;BFFFFH &#x5171;&#x8BA1; 32KB &#x7684;&#x7A7A;&#x95F4;&#xFF0C;&#x4E3A; 80&#xD7;25 &#x5F69;&#x8272;&#x5B57;&#x7B26;&#x6A21;&#x5F0F;&#x7684;&#x663E;&#x793A;&#x7F13;&#x51B2;&#x533A;&#x3002;&#x6B64;&#x533A;&#x57DF;&#x4E2D;&#x5199;&#x5165;&#x7684;&#x5185;&#x5BB9;&#x4F1A;&#x88AB;&#x7ACB;&#x5373;&#x5448;&#x73B0;&#x5728;&#x663E;&#x793A;&#x5668;&#x4E0A;&#x3002;</p>
+<p>&#x5728; 80&#xD7;25 &#x5F69;&#x8272;&#x5B57;&#x7B26;&#x6A21;&#x5F0F; &#x4E0B;&#xFF0C;&#x663E;&#x793A;&#x5668;&#x53EF;&#x4EE5;&#x663E;&#x793A; 25 &#x884C;&#xFF0C;&#x6BCF;&#x884C; 80 &#x4E2A;&#x5B57;&#x7B26;&#xFF0C;&#x6BCF;&#x4E2A;&#x5B57;&#x7B26;&#x53EF;&#x4EE5;&#x6709; 256 &#x79CD;&#x5C5E;&#x6027;&#xFF08;&#x80CC;&#x666F;&#x8272;&#x3001;&#x524D;&#x666F;&#x8272;&#x3001;&#x95EA;&#x70C1;&#x3001;&#x9AD8;&#x4EAE;&#x7B49;&#xFF09;&#x3002;</p>
+<p>&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x5728;&#x8FD9;&#x4E2A;&#x6A21;&#x5F0F;&#x4E0B;&#x5360;&#x7528; 2 Bytes&#xFF0C;&#x5B58;&#x653E;&#x5B57;&#x7B26;&#x7684; ASCII &#x7801;&#x548C;&#x5C5E;&#x6027;&#x3002;&#x4E00;&#x5C4F;&#x5185;&#x5BB9;&#x5728;&#x663E;&#x793A;&#x7F13;&#x51B2;&#x533A;&#x4E2D;&#x5171;&#x5360;&#x7528; 4000 Bytes.</p>
+<p>&#x663E;&#x793A;&#x7F13;&#x51B2;&#x533A;&#x5206;&#x4E3A; 8 &#x9875;&#xFF0C;&#x6BCF;&#x9875; 4 KB&#xFF0C;&#x663E;&#x793A;&#x5668;&#x53EF;&#x4EE5;&#x663E;&#x793A;&#x4EFB;&#x4F55;&#x4E00;&#x9875;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;&#x663E;&#x793A;&#x7B2C; 0 &#x9875;&#x7684;&#x5185;&#x5BB9;&#x3002;&#x7B49;&#x4EF7;&#x4E8E;&#xFF0C;&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B; B8000H~B8F9FH &#x4E2D;&#x7684; 4000 &#x4E2A;&#x5B57;&#x8282;&#x7684;&#x5185;&#x5BB9;&#x5C06;&#x9996;&#x5148;&#x663E;&#x793A;&#x5728;&#x663E;&#x793A;&#x5668;&#x4E0A;&#x3002;</p>
+<h2 id="&#x663E;&#x793A;&#x7F13;&#x51B2;&#x533A;&#x504F;&#x79FB;"><a name="&#x663E;&#x793A;&#x7F13;&#x51B2;&#x533A;&#x504F;&#x79FB;" class="plugin-anchor" href="#&#x663E;&#x793A;&#x7F13;&#x51B2;&#x533A;&#x504F;&#x79FB;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x663E;&#x793A;&#x7F13;&#x51B2;&#x533A;&#x504F;&#x79FB;</h2>
+<p>&#x5728;&#x4E00;&#x9875;&#x663E;&#x793A;&#x7F13;&#x51B2;&#x533A;&#x4E2D;, <strong>&#x504F;&#x79FB; 000~09F &#x5BF9;&#x5E94;&#x7B2C;&#x4E00;&#x884C; &#xFF08;&#x6BCF;&#x884C; 80 &#x4E2A;&#x5B57;&#x7B26;&#x5360;&#x7528; 160 &#x5B57;&#x8282;&#xFF09;</strong> &#xFF0C;&#x5269;&#x4F59;&#x7684;&#x4F9D;&#x6B21;&#x7C7B;&#x63A8;&#x3002;&#x4F4E;&#x4F4D;&#x5B57;&#x8282;&#x5B58;&#x50A8; ASCII &#x7801;&#xFF0C;&#x9AD8;&#x4F4D;&#x5B57;&#x8282;&#x5B58;&#x50A8;&#x5B57;&#x7B26;&#x5C5E;&#x6027;&#x3002;</p>
+<p>&#x5373;&#x5728;&#x4E00;&#x884C;&#x4E2D;&#xFF1A; <strong>&#x504F;&#x79FB; 00~01 &#x5BF9;&#x5E94;&#x663E;&#x793A;&#x5668;&#x7B2C;&#x4E00;&#x5217;</strong> &#xFF0C;&#x5269;&#x4F59;&#x7684;&#x4F9D;&#x6B21;&#x7C7B;&#x63A8;&#x3002;&#x5373;&#x5076;&#x5730;&#x5740;&#x5B58;&#x653E;&#x5B57;&#x7B26;&#xFF0C;&#x5947;&#x5730;&#x5740;&#x5B58;&#x653E;&#x5B57;&#x7B26;&#x7684;&#x989C;&#x8272;&#x5C5E;&#x6027;&#x3002;</p>
+<h2 id="&#x5B57;&#x7B26;&#x7684;&#x989C;&#x8272;&#x5C5E;&#x6027;"><a name="&#x5B57;&#x7B26;&#x7684;&#x989C;&#x8272;&#x5C5E;&#x6027;" class="plugin-anchor" href="#&#x5B57;&#x7B26;&#x7684;&#x989C;&#x8272;&#x5C5E;&#x6027;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B57;&#x7B26;&#x7684;&#x989C;&#x8272;&#x5C5E;&#x6027;</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Address Bit</th>
+<th style="text-align:center">7</th>
+<th style="text-align:center">6</th>
+<th style="text-align:center">5</th>
+<th style="text-align:center">4</th>
+<th style="text-align:center">3</th>
+<th style="text-align:center">2</th>
+<th style="text-align:center">1</th>
+<th style="text-align:center">0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">&#x542B;&#x4E49;</td>
+<td style="text-align:center">BL(&#x95EA;&#x70C1;)</td>
+<td style="text-align:center">R(&#x80CC;&#x666F;&#x8272;)</td>
+<td style="text-align:center">G(&#x80CC;&#x666F;&#x8272;)</td>
+<td style="text-align:center">B(&#x80CC;&#x666F;&#x8272;)</td>
+<td style="text-align:center">Highlight(&#x9AD8;&#x4EAE;)</td>
+<td style="text-align:center">R(&#x524D;&#x666F;&#x8272;)</td>
+<td style="text-align:center">G(&#x524D;&#x666F;&#x8272;)</td>
+<td style="text-align:center">B(&#x524D;&#x666F;&#x8272;)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="&#x95EA;&#x70C1;&#x6548;&#x679C;"><a name="&#x95EA;&#x70C1;&#x6548;&#x679C;" class="plugin-anchor" href="#&#x95EA;&#x70C1;&#x6548;&#x679C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x95EA;&#x70C1;&#x6548;&#x679C;</h2>
+<p>&#x5FC5;&#x987B;&#x5728;&#x5168;&#x5C4F; DOS &#x65B9;&#x5F0F;&#x624D;&#x80FD;&#x770B;&#x5230;&#x3002;</p>
 <footer class="page-footer"><span class="copyright">&#xA9; 2018  kmahyyg <16604643+kmahyyg@users.noreply.github.com>. All rights reserved.</16604643+kmahyyg@users.noreply.github.com></span><span class="footer-modification"><span id="busuanzi_container_site_uv" style="display:none">&#x672C;&#x7AD9;&#x8BBF;&#x5BA2;&#x6570; <span id="busuanzi_value_site_uv"></span> &#x4EBA;&#x6B21;</span></span></footer><script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
                                 
                                 </section>
@@ -760,14 +785,10 @@
 
             
                 
-                <a href="exp1-dosdbg.html" class="navigation navigation-prev " aria-label="Previous page: 实验一：DOS 中 DEBUG 的基本使用">
+                <a href="../ramndata/ref_ascii.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 6 ASCII 码表">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="exp3-bxloop.html" class="navigation navigation-next " aria-label="Next page: 实验三：[BX] 和 LOOP 指令的使用">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -776,7 +797,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"实验二：编程、编译、链接、跟踪 :star:","level":"1.6.2","depth":2,"next":{"title":"实验三：[BX] 和 LOOP 指令的使用","level":"1.6.3","depth":2,"path":"exps/exp3-bxloop.md","ref":"exps/exp3-bxloop.md","articles":[]},"previous":{"title":"实验一：DOS 中 DEBUG 的基本使用","level":"1.6.1","depth":2,"path":"exps/exp1-dosdbg.md","ref":"exps/exp1-dosdbg.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","anchors","multipart","-highlight","prism","prism-themes","page-footer-copyright","sitemap"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-duotone-light.css"]},"disqus":{"useIdentifier":false,"shortName":"asm-kmahyyg"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"page-footer-copyright":{},"sitemap":{"hostname":"https://asm.kmahyyg.xyz"},"prism-themes":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"kmahyyg <16604643+kmahyyg@users.noreply.github.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"none","variables":{},"title":"汇编语言程序设计","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"About Me":"https://www.kmahyyg.xyz/about","My Blog":"https://www.kmahyyg.xyz"}},"gitbook":"*","description":"Learning Notes about Assembly Language","extension":null},"file":{"path":"exps/exp2-firsttry.md","mtime":"2018-08-24T12:18:05.934Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-24T12:18:55.710Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"7 80×25 显示缓冲区结构","level":"1.7.7","depth":2,"previous":{"title":"6 ASCII 码表","level":"1.7.6","depth":2,"path":"ramndata/ref_ascii.md","ref":"ramndata/ref_ascii.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","anchors","multipart","-highlight","prism","prism-themes","page-footer-copyright","sitemap"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-duotone-light.css"]},"disqus":{"useIdentifier":false,"shortName":"asm-kmahyyg"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"page-footer-copyright":{},"sitemap":{"hostname":"https://asm.kmahyyg.xyz"},"prism-themes":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"kmahyyg <16604643+kmahyyg@users.noreply.github.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"none","variables":{},"title":"汇编语言程序设计","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"About Me":"https://www.kmahyyg.xyz/about","My Blog":"https://www.kmahyyg.xyz"}},"gitbook":"*","description":"Learning Notes about Assembly Language","extension":null},"file":{"path":"exps/exp7-02ref.md","mtime":"2018-08-24T12:18:05.934Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-24T12:18:55.710Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
