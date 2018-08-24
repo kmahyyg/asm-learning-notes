@@ -44,3 +44,4 @@
   - [3 MASM 编译器对 JMP 的相关处理](asmcommands/ref_tb3.md)
   - [4 用栈传递参数](ramndata/ref_tb4.md)
   - [5 除法溢出避免公式证明](ramndata/ref_tb5.md)
+  - [6 ASCII 码表](ramndata/ref_ascii.md)
