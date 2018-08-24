@@ -38,16 +38,20 @@
         "-highlight",
         "prism",
         "prism-themes",
-        "page-footer-copyright"
+        "page-footer-copyright",
+        "sitemap"
     ],
     "pluginsConfig": {
-        "disqus": {
+        "disqus":{
             "shortName": "asm-kmahyyg"
         },
         "prism":{
           "css": [
             "prism-themes/themes/prism-duotone-light.css"
           ]
+        },
+        "sitemap":{
+            "hostname": "https://asm.kmahyyg.xyz"
         }
     },
     "title": "汇编语言程序设计",
