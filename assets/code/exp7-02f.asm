@@ -10,17 +10,17 @@ datasg ends
 
 codesg segment
 
-    start:  mov ax,0b800h
+    start:  mov ax,0b872h
             mov es,ax
             mov ax,datasg
             mov ds,ax
+            
             mov bx,0
             
             mov cx,40
             
-      lys:  mov al,[bx]
-            mov dx,ds:[bx]
-            mov es:[bx],dx
+      lys:  mov al,ds:[bx]
+            mov es:[bx],al
             inc bx
             
             loop lys
