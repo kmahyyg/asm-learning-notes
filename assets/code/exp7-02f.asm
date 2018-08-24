@@ -2,18 +2,18 @@ assume cs:codesg,ds:datasg
 
 datasg segment 
 
-    dw 5702h,6502h,6c02h,6302h,6f02h,6d02h,6502h,2002h
-    dw 7407h,6f07h,2007h
-    dw 6274h,6974h,6c74h,6974h,6274h,6974h,6c74h,6974h,2174h
+    dw 0257h,0265h,026ch,0263h,026fh,026dh,0265h,0220h
+    dw 0774h,076fh,0720h
+    dw 7462h,7469h,746ch,7469h,7462h,7469h,746ch,7469h,7421h
     
 datasg ends
 
 codesg segment
 
-    start:  mov ax,datasg
+    start:  mov ax,0b800h
+            mov es,ax
+            mov ax,datasg
             mov ds,ax
-            mov es,b8000h
-            mov ax,start
             mov bx,0
             
             mov cx,40
