@@ -740,7 +740,129 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x53C2;&#x8003;&#x6559;&#x6750;-&#x9644;&#x6CE8;-3&#xFF1A;-masm-&#x7F16;&#x8BD1;&#x5668;&#x5BF9;-jmp-&#x7684;&#x76F8;&#x5173;&#x5904;&#x7406;"><a name="&#x53C2;&#x8003;&#x6559;&#x6750;-&#x9644;&#x6CE8;-3&#xFF1A;-masm-&#x7F16;&#x8BD1;&#x5668;&#x5BF9;-jmp-&#x7684;&#x76F8;&#x5173;&#x5904;&#x7406;" class="plugin-anchor" href="#&#x53C2;&#x8003;&#x6559;&#x6750;-&#x9644;&#x6CE8;-3&#xFF1A;-masm-&#x7F16;&#x8BD1;&#x5668;&#x5BF9;-jmp-&#x7684;&#x76F8;&#x5173;&#x5904;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53C2;&#x8003;&#x6559;&#x6750; &#x9644;&#x6CE8; 3&#xFF1A; MASM &#x7F16;&#x8BD1;&#x5668;&#x5BF9; JMP &#x7684;&#x76F8;&#x5173;&#x5904;&#x7406;</h1>
-<h2 id="todo"><a name="todo" class="plugin-anchor" href="#todo"><i class="fa fa-link" aria-hidden="true"></i></a>TODO</h2>
+<h2 id="&#x5411;&#x524D;&#x8F6C;&#x79FB;"><a name="&#x5411;&#x524D;&#x8F6C;&#x79FB;" class="plugin-anchor" href="#&#x5411;&#x524D;&#x8F6C;&#x79FB;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5411;&#x524D;&#x8F6C;&#x79FB;</h2>
+<p>&#x7F16;&#x8BD1;&#x5668;&#x4E2D;&#x6709;&#x4E00;&#x4E2A;&#x5730;&#x5740;&#x5BC4;&#x5B58;&#x5668; (AC)&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x5728;&#x7F16;&#x8BD1;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x6BCF;&#x8BFB;&#x5230;&#x4E00;&#x4E2A;&#x5B57;&#x8282;&#xFF0C;AC &#x5C31;&#x81EA;&#x589E; 1. &#x5F53;&#x7F16;&#x8BD1;&#x5668;&#x9047;&#x5230;&#x4E00;&#x4E9B;&#x4F2A;&#x64CD;&#x4F5C;&#x65F6;&#xFF0C;&#x4E5F;&#x4F1A;&#x6839;&#x636E;&#x5177;&#x4F53;&#x60C5;&#x51B5;&#x4F7F; AC &#x589E;&#x52A0;&#x3002;</p>
+<p>&#x5411;&#x524D;&#x8F6C;&#x79FB;&#x65F6;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x53EF;&#x4EE5;&#x5728;&#x8BFB;&#x5230;&#x6807;&#x53F7; s &#x540E;&#x8BB0;&#x4E0B; AC &#x7684;&#x503C; as&#xFF0C;&#x5728;&#x8BFB;&#x5230; <code>jmp .... s</code> &#x540E;&#x8BB0;&#x4E0B; AC &#x7684;&#x503C; aj&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x4F7F;&#x7528; as - aj &#x7B97;&#x51FA;&#x4F4D;&#x79FB;&#x91CF; disp.</p>
+<p><code>jmp short s</code> &#x5BF9;&#x5E94;&#x7684;&#x673A;&#x5668;&#x7801; <code>EB disp</code> &#x4E2D; disp &#x7528; Hex &#x8868;&#x793A;&#xFF0C;&#x5171;&#x8BA1; 1 &#x4E2A;&#x5B57;&#x8282;&#x3002;
+<code>jmp near ptr s</code> &#x5BF9;&#x5E94;&#x7684;&#x673A;&#x5668;&#x7801; <code>E9 disp</code> &#x4E2D; disp &#x7528; Hex &#x8868;&#x793A;&#xFF0C;&#x5171;&#x8BA1; 2 &#x4E2A;&#x5B57;&#x8282;&#x3002;
+<code>jmp far ptr s</code> &#x5BF9;&#x5E94;&#x7684;&#x673A;&#x5668;&#x7801; <code>EA OFFSET STACK_BASE</code> &#xFF0C; &#x504F;&#x79FB;&#x5730;&#x5740; 2 &#x4E2A;&#x5B57;&#x8282;&#xFF0C;&#x6BB5;&#x5730;&#x5740; 2 &#x4E2A;&#x5B57;&#x8282;&#xFF0C;&#x5171;&#x8BA1; 4 &#x4E2A;&#x5B57;&#x8282;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x6309;disp&#x5206;&#x7C7B;</th>
+<th style="text-align:center">&#x6309;&#x6307;&#x4EE4;&#x683C;&#x5F0F;&#x5206;&#x7C7B;</th>
+<th style="text-align:center">&#x5904;&#x7406;&#x63AA;&#x65BD;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-128~127</td>
+<td style="text-align:center">jmp s</td>
+<td style="text-align:center">&#x8F6C;&#x6362;&#x4E3A; <code>EB disp</code></td>
+</tr>
+<tr>
+<td style="text-align:center">-128~127</td>
+<td style="text-align:center">jmp short s</td>
+<td style="text-align:center">&#x8F6C;&#x6362;&#x4E3A; <code>EB disp</code></td>
+</tr>
+<tr>
+<td style="text-align:center">-128~127</td>
+<td style="text-align:center">jmp near ptr s</td>
+<td style="text-align:center">&#x8F6C;&#x6362;&#x4E3A; <code>EB disp</code></td>
+</tr>
+<tr>
+<td style="text-align:center">-128~127</td>
+<td style="text-align:center">jmp far ptr s</td>
+<td style="text-align:center">&#x8F6C;&#x6362;&#x4E3A; <code>EB disp</code></td>
+</tr>
+<tr>
+<td style="text-align:center">-32768~32767</td>
+<td style="text-align:center">jmp short s</td>
+<td style="text-align:center">&#x7F16;&#x8BD1;&#x9519;&#x8BEF;</td>
+</tr>
+<tr>
+<td style="text-align:center">-32768~32767</td>
+<td style="text-align:center">jmp s</td>
+<td style="text-align:center">&#x8F6C;&#x6362;&#x4E3A; <code>E9 disp</code></td>
+</tr>
+<tr>
+<td style="text-align:center">-32768~32767</td>
+<td style="text-align:center">jmp near ptr s</td>
+<td style="text-align:center">&#x8F6C;&#x6362;&#x4E3A; <code>E9 disp</code></td>
+</tr>
+<tr>
+<td style="text-align:center">-32768~32767</td>
+<td style="text-align:center">jmp far ptr s</td>
+<td style="text-align:center">&#x8F6C;&#x6362;&#x4E3A; <code>EA OFFSET STACK_BASE</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="&#x5411;&#x540E;&#x8F6C;&#x79FB;"><a name="&#x5411;&#x540E;&#x8F6C;&#x79FB;" class="plugin-anchor" href="#&#x5411;&#x540E;&#x8F6C;&#x79FB;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5411;&#x540E;&#x8F6C;&#x79FB;</h2>
+<p>&#x7F16;&#x8BD1;&#x5668;&#x5148;&#x8BFB;&#x5230; <code>jmp ...... s</code> &#x6307;&#x4EE4;&#xFF0C;&#x7531;&#x4E8E;&#x6B64;&#x65F6;&#x5C1A;&#x672A;&#x8BFB;&#x5230;&#x6807;&#x53F7; s&#xFF0C;&#x6240;&#x4EE5;&#x7F16;&#x8BD1;&#x5668;&#x6B64;&#x65F6;&#x8FD8;&#x4E0D;&#x80FD;&#x786E;&#x5B9A;&#x6807;&#x53F7; s &#x5904; AC &#x503C;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x4E0D;&#x80FD;&#x786E;&#x5B9A;&#x4F4D;&#x79FB;&#x91CF; disp &#x7684;&#x5927;&#x5C0F;&#x3002;
+&#x6B64;&#x65F6;&#x7F16;&#x8BD1;&#x5668;&#x5C06; <code>jmp ...... s</code> &#x6307;&#x4EE4;&#x5168;&#x90E8;&#x5F53;&#x4F5C; <code>jmp short s</code> &#x6765;&#x8BFB;&#x53D6;&#xFF0C;&#x8BB0;&#x4E0B; <code>jmp ...... s</code> &#x6307;&#x4EE4;&#x7684;&#x4F4D;&#x7F6E;&#x548C; AC &#x7684;&#x503C; aj. &#x5E76;&#x8FDB;&#x884C;&#x5982;&#x4E0B;&#x5904;&#x7406;&#xFF1A;</p>
+<ul>
+<li><p>jmp short s</p>
+<p>&#x751F;&#x6210;<code>EB 90</code> (<code>jmp short s + nop</code>) &#xFF0C;&#x9884;&#x7559; 1 &#x5B57;&#x8282;&#xFF0C;&#x5B58;&#x653E; 8 &#x4F4D; disp.</p>
+</li>
+<li><p>jmp s &amp; jmp near ptr s</p>
+<p>&#x751F;&#x6210;<code>EB 90 90</code> (<code>jmp short s + nop + nop</code>) &#xFF0C;&#x9884;&#x7559; 2 &#x5B57;&#x8282;&#xFF0C;&#x5B58;&#x653E; 16 &#x4F4D; disp.</p>
+</li>
+<li><p>jmp far ptr s</p>
+<p>&#x751F;&#x6210;<code>EB 90 90 90 90</code> (<code>jmp short s + nop + nop + nop + nop</code>) &#xFF0C;&#x9884;&#x7559; 4 &#x5B57;&#x8282;&#xFF0C;&#x5B58;&#x653E; 32 &#x4F4D; disp&#xFF0C;&#x6B64;&#x65F6; disp &#x662F; &#x6BB5;&#x5730;&#x5740;&#x548C;&#x504F;&#x79FB;&#x5730;&#x5740;.</p>
+</li>
+</ul>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x7F16;&#x8BD1;&#x5668;&#x7EE7;&#x7EED;&#x5DE5;&#x4F5C;&#xFF0C;&#x5F53;&#x5411;&#x540E;&#x8BFB;&#x5230;&#x6807;&#x53F7; s &#x65F6;&#xFF0C;&#x8BB0;&#x4E0B; AC &#x7684;&#x503C; as, &#x5E76;&#x8BA1;&#x7B97;&#x51FA;&#x8F6C;&#x79FB;&#x7684;&#x4F4D;&#x79FB;&#x91CF; disp = as - aj.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x6309;disp&#x5206;&#x7C7B;</th>
+<th style="text-align:center">&#x6309;&#x6307;&#x4EE4;&#x683C;&#x5F0F;&#x5206;&#x7C7B;</th>
+<th style="text-align:center">&#x5904;&#x7406;&#x63AA;&#x65BD;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-128~127</td>
+<td style="text-align:center">jmp s</td>
+<td style="text-align:center">&#x5728;&#x4E4B;&#x524D;&#x9884;&#x7559;&#x7684;&#x4F4D;&#x7F6E;&#x586B;&#x4E0A; <code>EB disp</code></td>
+</tr>
+<tr>
+<td style="text-align:center">-128~127</td>
+<td style="text-align:center">jmp short s</td>
+<td style="text-align:center">&#x5728;&#x4E4B;&#x524D;&#x9884;&#x7559;&#x7684;&#x4F4D;&#x7F6E;&#x586B;&#x4E0A; <code>EB disp</code></td>
+</tr>
+<tr>
+<td style="text-align:center">-128~127</td>
+<td style="text-align:center">jmp near ptr s</td>
+<td style="text-align:center">&#x5728;&#x4E4B;&#x524D;&#x9884;&#x7559;&#x7684;&#x4F4D;&#x7F6E;&#x586B;&#x4E0A; <code>EB disp</code></td>
+</tr>
+<tr>
+<td style="text-align:center">-128~127</td>
+<td style="text-align:center">jmp far ptr s</td>
+<td style="text-align:center">&#x5728;&#x4E4B;&#x524D;&#x9884;&#x7559;&#x7684;&#x4F4D;&#x7F6E;&#x586B;&#x4E0A; <code>EB disp</code></td>
+</tr>
+<tr>
+<td style="text-align:center">-32768~32767</td>
+<td style="text-align:center">jmp short s</td>
+<td style="text-align:center">&#x7F16;&#x8BD1;&#x9519;&#x8BEF;</td>
+</tr>
+<tr>
+<td style="text-align:center">-32768~32767</td>
+<td style="text-align:center">jmp s</td>
+<td style="text-align:center">&#x5728;&#x4E4B;&#x524D;&#x9884;&#x7559;&#x7684;&#x4F4D;&#x7F6E;&#x586B;&#x4E0A; <code>E9 disp</code></td>
+</tr>
+<tr>
+<td style="text-align:center">-32768~32767</td>
+<td style="text-align:center">jmp near ptr s</td>
+<td style="text-align:center">&#x5728;&#x4E4B;&#x524D;&#x9884;&#x7559;&#x7684;&#x4F4D;&#x7F6E;&#x586B;&#x4E0A; <code>E9 disp</code></td>
+</tr>
+<tr>
+<td style="text-align:center">-32768~32767</td>
+<td style="text-align:center">jmp far ptr s</td>
+<td style="text-align:center">&#x5728;&#x4E4B;&#x524D;&#x9884;&#x7559;&#x7684;&#x4F4D;&#x7F6E;&#x586B;&#x4E0A; <code>EA OFFSET STACK_BASE</code></td>
+</tr>
+</tbody>
+</table>
 <footer class="page-footer"><span class="copyright">&#xA9; 2018  kmahyyg <16604643+kmahyyg@users.noreply.github.com>. All rights reserved.</16604643+kmahyyg@users.noreply.github.com></span><span class="footer-modification"><span id="busuanzi_container_site_uv" style="display:none">&#x672C;&#x7AD9;&#x8BBF;&#x5BA2;&#x6570; <span id="busuanzi_value_site_uv"></span> &#x4EBA;&#x6B21;</span></span></footer><script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
                                 
                                 </section>
@@ -784,7 +906,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3 MASM 编译器对 JMP 的相关处理","level":"1.8.3","depth":2,"next":{"title":"4 用栈传递参数","level":"1.8.4","depth":2,"path":"ramndata/ref_tb4.md","ref":"ramndata/ref_tb4.md","articles":[]},"previous":{"title":"2 补码表示与重码问题","level":"1.8.2","depth":2,"path":"register/ref_tb2.md","ref":"register/ref_tb2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","anchors","multipart","-highlight","prism","prism-themes","page-footer-copyright","sitemap"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-duotone-light.css"]},"disqus":{"useIdentifier":false,"shortName":"asm-kmahyyg"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"page-footer-copyright":{},"sitemap":{"hostname":"https://asm.kmahyyg.xyz"},"prism-themes":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"kmahyyg <16604643+kmahyyg@users.noreply.github.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"none","variables":{},"title":"汇编语言程序设计","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"About Me":"https://www.kmahyyg.xyz/about","My Blog":"https://www.kmahyyg.xyz"}},"gitbook":"*","description":"Learning Notes about Assembly Language","extension":null},"file":{"path":"transcom/ref_tb3.md","mtime":"2018-08-26T14:47:07.545Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-26T14:47:59.984Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3 MASM 编译器对 JMP 的相关处理","level":"1.8.3","depth":2,"next":{"title":"4 用栈传递参数","level":"1.8.4","depth":2,"path":"ramndata/ref_tb4.md","ref":"ramndata/ref_tb4.md","articles":[]},"previous":{"title":"2 补码表示与重码问题","level":"1.8.2","depth":2,"path":"register/ref_tb2.md","ref":"register/ref_tb2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","anchors","multipart","-highlight","prism","prism-themes","page-footer-copyright","sitemap"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-duotone-light.css"]},"disqus":{"useIdentifier":false,"shortName":"asm-kmahyyg"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"page-footer-copyright":{},"sitemap":{"hostname":"https://asm.kmahyyg.xyz"},"prism-themes":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"kmahyyg <16604643+kmahyyg@users.noreply.github.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"none","variables":{},"title":"汇编语言程序设计","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"About Me":"https://www.kmahyyg.xyz/about","My Blog":"https://www.kmahyyg.xyz"}},"gitbook":"*","description":"Learning Notes about Assembly Language","extension":null},"file":{"path":"transcom/ref_tb3.md","mtime":"2018-08-26T15:09:45.050Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-26T15:10:38.589Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
