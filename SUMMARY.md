@@ -19,15 +19,17 @@
   - [3.4 \[BX\] 和 LOOP 指令](asmcommands/bxloop.md)
   - [3.5 包含多个段的程序](asmcommands/multisegment.md)
   - [3.6 DIV DD DUP 指令](asmcommands/divdddup.md)
-  - [3.7 转移指令(1): 操作符 OFFSET](asmcommands/transfer_offset.md)
-  - [3.8 转移指令(2): JMP](asmcommands/transfer_jmp.md)
-  - [3.9 转移指令(3): JCXZ & LOOP](asmcommands/jcxzNloop.md)
-
+  
 * [Chapter 4 - 内存地址定位与数据处理](ramndata/README.md)
   - [4.1 AND OR 与 字符串](ramndata/andorstr.md)
   - [4.2 更加灵活的内存单元定位方法](ramndata/bxPidata.md)
   - [4.3 数据定位及位置表达](ramndata/regnsreg.md)
   - [4.4 数据处理数据的长度及综合应用](ramndata/lengthodata.md)
+  
+* [Chapter 5 - 转移指令](transcom/README.md)
+  - [5.1 操作符 OFFSET](transcom/transfer_offset.md)
+  - [5.2 JMP](transcom/transfer_jmp.md)
+  - [5.3 JCXZ & LOOP](transcom/jcxzNloop.md)
 
 * [All Experiments](exps/README.md)
   - [实验一：DOS 中 ```DEBUG``` 的基本使用](exps/exp1-dosdbg.md)
