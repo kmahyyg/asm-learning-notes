@@ -25,6 +25,8 @@
 <url> <loc>https://asm.kmahyyg.xyz/transcom/transfer_offset.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://asm.kmahyyg.xyz/transcom/transfer_jmp.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://asm.kmahyyg.xyz/transcom/jcxzNloop.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://asm.kmahyyg.xyz/transcom/retNretf.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://asm.kmahyyg.xyz/transcom/comm_call.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://asm.kmahyyg.xyz/exps/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://asm.kmahyyg.xyz/exps/exp1-dosdbg.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://asm.kmahyyg.xyz/exps/exp2-firsttry.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
