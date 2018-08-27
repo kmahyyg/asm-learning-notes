@@ -30,7 +30,9 @@
   - [5.1 操作符 OFFSET](transcom/transfer_offset.md)
   - [5.2 JMP](transcom/transfer_jmp.md)
   - [5.3 JCXZ & LOOP](transcom/jcxzNloop.md)
-
+  - [5.4 RET & RETF](transcom/retNretf.md)
+  - [5.5 CALL 指令 (1)](transcom/comm_call.md)
+  
 * [All Experiments](exps/README.md)
   - [实验一：DOS 中 ```DEBUG``` 的基本使用](exps/exp1-dosdbg.md)
   - [实验二：编程、编译、链接、跟踪 :star:](exps/exp2-firsttry.md)
