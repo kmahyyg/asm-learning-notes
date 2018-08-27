@@ -750,7 +750,7 @@
 <p>Calculate X/n (X &lt; 2^32, n != 0)</p>
 <p>Please ensure that your calculation will not occur any overflow.</p>
 <h2 id="analysis"><a name="analysis" class="plugin-anchor" href="#analysis"><i class="fa fa-link" aria-hidden="true"></i></a>Analysis</h2>
-<p>(1) &#x6B64;&#x5904;&#x4EE5; 8086 &#x7CFB;&#x5217;&#x5904;&#x7406;&#x5668;&#x4E3A;&#x4F8B;&#xFF0C;&#x4E0D;&#x51FA;&#x73B0;&#x6EA2;&#x51FA;&#xFF0C;&#x8BF4;&#x660E;&#x8BA1;&#x7B97;&#x8FC7;&#x7A0B;&#x4E2D;&#x9664;&#x6CD5;&#x8FD0;&#x7B97;&#x7684;&#x5546;&#x8981;&#x5C0F;&#x4E8E; 2^16 (65536)&#x3002;</p>
+<h3 id="&#x6B64;&#x5904;&#x4EE5;-8086-&#x7CFB;&#x5217;&#x5904;&#x7406;&#x5668;&#x4E3A;&#x4F8B;&#xFF0C;&#x4E0D;&#x51FA;&#x73B0;&#x6EA2;&#x51FA;&#xFF0C;&#x8BF4;&#x660E;&#x8BA1;&#x7B97;&#x8FC7;&#x7A0B;&#x4E2D;&#x9664;&#x6CD5;&#x8FD0;&#x7B97;&#x7684;&#x5546;&#x8981;&#x5C0F;&#x4E8E;-216-65536&#x3002;"><a name="&#x6B64;&#x5904;&#x4EE5;-8086-&#x7CFB;&#x5217;&#x5904;&#x7406;&#x5668;&#x4E3A;&#x4F8B;&#xFF0C;&#x4E0D;&#x51FA;&#x73B0;&#x6EA2;&#x51FA;&#xFF0C;&#x8BF4;&#x660E;&#x8BA1;&#x7B97;&#x8FC7;&#x7A0B;&#x4E2D;&#x9664;&#x6CD5;&#x8FD0;&#x7B97;&#x7684;&#x5546;&#x8981;&#x5C0F;&#x4E8E;-216-65536&#x3002;" class="plugin-anchor" href="#&#x6B64;&#x5904;&#x4EE5;-8086-&#x7CFB;&#x5217;&#x5904;&#x7406;&#x5668;&#x4E3A;&#x4F8B;&#xFF0C;&#x4E0D;&#x51FA;&#x73B0;&#x6EA2;&#x51FA;&#xFF0C;&#x8BF4;&#x660E;&#x8BA1;&#x7B97;&#x8FC7;&#x7A0B;&#x4E2D;&#x9664;&#x6CD5;&#x8FD0;&#x7B97;&#x7684;&#x5546;&#x8981;&#x5C0F;&#x4E8E;-216-65536&#x3002;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6B64;&#x5904;&#x4EE5; 8086 &#x7CFB;&#x5217;&#x5904;&#x7406;&#x5668;&#x4E3A;&#x4F8B;&#xFF0C;&#x4E0D;&#x51FA;&#x73B0;&#x6EA2;&#x51FA;&#xFF0C;&#x8BF4;&#x660E;&#x8BA1;&#x7B97;&#x8FC7;&#x7A0B;&#x4E2D;&#x9664;&#x6CD5;&#x8FD0;&#x7B97;&#x7684;&#x5546;&#x8981;&#x5C0F;&#x4E8E; 2^16 (65536)&#x3002;</h3>
 <p>  &#x4F5C;&#x51FA;&#x4E0B;&#x5217;&#x5047;&#x8BBE;&#xFF1A;</p>
 <ul>
 <li>X/n = (H<em>65536+L)/n = (H/n)</em>65536 + (L/n)</li>
@@ -759,8 +759,34 @@
 <p>Cuz H &lt; 65536 &amp; L &lt; 65536, So &#x4E0A;&#x8FF0;&#x8F6C;&#x5316;&#x6210;&#x7ACB;</p>
 </li>
 </ul>
-<p>(2) &#x5C06;&#x8BA1;&#x7B97; X/n &#x5206;&#x89E3;&#x4E3A;&#x8BA1;&#x7B97; (H/n)*65536 + (L/n) &#x4E4B;&#x540E;</p>
+<h3 id="&#x5C06;&#x8BA1;&#x7B97;-xn-&#x5206;&#x89E3;&#x4E3A;&#x8BA1;&#x7B97;-hn65536--ln-&#x4E4B;&#x540E;"><a name="&#x5C06;&#x8BA1;&#x7B97;-xn-&#x5206;&#x89E3;&#x4E3A;&#x8BA1;&#x7B97;-hn65536--ln-&#x4E4B;&#x540E;" class="plugin-anchor" href="#&#x5C06;&#x8BA1;&#x7B97;-xn-&#x5206;&#x89E3;&#x4E3A;&#x8BA1;&#x7B97;-hn65536--ln-&#x4E4B;&#x540E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5C06;&#x8BA1;&#x7B97; X/n &#x5206;&#x89E3;&#x4E3A;&#x8BA1;&#x7B97; (H/n)*65536 + (L/n) &#x4E4B;&#x540E;</h3>
 <p>&#x6C47;&#x7F16;&#x8BED;&#x8A00;&#x4E2D;&#x4F7F;&#x7528; <code>DIV</code> &#x6307;&#x4EE4;&#x8BA1;&#x7B97;&#x9664;&#x6CD5;&#xFF0C;&#x5E76;&#x5F97;&#x51FA;&#x5546;&#x548C;&#x4F59;&#x6570;&#xFF0C;&#x6211;&#x4EEC;&#x4FDD;&#x7559;&#x5546;&#xFF0C;&#x4F59;&#x6570;&#x4E22;&#x5F03;&#xFF0C;&#x4E14;&#x4F59;&#x6570;&#x5FC5;&#x7136;&#x5C0F;&#x4E8E;&#x9664;&#x6570;&#x3002;</p>
+<p>&#x65E0;&#x8BBA;&#x5982;&#x4F55;&#xFF0C; H/n = int(x/65536) / n &#x7684;&#x4F59;&#x6570;&#x662F;&#x7EDD;&#x5BF9;&#x4E0D;&#x80FD;&#x4E22;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x4E00;&#x65E6;&#x4E22;&#x5F03;&#xFF0C;&#x5C31;&#x7B49;&#x4EF7;&#x4E8E;&#x4E22;&#x5F03;&#x4E86; <code>&#x4F59;&#x6570; &#xD7; 65536</code>.</p>
+<p>&#x90A3;&#x4E48;&#x5982;&#x4F55;&#x5904;&#x7406;&#x4F59;&#x6570;&#xFF1F;</p>
+<p>H = int(H/n)* n + rem(H/n)</p>
+<p>&#x6240;&#x4EE5;&#xFF1A;</p>
+<p>(H/n) <em> 65536 + (L/n)
+= [int(H/n) </em> n + rem(H/n)] / n <em> 65536 + (L/n)
+= int(H/n) </em> 65536 + rem(H/n) <em> 65536 / n + L / n
+= int(H/n) </em> 65536 + [rem(H/n) * 65536 + L] / n</p>
+<h3 id="&#x8FDB;&#x4E00;&#x6B65;&#x8F6C;&#x5316;"><a name="&#x8FDB;&#x4E00;&#x6B65;&#x8F6C;&#x5316;" class="plugin-anchor" href="#&#x8FDB;&#x4E00;&#x6B65;&#x8F6C;&#x5316;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FDB;&#x4E00;&#x6B65;&#x8F6C;&#x5316;</h3>
+<p>&#x6211;&#x4EEC;&#x73B0;&#x5728;&#x5C06;&#x8D77;&#x59CB;&#x7684; X / n &#x95EE;&#x9898;&#x8F6C;&#x5316;&#x6210;&#x4E86; int(H/n) <em> 65536 + [rem(H/n) </em> 65536 + L] / n &#x7684;&#x95EE;&#x9898;&#x3002;</p>
+<p>&#x8FD9;&#x91CC;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x4E24;&#x6B21;&#x8FD0;&#x7B97;&#xFF1A;</p>
+<ol>
+<li>H/n</li>
+<li>[rem(H/n) * 65536 + L] / n</li>
+</ol>
+<p>&#x56E0;&#x4E3A;&#xFF1A; H = int(x/65536) &#x6240;&#x4EE5;&#x7B2C;&#x4E00;&#x6B21;&#x8FD0;&#x7B97;&#x4E0D;&#x4F1A;&#x4EA7;&#x751F;&#x9664;&#x6CD5;&#x6EA2;&#x51FA;&#x3002;</p>
+<p>&#x5BF9;&#x7B2C;&#x4E8C;&#x6B21;&#x8FD0;&#x7B97;&#x8FDB;&#x884C;&#x8BC1;&#x660E;:</p>
+<ul>
+<li>L &lt;= 65535</li>
+<li>rem(H/n) &lt;= n-1</li>
+<li>rem(H/n) <em> 65536 &lt;= (n-1) </em> 65536</li>
+<li>rem(H/n) <em> 65536 + L &lt;= (n-1) </em> 65536 + 65535</li>
+<li>[rem(H/n) <em> 65536 + L] / n &lt;= [(n-1) </em> 65536 + 65535] / n</li>
+<li>[rem(H/n) * 65536 + L] / n &lt;= 65536 - (1/n)</li>
+</ul>
+<p>&#x8BC1;&#x6BD5;&#x3002;</p>
 <footer class="page-footer"><span class="copyright">&#xA9; 2018  kmahyyg <16604643+kmahyyg@users.noreply.github.com>. All rights reserved.</16604643+kmahyyg@users.noreply.github.com></span><span class="footer-modification"><span id="busuanzi_container_site_uv" style="display:none">&#x672C;&#x7AD9;&#x8BBF;&#x5BA2;&#x6570; <span id="busuanzi_value_site_uv"></span> &#x4EBA;&#x6B21;</span></span></footer><script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
                                 
                                 </section>
@@ -804,7 +830,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"5 除法溢出避免公式证明","level":"1.8.5","depth":2,"next":{"title":"6 ASCII 码表","level":"1.8.6","depth":2,"path":"ramndata/ref_ascii.md","ref":"ramndata/ref_ascii.md","articles":[]},"previous":{"title":"4 用栈传递参数","level":"1.8.4","depth":2,"path":"ramndata/ref_tb4.md","ref":"ramndata/ref_tb4.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","anchors","multipart","-highlight","prism","prism-themes","page-footer-copyright","sitemap"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-duotone-light.css"]},"disqus":{"useIdentifier":false,"shortName":"asm-kmahyyg"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"page-footer-copyright":{},"sitemap":{"hostname":"https://asm.kmahyyg.xyz"},"prism-themes":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"kmahyyg <16604643+kmahyyg@users.noreply.github.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"none","variables":{},"title":"汇编语言程序设计","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"About Me":"https://www.kmahyyg.xyz/about","My Blog":"https://www.kmahyyg.xyz"}},"gitbook":"*","description":"Learning Notes about Assembly Language","extension":null},"file":{"path":"ramndata/ref_tb5.md","mtime":"2018-08-26T23:59:01.474Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-26T23:59:53.971Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"5 除法溢出避免公式证明","level":"1.8.5","depth":2,"next":{"title":"6 ASCII 码表","level":"1.8.6","depth":2,"path":"ramndata/ref_ascii.md","ref":"ramndata/ref_ascii.md","articles":[]},"previous":{"title":"4 用栈传递参数","level":"1.8.4","depth":2,"path":"ramndata/ref_tb4.md","ref":"ramndata/ref_tb4.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","anchors","multipart","-highlight","prism","prism-themes","page-footer-copyright","sitemap"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-duotone-light.css"]},"disqus":{"useIdentifier":false,"shortName":"asm-kmahyyg"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"page-footer-copyright":{},"sitemap":{"hostname":"https://asm.kmahyyg.xyz"},"prism-themes":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"kmahyyg <16604643+kmahyyg@users.noreply.github.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"none","variables":{},"title":"汇编语言程序设计","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"About Me":"https://www.kmahyyg.xyz/about","My Blog":"https://www.kmahyyg.xyz"}},"gitbook":"*","description":"Learning Notes about Assembly Language","extension":null},"file":{"path":"ramndata/ref_tb5.md","mtime":"2018-08-27T13:56:13.545Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-27T13:57:07.418Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
