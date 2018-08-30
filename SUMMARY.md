@@ -33,9 +33,10 @@
   - [5.3 JCXZ & LOOP](transcom/jcxzNloop.md)
   - [5.4 RET & RETF](transcom/retNretf.md)
   - [5.5 CALL 指令](transcom/comm_call.md)
+  - [5.6 CALL 与 RET 的结合使用](transcom/cooperate_calret.md)
   
 * [All Experiments](exps/README.md)
-  - [实验一：DOS 中 ```DEBUG``` 的基本使用](exps/exp1-dosdbg.md)
+  - [实验一：DOS 中 `DEBUG` 的基本使用](exps/exp1-dosdbg.md)
   - [实验二：编程、编译、链接、跟踪 :star:](exps/exp2-firsttry.md)
   - [实验三：\[BX\] 和 LOOP 指令的使用](exps/exp3-bxloop.md)
   - [实验四：编写、调试具有多个段的程序](exps/exp4-multisegment.md)
