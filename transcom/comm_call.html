@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>5.5 CALL 指令 (1) · 汇编语言程序设计</title>
+        <title>5.5 CALL 指令 · 汇编语言程序设计</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -487,7 +487,7 @@
                 <a href="comm_call.html">
             
                     
-                    5.5 CALL 指令 (1)
+                    5.5 CALL 指令
             
                 </a>
             
@@ -750,7 +750,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >5.5 CALL 指令 (1)</a>
+        <a href=".." >5.5 CALL 指令</a>
     </h1>
 </div>
 
@@ -765,8 +765,84 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="55-call-&#x6307;&#x4EE4;-1"><a name="55-call-&#x6307;&#x4EE4;-1" class="plugin-anchor" href="#55-call-&#x6307;&#x4EE4;-1"><i class="fa fa-link" aria-hidden="true"></i></a>5.5 CALL &#x6307;&#x4EE4; (1)</h1>
-<h2 id="todo"><a name="todo" class="plugin-anchor" href="#todo"><i class="fa fa-link" aria-hidden="true"></i></a>TODO</h2>
+                                <h1 id="55-call-&#x6307;&#x4EE4;"><a name="55-call-&#x6307;&#x4EE4;" class="plugin-anchor" href="#55-call-&#x6307;&#x4EE4;"><i class="fa fa-link" aria-hidden="true"></i></a>5.5 CALL &#x6307;&#x4EE4;</h1>
+<h2 id="&#x6307;&#x4EE4;&#x89C4;&#x5B9A;"><a name="&#x6307;&#x4EE4;&#x89C4;&#x5B9A;" class="plugin-anchor" href="#&#x6307;&#x4EE4;&#x89C4;&#x5B9A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6307;&#x4EE4;&#x89C4;&#x5B9A;</h2>
+<p>CALL &#x6307;&#x4EE4;&#x6267;&#x884C;&#x4E24;&#x6B65;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<ul>
+<li>&#x5C06;&#x5F53;&#x524D;&#x7684; CS &#x548C; IP &#x538B;&#x5165;&#x6808;&#x4E2D;&#x3002;</li>
+<li>&#x8F6C;&#x79FB;</li>
+</ul>
+<p>&#x6307;&#x4EE4;&#x683C;&#x5F0F;&#xFF1A; <code>call &#x8F6C;&#x79FB;&#x76EE;&#x7684;&#x5730;</code></p>
+<p>call &#x6307;&#x4EE4;&#x4E0D;&#x80FD;&#x8FDB;&#x884C;&#x77ED;&#x8F6C;&#x79FB;&#xFF0C;&#x5176;&#x4F59;&#x540C; jmp &#x6307;&#x4EE4;&#x7684;&#x539F;&#x7406;&#x76F8;&#x540C;&#x3002;&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x6211;&#x4EEC;&#x8BB2;&#x89E3; call &#x6307;&#x4EE4;&#x7684;&#x4E3B;&#x8981;&#x5E94;&#x7528;&#x683C;&#x5F0F;&#x3002;</p>
+<h2 id="&#x4F9D;&#x636E;&#x4F4D;&#x79FB;&#x8FDB;&#x884C;&#x8F6C;&#x79FB;"><a name="&#x4F9D;&#x636E;&#x4F4D;&#x79FB;&#x8FDB;&#x884C;&#x8F6C;&#x79FB;" class="plugin-anchor" href="#&#x4F9D;&#x636E;&#x4F4D;&#x79FB;&#x8FDB;&#x884C;&#x8F6C;&#x79FB;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F9D;&#x636E;&#x4F4D;&#x79FB;&#x8FDB;&#x884C;&#x8F6C;&#x79FB;</h2>
+<p>&#x683C;&#x5F0F;&#xFF1A; <code>call &#x6807;&#x53F7;</code></p>
+<p>&#x8FD9;&#x7C7B;&#x6307;&#x4EE4;&#x7B49;&#x4EF7;&#x4E8E;&#xFF1A;</p>
+<pre class="language-"><code class="lang-asm6502">push IP
+<span class="token opcode property">jmp</span> near ptr &#x6807;&#x53F7;
+</code></pre>
+<p>&#x6267;&#x884C;&#x7684;&#x64CD;&#x4F5C;&#x662F;&#xFF1A;</p>
+<ul>
+<li>(SP) = (SP) - 2</li>
+<li>((SS) * 16 + (SP)) = (IP)</li>
+<li>(IP) = (IP) + 16 Bits &#x4F4D;&#x79FB;</li>
+</ul>
+<h3 id="16-bits-&#x4F4D;&#x79FB;&#x7684;&#x8BA1;&#x7B97;"><a name="16-bits-&#x4F4D;&#x79FB;&#x7684;&#x8BA1;&#x7B97;" class="plugin-anchor" href="#16-bits-&#x4F4D;&#x79FB;&#x7684;&#x8BA1;&#x7B97;"><i class="fa fa-link" aria-hidden="true"></i></a>16 Bits &#x4F4D;&#x79FB;&#x7684;&#x8BA1;&#x7B97;</h3>
+<p>&#x4F4D;&#x79FB; = &#x6807;&#x53F7;&#x5730;&#x5740; - call &#x6307;&#x4EE4;&#x540E;&#x7B2C;&#x4E00;&#x5B57;&#x8282;&#x7684;&#x5730;&#x5740;&#x3002;</p>
+<p>&#x8303;&#x56F4;: -32768 ~ 32767&#xFF0C;&#x8865;&#x7801;&#x8868;&#x793A;&#x3002;</p>
+<p>&#x8BA1;&#x7B97;&#xFF1A;&#x5728;&#x7F16;&#x8BD1;&#x5668;&#x7F16;&#x8BD1;&#x65F6;&#x7B97;&#x51FA;&#x3002;</p>
+<h2 id="&#x8F6C;&#x79FB;&#x76EE;&#x7684;&#x5730;&#x5740;&#x5728;&#x6307;&#x4EE4;&#x4E2D;"><a name="&#x8F6C;&#x79FB;&#x76EE;&#x7684;&#x5730;&#x5740;&#x5728;&#x6307;&#x4EE4;&#x4E2D;" class="plugin-anchor" href="#&#x8F6C;&#x79FB;&#x76EE;&#x7684;&#x5730;&#x5740;&#x5728;&#x6307;&#x4EE4;&#x4E2D;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8F6C;&#x79FB;&#x76EE;&#x7684;&#x5730;&#x5740;&#x5728;&#x6307;&#x4EE4;&#x4E2D;</h2>
+<p>&#x683C;&#x5F0F;&#xFF1A; <code>call far ptr &#x6807;&#x53F7;</code> &#x5B9E;&#x73B0;&#x6BB5;&#x95F4;&#x8F6C;&#x79FB;</p>
+<p>&#x8FD9;&#x7C7B;&#x6307;&#x4EE4;&#x7B49;&#x4EF7;&#x4E8E;&#xFF1A;</p>
+<pre class="language-"><code class="lang-asm6502">push CS
+push IP
+<span class="token opcode property">jmp</span> near ptr &#x6807;&#x53F7;
+</code></pre>
+<p>&#x6267;&#x884C;&#x7684;&#x64CD;&#x4F5C;&#x662F;&#xFF1A;</p>
+<ul>
+<li>(SP) = (SP) - 2</li>
+<li>((SS) * 16 + (SP)) = (CS)</li>
+<li>(SP) = (SP) - 2</li>
+<li>((SS) * 16 + (SP)) = (IP)</li>
+<li>(CS) = &#x6807;&#x53F7;&#x6240;&#x5728;&#x6BB5;&#x7684;&#x6BB5;&#x5730;&#x5740;</li>
+<li>(IP) = &#x6807;&#x53F7;&#x5728;&#x6BB5;&#x4E2D;&#x7684;&#x504F;&#x79FB;&#x5730;&#x5740;</li>
+</ul>
+<h2 id="&#x8F6C;&#x79FB;&#x5730;&#x5740;&#x5728;&#x5BC4;&#x5B58;&#x5668;&#x4E2D;"><a name="&#x8F6C;&#x79FB;&#x5730;&#x5740;&#x5728;&#x5BC4;&#x5B58;&#x5668;&#x4E2D;" class="plugin-anchor" href="#&#x8F6C;&#x79FB;&#x5730;&#x5740;&#x5728;&#x5BC4;&#x5B58;&#x5668;&#x4E2D;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8F6C;&#x79FB;&#x5730;&#x5740;&#x5728;&#x5BC4;&#x5B58;&#x5668;&#x4E2D;</h2>
+<p>&#x683C;&#x5F0F;&#xFF1A; <code>call REG</code> </p>
+<p>REG &#x4E3A; 16 &#x4F4D;&#x5BC4;&#x5B58;&#x5668;&#x7684;&#x7F16;&#x53F7;</p>
+<p>&#x8FD9;&#x7C7B;&#x6307;&#x4EE4;&#x7B49;&#x4EF7;&#x4E8E;&#xFF1A;</p>
+<pre class="language-"><code class="lang-asm6502">push IP
+<span class="token opcode property">jmp</span> REG
+</code></pre>
+<p>&#x6267;&#x884C;&#x7684;&#x64CD;&#x4F5C;&#x662F;&#xFF1A;</p>
+<ul>
+<li>(SP) = (SP) - 2</li>
+<li>((SS) * 16 + (SP)) = (IP)</li>
+<li>(IP) = (16 Bits &#x5BC4;&#x5B58;&#x5668;)</li>
+</ul>
+<h2 id="&#x8F6C;&#x79FB;&#x5730;&#x5740;&#x5728;&#x5185;&#x5B58;&#x4E2D;"><a name="&#x8F6C;&#x79FB;&#x5730;&#x5740;&#x5728;&#x5185;&#x5B58;&#x4E2D;" class="plugin-anchor" href="#&#x8F6C;&#x79FB;&#x5730;&#x5740;&#x5728;&#x5185;&#x5B58;&#x4E2D;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8F6C;&#x79FB;&#x5730;&#x5740;&#x5728;&#x5185;&#x5B58;&#x4E2D;</h2>
+<h3 id="call-word-ptr-ram"><a name="call-word-ptr-ram" class="plugin-anchor" href="#call-word-ptr-ram"><i class="fa fa-link" aria-hidden="true"></i></a>call word ptr RAM</h3>
+<p>&#x683C;&#x5F0F;&#x5373;&#x6807;&#x9898;&#x3002;</p>
+<p>&#x8FD9;&#x7C7B;&#x6307;&#x4EE4;&#x7B49;&#x4EF7;&#x4E8E;&#xFF1A;</p>
+<pre class="language-"><code class="lang-asm6502">push IP
+<span class="token opcode property">jmp</span> word ptr RAM
+</code></pre>
+<p>&#x6267;&#x884C;&#x7684;&#x64CD;&#x4F5C;&#x662F;&#xFF1A;</p>
+<ul>
+<li>&#x4FEE;&#x6539; IP &#x4E3A;&#x5BF9;&#x5E94;&#x7684; RAM &#x5355;&#x5143;&#x4E2D;&#x7684;&#x5185;&#x5BB9;</li>
+<li>(SP) = (SP) - 2</li>
+</ul>
+<h3 id="call-dword-ptr-ram"><a name="call-dword-ptr-ram" class="plugin-anchor" href="#call-dword-ptr-ram"><i class="fa fa-link" aria-hidden="true"></i></a>call dword ptr RAM</h3>
+<p>&#x683C;&#x5F0F;&#x5373;&#x6807;&#x9898;&#x3002;</p>
+<p>&#x8FD9;&#x7C7B;&#x6307;&#x4EE4;&#x7B49;&#x4EF7;&#x4E8E;&#xFF1A;</p>
+<pre class="language-"><code class="lang-asm6502">push CS
+push IP
+<span class="token opcode property">jmp</span> dword ptr RAM
+</code></pre>
+<p>&#x6267;&#x884C;&#x7684;&#x64CD;&#x4F5C;&#x662F;&#xFF1A;</p>
+<ul>
+<li>&#x4FEE;&#x6539; CS &#x548C; IP &#x4E3A;&#x5BF9;&#x5E94;&#x7684; RAM &#x5355;&#x5143;&#x4E2D;&#x7684; dword &#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x5176;&#x4E2D; CS &#x5BF9;&#x5E94;&#x4E3A; dword &#x7684;&#x9AD8;&#x4F4D;&#x5730;&#x5740;&#x7684;&#x5185;&#x5BB9;&#xFF0C;IP &#x5BF9;&#x5E94;&#x4E3A; dword &#x7684;&#x4F4E;&#x4F4D;&#x5730;&#x5740;&#x7684;&#x5185;&#x5BB9;</li>
+<li>(SP) = (SP) - 4</li>
+</ul>
 <footer class="page-footer"><span class="copyright">&#xA9; 2018  kmahyyg <16604643+kmahyyg@users.noreply.github.com>. All rights reserved.</16604643+kmahyyg@users.noreply.github.com></span><span class="footer-modification"><span id="busuanzi_container_site_uv" style="display:none">&#x672C;&#x7AD9;&#x8BBF;&#x5BA2;&#x6570; <span id="busuanzi_value_site_uv"></span> &#x4EBA;&#x6B21;</span></span></footer><script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
                                 
                                 </section>
@@ -810,7 +886,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"5.5 CALL 指令 (1)","level":"1.6.5","depth":2,"next":{"title":"All Experiments","level":"1.7","depth":1,"path":"exps/README.md","ref":"exps/README.md","articles":[{"title":"实验一：DOS 中 DEBUG 的基本使用","level":"1.7.1","depth":2,"path":"exps/exp1-dosdbg.md","ref":"exps/exp1-dosdbg.md","articles":[]},{"title":"实验二：编程、编译、链接、跟踪 :star:","level":"1.7.2","depth":2,"path":"exps/exp2-firsttry.md","ref":"exps/exp2-firsttry.md","articles":[]},{"title":"实验三：[BX] 和 LOOP 指令的使用","level":"1.7.3","depth":2,"path":"exps/exp3-bxloop.md","ref":"exps/exp3-bxloop.md","articles":[]},{"title":"实验四：编写、调试具有多个段的程序","level":"1.7.4","depth":2,"path":"exps/exp4-multisegment.md","ref":"exps/exp4-multisegment.md","articles":[]},{"title":"实验五：更加灵活的内存单元定位","level":"1.7.5","depth":2,"path":"exps/exp5-doubleloop.md","ref":"exps/exp5-doubleloop.md","articles":[]},{"title":"实验六：结构化数据访问应用","level":"1.7.6","depth":2,"path":"exps/exp6-strudata.md","ref":"exps/exp6-strudata.md","articles":[]},{"title":"实验七：位移指令","level":"1.7.7","depth":2,"path":"exps/exp7-transfer.md","ref":"exps/exp7-transfer.md","articles":[]}]},"previous":{"title":"5.4 RET & RETF","level":"1.6.4","depth":2,"path":"transcom/retNretf.md","ref":"transcom/retNretf.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","anchors","multipart","-highlight","prism","prism-themes","page-footer-copyright","sitemap"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-duotone-light.css"]},"disqus":{"useIdentifier":false,"shortName":"asm-kmahyyg"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"page-footer-copyright":{},"sitemap":{"hostname":"https://asm.kmahyyg.xyz"},"prism-themes":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"kmahyyg <16604643+kmahyyg@users.noreply.github.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"none","variables":{},"title":"汇编语言程序设计","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"About Me":"https://www.kmahyyg.xyz/about","My Blog":"https://www.kmahyyg.xyz"}},"gitbook":"*","description":"Learning Notes about Assembly Language","extension":null},"file":{"path":"transcom/comm_call.md","mtime":"2018-08-30T07:14:04.620Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-30T07:15:03.986Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"5.5 CALL 指令","level":"1.6.5","depth":2,"next":{"title":"All Experiments","level":"1.7","depth":1,"path":"exps/README.md","ref":"exps/README.md","articles":[{"title":"实验一：DOS 中 DEBUG 的基本使用","level":"1.7.1","depth":2,"path":"exps/exp1-dosdbg.md","ref":"exps/exp1-dosdbg.md","articles":[]},{"title":"实验二：编程、编译、链接、跟踪 :star:","level":"1.7.2","depth":2,"path":"exps/exp2-firsttry.md","ref":"exps/exp2-firsttry.md","articles":[]},{"title":"实验三：[BX] 和 LOOP 指令的使用","level":"1.7.3","depth":2,"path":"exps/exp3-bxloop.md","ref":"exps/exp3-bxloop.md","articles":[]},{"title":"实验四：编写、调试具有多个段的程序","level":"1.7.4","depth":2,"path":"exps/exp4-multisegment.md","ref":"exps/exp4-multisegment.md","articles":[]},{"title":"实验五：更加灵活的内存单元定位","level":"1.7.5","depth":2,"path":"exps/exp5-doubleloop.md","ref":"exps/exp5-doubleloop.md","articles":[]},{"title":"实验六：结构化数据访问应用","level":"1.7.6","depth":2,"path":"exps/exp6-strudata.md","ref":"exps/exp6-strudata.md","articles":[]},{"title":"实验七：位移指令","level":"1.7.7","depth":2,"path":"exps/exp7-transfer.md","ref":"exps/exp7-transfer.md","articles":[]}]},"previous":{"title":"5.4 RET & RETF","level":"1.6.4","depth":2,"path":"transcom/retNretf.md","ref":"transcom/retNretf.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","anchors","multipart","-highlight","prism","prism-themes","page-footer-copyright","sitemap"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-duotone-light.css"]},"disqus":{"useIdentifier":false,"shortName":"asm-kmahyyg"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"page-footer-copyright":{},"sitemap":{"hostname":"https://asm.kmahyyg.xyz"},"prism-themes":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"kmahyyg <16604643+kmahyyg@users.noreply.github.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"none","variables":{},"title":"汇编语言程序设计","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"About Me":"https://www.kmahyyg.xyz/about","My Blog":"https://www.kmahyyg.xyz"}},"gitbook":"*","description":"Learning Notes about Assembly Language","extension":null},"file":{"path":"transcom/comm_call.md","mtime":"2018-08-30T08:13:28.562Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-30T08:14:25.263Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
