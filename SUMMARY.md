@@ -34,6 +34,7 @@
   - [5.4 RET & RETF](transcom/retNretf.md)
   - [5.5 CALL 指令](transcom/comm_call.md)
   - [5.6 CALL 与 RET 的结合使用](transcom/cooperate_calret.md)
+  - [5.7 模块化程序设计](transcom/modulized_prog.md)
   
 * [All Experiments](exps/README.md)
   - [实验一：DOS 中 `DEBUG` 的基本使用](exps/exp1-dosdbg.md)

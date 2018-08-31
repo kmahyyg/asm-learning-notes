@@ -11,6 +11,19 @@ RET 命令使用栈中的数据，修改 IP 的内容，从而实现近转移。
 
 等价于： `pop IP`
 
+## RET N
+
+`ref n` 作用是修改 SP 的值，将 SP 的当前值 加上 n，具体请参照 [此处](https://asm.kmahyyg.xyz/asmcommands/pushpop.html#%E5%A6%82%E4%BD%95%E7%A1%AE%E5%AE%9A%E6%A0%88%E9%A1%B6%E6%A0%87%E8%AE%B0) 。
+
+`ref n` 用于修改栈顶指针。等价于：
+
+```asm6502
+pop ip
+add sp,n
+```
+
+## RETF
+
 RETF 命令使用栈中的数据，修改 CS 和 IP 的内容，从而实现远转移。
 
 对应的操作：
