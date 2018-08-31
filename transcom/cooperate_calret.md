@@ -25,6 +25,41 @@ end start
 - 将 ret 处指令读入，IP 指向 ret 之后的内存单元，将之前保存的值出栈，送入 IP 中，继续执行。
 - 将 AX 最终的值 8 传入 BX，退出。
 
-## 实现一个子程序的示例
+## 实现一个子程序
 
-### TODO
+### 子程序框架
+
+```
+标号:
+    指令
+    ret
+```
+
+### 具有子程序的源程序框架
+
+```asm6502
+assume cs:code
+code segment
+    main:   ;TODO
+            ;TODO
+            ;TODO
+            call sub1
+            ;TODO
+            ;TODO
+            mov ax,4c00h
+            int 21h
+    sub1:   ;TODO
+            ;TODO
+            ;TODO
+            call sub2
+            ;TODO
+            ;TODO
+            ret
+
+    sub2:   ;TODO
+            ;TODO
+            ;TODO
+            ret
+code ends
+end start
+```
