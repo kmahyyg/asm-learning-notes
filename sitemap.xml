@@ -30,6 +30,8 @@
 <url> <loc>https://asm.kmahyyg.xyz/transcom/comm_call.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://asm.kmahyyg.xyz/transcom/cooperate_calret.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://asm.kmahyyg.xyz/transcom/modulized_prog.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://asm.kmahyyg.xyz/statusreg/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://asm.kmahyyg.xyz/statusreg/brief.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://asm.kmahyyg.xyz/exps/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://asm.kmahyyg.xyz/exps/exp1-dosdbg.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://asm.kmahyyg.xyz/exps/exp2-firsttry.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
