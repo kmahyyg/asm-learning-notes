@@ -34,6 +34,10 @@ IA-32e Mode：增强模式，Intel EM64T Processor Only (Extended Memory 64 Tech
 
 System Management Mode: 一般用户无感知。 更多详情参看 [此处](https://en.wikipedia.org/wiki/System_Management_Mode)
 
+## 工作模式的切换
+
+![switch_cpu_work_mode](../assets/statusreg/cpu_workmode_switch.png)
+
 ## 一些疑问
 
 或许你会说我们为什么不直接在保护模式下学习汇编语言？学习的过程是循序渐进的，本书主要面向 Intel 在 DOS / Windows-NT 下使用的 MASM，只有先学会基础的，我们才能进一步学习保护模式下的相对复杂的程序运行原理。 
