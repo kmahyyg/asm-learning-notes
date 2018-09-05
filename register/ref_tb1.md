@@ -18,6 +18,12 @@ Intel 系列处理器主要的发展从 8080，8086/8088，80186，80286，80386
 
 虚拟 8086 模式的提供是有极大意义的，这意味着你不需要重启计算机就能使计算机同时运行 DOS 的程序 和 Windows 的程序，这样就可以节省用户大量的时间，给应用程序带来相对较好的兼容性。
 
+## 一些现代的 CPU 提供了更多的工作模式
+
+IA-32e Mode：增强模式，Intel EM64T Processor Only (Extended Memory 64 Technology), 即基于 x86 架构的 64 位指令集处理器。
+
+System Management Mode: 一般用户无感知。 更多详情参看 [此处](https://en.wikipedia.org/wiki/System_Management_Mode)
+
 ## 一些疑问
 
 或许你会说我们为什么不直接在保护模式下学习汇编语言？学习的过程是循序渐进的，本书主要面向 Intel 在 DOS / Windows-NT 下使用的 MASM，只有先学会基础的，我们才能进一步学习保护模式下的相对复杂的程序运行原理。 
