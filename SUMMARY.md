@@ -36,6 +36,9 @@
   - [5.6 CALL 与 RET 的结合使用](transcom/cooperate_calret.md)
   - [5.7 模块化程序设计](transcom/modulized_prog.md)
   
+* [Chapter 6 - 标志寄存器](statusreg/README.md)
+  - [6.1 常见标志寄存器简介](statusreg/brief.md)
+  
 * [All Experiments](exps/README.md)
   - [实验一：DOS 中 `DEBUG` 的基本使用](exps/exp1-dosdbg.md)
   - [实验二：编程、编译、链接、跟踪 :star:](exps/exp2-firsttry.md)
