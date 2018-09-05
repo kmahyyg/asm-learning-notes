@@ -25,6 +25,7 @@ deploy:
   keep-history: true
   github-token: $GITHUB_PERTKN
   on:
+    tags: false
     branch: master
   target-branch: gh-pages
   fqdn: asm.kmahyyg.xyz
