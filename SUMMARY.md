@@ -49,6 +49,7 @@
   - [实验五：更加灵活的内存单元定位](exps/exp5-doubleloop.md)
   - [实验六：结构化数据访问应用](exps/exp6-strudata.md)
   - [实验七：位移指令](exps/exp7-transfer.md)
+  - [实验八：VS 内联汇编](exps/exp8-asminc.md)
   
 * [Reference: 附注](README.md)
   - [1 Intel 系列微处理器的 3 种工作模式](register/ref_tb1.md)

@@ -12,6 +12,7 @@ SAHF：将AH寄存器中数据传送到标志寄存器最低8位。
 指令格式： CLC / STC / CMC
 
 指令功能：
+
 - CLC：CF=0。
 - STC：CF=0。
 - CMC：CF取反。
