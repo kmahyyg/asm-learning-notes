@@ -23,6 +23,7 @@
 <url> <loc>https://asm.kmahyyg.xyz/ramndata/bxPidata.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://asm.kmahyyg.xyz/ramndata/regnsreg.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://asm.kmahyyg.xyz/ramndata/lengthodata.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://asm.kmahyyg.xyz/ramndata/memmgr.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://asm.kmahyyg.xyz/transcom/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://asm.kmahyyg.xyz/transcom/transfer_offset.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://asm.kmahyyg.xyz/transcom/transfer_jmp.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
@@ -42,6 +43,7 @@
 <url> <loc>https://asm.kmahyyg.xyz/exps/exp5-doubleloop.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://asm.kmahyyg.xyz/exps/exp6-strudata.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://asm.kmahyyg.xyz/exps/exp7-transfer.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://asm.kmahyyg.xyz/exps/exp8-asminc.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://asm.kmahyyg.xyz/register/ref_tb1.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://asm.kmahyyg.xyz/register/ref_tb2.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://asm.kmahyyg.xyz/transcom/ref_tb3.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
