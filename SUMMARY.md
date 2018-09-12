@@ -27,6 +27,7 @@
   - [4.2 更加灵活的内存单元定位方法](ramndata/bxPidata.md)
   - [4.3 数据定位及位置表达](ramndata/regnsreg.md)
   - [4.4 数据处理数据的长度及综合应用](ramndata/lengthodata.md)
+  - [4.5 段寄存器与内存管理](ramndata/memmgr.md)
   
 * [Chapter 5 - 转移指令](transcom/README.md)
   - [5.1 操作符 OFFSET](transcom/transfer_offset.md)

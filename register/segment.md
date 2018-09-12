@@ -14,6 +14,11 @@ CS：是 Code Segment 的缩写，翻译为“代码段寄存器”，对应于�
 DS：是 Data Segment 的缩写，翻译为“数据段寄存器”； 
 SS：是 Stack Segment 的缩写，翻译为“堆栈段寄存器”； 
 ES：是 Extra Segment 的缩写，翻译为“附加段寄存器”。
+ES/FS/GS: 附加段 (Extra Segment) 寄存器
+
+用来保存当前代码段、堆栈段、数据段  段地址(段基址) 取值；
+实地址模式下，用于存放段的基址，可以使用4个CS/SS/DS/ES；
+保护模式下用于存放段描述符表的指针符，可以使用全部6个；
 
 在CPU执行指令时，通过代码段寄存器（CS，Code Segment）和指令指针寄存器（IP，Instruction Pointer）来确定要执行的下一条指令的内存地址。
 
