@@ -20,6 +20,7 @@
   - [3.5 包含多个段的程序](asmcommands/multisegment.md)
   - [3.6 DIV DD DUP 指令](asmcommands/divdddup.md)
   - [3.7 MUL 乘法指令](asmcommands/mulcomm.md)
+  - [3.8 自增、自减与比较指令](asmcommands/incdec.md)
   
 * [Chapter 4 - 内存地址定位与数据处理](ramndata/README.md)
   - [4.1 AND OR 与 字符串](ramndata/andorstr.md)
@@ -38,6 +39,7 @@
   
 * [Chapter 6 - 标志寄存器](statusreg/README.md)
   - [6.1 常见标志寄存器简介](statusreg/brief.md)
+  - [6.2 标志位操作指令](statusreg/flagopcomm.md)
   
 * [All Experiments](exps/README.md)
   - [实验一：DOS 中 `DEBUG` 的基本使用](exps/exp1-dosdbg.md)
