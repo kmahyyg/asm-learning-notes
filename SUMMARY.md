@@ -27,6 +27,7 @@
   - [4.2 更加灵活的内存单元定位方法](ramndata/bxPidata.md)
   - [4.3 数据定位及位置表达](ramndata/regnsreg.md)
   - [4.4 数据处理数据的长度及综合应用](ramndata/lengthodata.md)
+  - [4.5 段寄存器与内存管理](ramndata/memmgr.md)
   
 * [Chapter 5 - 转移指令](transcom/README.md)
   - [5.1 操作符 OFFSET](transcom/transfer_offset.md)
@@ -49,6 +50,7 @@
   - [实验五：更加灵活的内存单元定位](exps/exp5-doubleloop.md)
   - [实验六：结构化数据访问应用](exps/exp6-strudata.md)
   - [实验七：位移指令](exps/exp7-transfer.md)
+  - [实验八：VS 内联汇编](exps/exp8-asminc.md)
   
 * [Reference: 附注](README.md)
   - [1 Intel 系列微处理器的 3 种工作模式](register/ref_tb1.md)
