@@ -60,3 +60,4 @@
   - [5 除法溢出避免公式证明](ramndata/ref_tb5.md)
   - [6 ASCII 码表](ramndata/ref_ascii.md)
   - [7 80×25 显示缓冲区结构](exps/exp7-02ref.md)
+  - [8 DEBUG(DOS) 参考文档](exps/exp1-debugref.md)
