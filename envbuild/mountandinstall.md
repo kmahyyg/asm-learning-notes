@@ -15,7 +15,7 @@ KVM 的默认磁盘镜像存储位置： `/var/lib/libvirt/images`
 # modprobe nbd          // 挂载需要的内核模块
 # qemu-nbd --connect=/dev/nbd0 /path/to/qcow2/image  // 将镜像挂载为 Block 设备 （添加 --readonly 以保持只读）
 # fdisk /dev/nbd0 -l    // 检查镜像的分区
-# mkder /media/mountpoint    // 创建挂载点
+# mkdir /media/mountpoint    // 创建挂载点
 # mount /dev/nbd0p1 /media/mountpoint   // 将分区挂载到挂载点
 ```
 
