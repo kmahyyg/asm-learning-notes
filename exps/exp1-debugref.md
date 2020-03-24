@@ -53,3 +53,5 @@ EMS show status XS                                              special  (define
 ```
 
 From https://sites.google.com/site/pcdosretro/enhdebug
+
+关于 DOS int21h 中断和相关的其他中断的具体使用及功能，可参考： http://stanislavs.org/helppc/
